@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbdulQ Site</title>
+    <link rel="stylesheet" href="/site/style.css">
+</head>
+<body>
+    <div class="taskbar">
+        <button id="start-btn">
+            <img src="/site/assets/raspberryOne.png" class="menu-icon" alt="Start">
+            Start
+        </button>
+        <div class="dropdown">
+            <a href="#" onclick="openWindow('about')">
+                <img src="/site/assets/folder-icon.png" class="menu-icon" alt="About">
+                About Me
+            </a>
+            <a href="#" onclick="openWindow('projects')">
+                <img src="/site/assets/code-icon.png" class="menu-icon" alt="Projects">
+                Projects
+            </a>
+            <a href="#" onclick="openWindow('resume')">
+                <img src="/site/assets/resume-icon.png" class="menu-icon" alt="Resume">
+                Resume
+            </a>
+            <a href="#" onclick="openWindow('contact')">
+                <img src="/site/assets/email-icon.png" class="menu-icon" alt="Contact">
+                Contact
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="/site/assets/shutdown.png" class="menu-icon" alt="Shutdown">
+                Shut Down...
+                
+            </a>
+        </div>
+        <div class="clock" id="clock"></div>
+    </div>
+    <video autoplay muted loop id="bg-video">
+        <source src="/site/assets/aesthetic-japan.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Desktop Icons -->
+    <div class="desktop">
+        <div id="icon-about" class="icon" onclick="openWindow('about')">
+            <img src="assets/folder-icon.png" alt="About">
+            <p>About Me</p>
+        </div>
+        <div id="icon-projects" class="icon" onclick="openWindow('projects')">
+            <img src="assets/code-icon.png" alt="Projects">
+            <p>Projects</p>
+        </div>
+        <div id="icon-resume" class="icon" onclick="openWindow('resume')">
+            <img src="assets/resume-icon.png" alt="Resume">
+            <p>Resume</p>
+        </div>
+        <div id ="icon-contact" class="icon" onclick="openWindow('contact')">
+            <img src="assets/email-icon.png" alt="Contact">
+            <p>Contact</p>
+        </div>
+    </div>
+
+    <!-- Windows (Hidden by Default) -->
+    <div id="window-about" class="window hidden">
+        <div class="title-bar">
+            <span>About Me</span>
+            <button class="close-btn" onclick="closeWindow('about')">X</button>
+        </div>
+        <iframe src="pages/about.html"></iframe>
+    </div>
+
+    <div id="window-projects" class="window hidden">
+        <div class="title-bar">
+            <span>Projects</span>
+            <button class="close-btn" onclick="closeWindow('projects')">X</button>
+        </div>
+        <iframe src="pages/projects.html"></iframe>
+    </div>
+
+    <div id="window-resume" class="window hidden">
+        <div class="title-bar">
+            <span>Resume</span>
+            <button class="close-btn" onclick="closeWindow('resume')">X</button>
+        </div>
+        <iframe src="pages/resume.html"></iframe>
+    </div>
+
+    <div id="window-contact" class="window hidden">
+        <div class="title-bar">
+            <span>Contact</span>
+            <button class="close-btn" onclick="closeWindow('contact')">X</button>
+        </div>
+        <iframe src="pages/contact.html"></iframe>
+    </div>
+
+    <script src="/site/script.js"></script>
+</body>
+</html>

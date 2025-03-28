@@ -1,0 +1,77 @@
+/* General Content Box */
+.content {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #c3c3c3;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+/* Headings */
+h1, h2 {
+    color: black;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    background: white;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    padding: 10px;
+    background: #000080;
+    color: white;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.download-btn:hover {
+    background: #5a5aff;
+}
+
+/* Projects Section */
+.project {
+    background: white;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
+}
+
+.project h2 {
+    color: black;
+    font-size: 18px;
+}
+
+.project p {
+    font-size: 14px;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 5px;
+    background: #000080;
+    color: white;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.project-link:hover {
+    background: #5a5aff;
+}

@@ -1,0 +1,216 @@
+/* General styles */
+body {
+    margin: 0;
+    background: url('/site/assets/retro-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #c3c3c3; /* Windows 95 Gray */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid black;
+    z-index: 1000; /* Ensures taskbar is above everything */
+}
+
+/* Start Button */
+#start-btn {
+    background: #c3c3c3;
+    color: black;
+    font-size: 14px;
+    padding: 6px 16px;
+    border: 2px solid #7a7a7a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    font-weight: bold;
+}
+
+#start-btn:hover {
+    background: #c64f4f;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #c3c3c3;
+    width: 180px;
+    bottom: 50px; /* Moves menu above the button */
+    left: 5px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px #cbc9c9, -2px -2px 0px white;
+    z-index: 1001; /* Ensures dropdown is above desktop */
+    padding: 5px 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+/* Show menu when toggled */
+.dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Menu Items */
+.dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    gap: 10px;
+    border-bottom: 1px solid #fffafa;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+    background: #000080;
+    color: white;
+}
+
+/* Menu Icons */
+.menu-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Desktop Icons */
+.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 40px); /* Prevents desktop from covering taskbar */
+}
+
+.icon {
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon img {
+    width: 60px;
+}
+
+/* Positioning Desktop Icons */
+#icon-about {
+    top: 20%;
+    left: 10%;
+    
+}
+
+#icon-projects {
+    top: 50%;
+    left: 20%;
+}
+
+#icon-resume {
+    top: 70%;
+    left: 60%;
+}
+
+#icon-contact {
+    top: 30%;
+    left: 80%;
+}
+
+/* Windows */
+.window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80000px;
+    height: 80000px;
+    background: white;
+    border: 2px solid rgb(39, 162, 154);
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Expanded state */
+.window.active {
+    width: 40vw;
+    height: 65vh;
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 10;
+}
+
+.window iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Title Bar */
+.title-bar {
+    background: black;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-btn {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Clock Position */
+#clock {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .desktop {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .window {
+        width: 90%;
+        height: auto;
+    }
+}

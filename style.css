@@ -137,6 +137,11 @@ body {
     left: 80%;
 }
 
+#icon-dashboard {
+    top: 10%;
+    left: 80%;
+}
+
 /* Windows */
 .window {
     display: none;

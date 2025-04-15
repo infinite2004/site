@@ -32,8 +32,8 @@
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                 <img src="./assets/shutdown.png" class="menu-icon" alt="Shutdown">
                 Shut Down...
-                
             </a>
+
         </div>
         <div class="clock" id="clock"></div>
     </div>
@@ -59,6 +59,10 @@
         <div id ="icon-contact" class="icon" onclick="openWindow('contact')">
             <img src="assets/email-icon.png" alt="Contact">
             <p>Contact</p>
+        </div>
+        <div id ="icon-dashboard" class="icon" onclick="openWindow('dashboard')">
+            <img src="assets/wheel.png" alt="Dashboard">
+            <p>Dashboard</p>
         </div>
     </div>
 
@@ -93,6 +97,14 @@
             <button class="close-btn" onclick="closeWindow('contact')">X</button>
         </div>
         <iframe src="pages/contact.html"></iframe>
+    </div>
+
+    <div id="window-dashboard" class="window hidden">
+        <div class="title-bar">
+            <span>Dashboard</span>
+            <button class="close-btn" onclick="closeWindow('dashboard')">X</button>
+        </div>
+        <iframe src="pages/dashboard.html"></iframe>
     </div>
 
     <script src="script.js"></script>

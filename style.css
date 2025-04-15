@@ -148,21 +148,25 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80000px;
-    height: 80000px;
+    width: 60vw;
+    height: 60vh;
     background: white;
     border: 2px solid rgb(39, 162, 154);
     transform: translate(-50%, -50%) scale(0.8);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-}
+    cursor: default; /* Normal cursor inside window */
 
+}
+.title-bar {
+    cursor: move; /* Indicates draggable */
+}
 /* Expanded state */
 .window.active {
     width: 40vw;
     height: 65vh;
     transform: translate(-50%, -50%) scale(1.4);
-    opacity: 10;
+    opacity: 1;
 }
 
 .window iframe {

@@ -1,161 +1,175 @@
 /* General Content Box */
 .content {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #c3c3c3;
-    border: 2px solid black;
-    box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
-    font-family: "MS Sans Serif", sans-serif;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #c3c3c3;
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
+  font-family: "MS Sans Serif", sans-serif;
+  overflow-y: auto;               /* Added */
+  max-height: 85vh;               /* Added */
+  box-sizing: border-box;         /* Prevents content from spilling */
 }
 
 /* Headings */
 h1, h2 {
-    color: black;
+  color: black;
+  margin-top: 0; /* Prevents large spacing at top */
 }
 
 /* Form Styles */
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 input, textarea {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 2px solid black;
-    background: white;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  background: white;
+  box-sizing: border-box; /* Added */
+  width: 100%;             /* Responsive */
 }
 
 /* Download Button */
 .download-btn {
-    display: inline-block;
-    padding: 10px;
-    background: #000080;
-    color: white;
-    text-decoration: none;
-    border: 2px solid black;
+  display: inline-block;
+  padding: 10px;
+  background: #000080;
+  color: white;
+  text-decoration: none;
+  border: 2px solid black;
+  text-align: center;
 }
 
 .download-btn:hover {
-    background: #5a5aff;
+  background: #5a5aff;
 }
 
 /* Projects Section */
 .project {
-    background: white;
-    padding: 10px;
-    margin: 15px 0;
-    border: 2px solid black;
-    box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
+  background: white;
+  padding: 15px;
+  margin: 20px 0;
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px #7a7a7a, -2px -2px 0px white;
+  box-sizing: border-box;
 }
 
 .project h2 {
-    color: black;
-    font-size: 18px;
+  color: black;
+  font-size: 18px;
+  margin-top: 0;
 }
 
 .project p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .project-link {
-    display: inline-block;
-    padding: 5px;
-    background: #000080;
-    color: white;
-    text-decoration: none;
-    border: 2px solid black;
+  display: inline-block;
+  padding: 8px;
+  background: #000080;
+  color: white;
+  text-decoration: none;
+  border: 2px solid black;
 }
 
 .project-link:hover {
-    background: #5a5aff;
+  background: #5a5aff;
 }
 
-
+/* Resume Image */
 .resume-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border: 2px solid black;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;
 }
 
+/* Instagram Embed */
 .instagram-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .instagram-media {
-    width: 100% !important;
-    max-width: 540px !important;
-    min-width: 300px !important;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
 
-  .refresh-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-    font-family: "MS Sans Serif", sans-serif;
-    font-size: 14px;
-    background: #000080;
-    color: white;
-    border: 2px solid black;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-  }
-  
-  .refresh-btn:hover {
-    background: #5a5aff;
-  }
+.instagram-media {
+  width: 100% !important;
+  max-width: 540px !important;
+  min-width: 300px !important;
+}
 
+/* Buttons */
+.refresh-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-family: "MS Sans Serif", sans-serif;
+  font-size: 14px;
+  background: #000080;
+  color: white;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.refresh-btn:hover {
+  background: #5a5aff;
+}
+
+/* Mobile Styles */
 @media (max-width: 600px) {
-    .content {
+  .content {
       margin: 20px 10px;
       padding: 15px;
       max-width: 100%;
-    }
-  
-    h1 {
+      max-height: 80vh;           /* Ensures vertical scroll on mobile */
+      overflow-y: auto;
+  }
+
+  h1 {
       font-size: 20px;
-    }
-  
-    h2 {
+  }
+
+  h2 {
       font-size: 16px;
-    }
-  
-    input,
-    textarea {
+  }
+
+  input, textarea {
       font-size: 14px;
-    }
-  
-    .download-btn,
-    .project-link {
+  }
+
+  .download-btn,
+  .project-link {
       font-size: 14px;
       padding: 8px;
       text-align: center;
-    }
-  
-    .project {
+  }
+
+  .project {
       padding: 10px;
       margin: 10px 0;
-    }
-  
-    .project h2 {
-      font-size: 16px;
-    }
-  
-    .project p {
-      font-size: 13px;
-    }
-    .instagram-media {
-        max-width: 100% !important;
-        min-width: 100% !important;
-      }
   }
+
+  .project h2 {
+      font-size: 16px;
+  }
+
+  .project p {
+      font-size: 13px;
+  }
+
+  .instagram-media {
+      max-width: 100% !important;
+      min-width: 100% !important;
+  }
+}

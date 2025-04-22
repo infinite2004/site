@@ -126,6 +126,26 @@ input, textarea {
   background: #5a5aff;
 }
 
+.social-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #000080;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.social-links a:hover {
+  color: #5a5aff;
+}
+
 /* Mobile Styles */
 @media (max-width: 600px) {
   .content {

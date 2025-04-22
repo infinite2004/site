@@ -109,3 +109,92 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Apply to all windows after DOM is loaded
   document.querySelectorAll(".window").forEach(makeDraggable);
+
+
+  // Replace setTimeout/openWindow with:
+window.openWindow = function (id) {
+  const win = document.getElementById(`window-${id}`);
+  win.style.display = "block";
+  gsap.fromTo(win, { scale: 0.5, opacity: 0 }, { scale: 1.4, opacity: 1, duration: 0.4, ease: "power2.out" });
+};
+
+// Replace closeWindow with:
+window.closeWindow = function (id) {
+  const win = document.getElementById(`window-${id}`);
+  gsap.to(win, {
+    scale: 0.5,
+    opacity: 0,
+    duration: 0.3,
+    ease: "power1.in",
+    onComplete: () => {
+      win.style.display = "none";
+    }
+  });
+};
+
+document.querySelectorAll(".icon").forEach(icon => {
+  icon.addEventListener("mouseenter", () => {
+    gsap.to(icon, { scale: 1.1, duration: 0.2 });
+  });
+  icon.addEventListener("mouseleave", () => {
+    gsap.to(icon, { scale: 1.0, duration: 0.2 });
+  });
+});
+
+gsap.from(".desktop", { opacity: 0, y: 30, duration: 5, ease: "power3.out" });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoElement = document.getElementById("bg-video");
+
+  const videoSources = [
+    "./assets/aesthetic-japan.mp4",
+    "./assets/chillout.mp4",
+    "./assets/aesthetic_three.mp4",
+    "./assets/asthetic_four.mp4",
+    "./assets/asthetic_six.mp4",
+    "./assets/asthetic_seven.mp4",
+    "./assets/asthetic_eight.mp4"
+  
+
+    
+    // Add more videos if needed
+  ];
+
+  let currentVideoIndex = 0;
+  let videoLooping = true;
+  let loopTimeout;
+
+  function playVideo(index) {
+    const source = videoSources[index];
+    videoElement.src = source;
+    videoElement.load();
+    videoElement.play();
+  }
+
+  function loopForDuration(duration = 30000) {
+    playVideo(currentVideoIndex);
+
+    // Allow video to loop
+    videoElement.loop = true;
+
+    // After duration ends, move to the next video
+    loopTimeout = setTimeout(() => {
+      currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+      loopForDuration(duration); // start next video looping
+    }, duration);
+  }
+
+  // Start looping the first video
+  loopForDuration();
+});
+
+function playNextVideo() {
+  gsap.to(videoElement, { opacity: 0, duration: 1, onComplete: () => {
+    videoElement.src = videoSources[currentVideoIndex];
+    videoElement.load();
+    videoElement.play();
+    gsap.to(videoElement, { opacity: 1, duration: 1 });
+    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+  }});
+}

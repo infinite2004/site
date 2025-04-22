@@ -116,30 +116,39 @@ body {
 }
 
 /* Positioning Desktop Icons */
-#icon-about {
+#icon-about  {
     top: 20%;
     left: 10%;
+    color: white;
     
 }
 
 #icon-projects {
     top: 50%;
     left: 20%;
+    color: white;
+
 }
 
 #icon-resume {
     top: 70%;
     left: 60%;
+    color: white;
+
 }
 
 #icon-contact {
     top: 30%;
     left: 80%;
+    color: white;
+
 }
 
 #icon-dashboard {
     top: 10%;
     left: 80%;
+    color: white;
+
 }
 
 /* Windows */
@@ -174,6 +183,7 @@ body {
     height: 100%;
     border: none;
 }
+
 
 /* Title Bar */
 .title-bar {

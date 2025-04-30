@@ -9,90 +9,109 @@ body {
 /* Taskbar */
 .taskbar {
     position: fixed;
-    bottom: 0;
+    top: 0;                    /* Move to top */
+    left: 0;
     width: 100%;
-    height: 40px;
-    background: #c3c3c3; /* Windows 95 Gray */
+    height: 45px;
     display: flex;
     align-items: center;
-    padding: 5px;
-    border-top: 2px solid white;
-    border-bottom: 2px solid black;
-    z-index: 1000; /* Ensures taskbar is above everything */
+    justify-content: space-between;
+    padding: 0 10px;
+    background: linear-gradient(to top, #bababa, #e0e0e0);
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 /* Start Button */
+/* Start Button */
 #start-btn {
-    background: #c3c3c3;
+    background: linear-gradient(to bottom, #d9d9d9, #c3c3c3);
     color: black;
     font-size: 14px;
-    padding: 6px 16px;
+    padding: 6px 20px;
     border: 2px solid #7a7a7a;
+    border-radius: 60px;
+    box-shadow: inset 1px 1px #fff, inset -1px -1px #7a7a7a;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    position: relative;
+    gap: 6px;
     font-weight: bold;
+    transition: background 0.3s ease;
+    margin-left: 25px; /* or whatever spacing you want */
+    margin-right: auto; /* push other items away */
 }
 
 #start-btn:hover {
-    background: #c64f4f;
+    background: #9c2e2e;
+    color: white;
 }
 
-/* Dropdown Menu */
 .dropdown {
     display: none;
     position: absolute;
-    background: #c3c3c3;
-    width: 180px;
-    bottom: 50px; /* Moves menu above the button */
+    top: 45px; /* appears below top taskbar */
     left: 5px;
-    border: 2px solid black;
-    box-shadow: 2px 2px 0px #cbc9c9, -2px -2px 0px white;
-    z-index: 1001; /* Ensures dropdown is above desktop */
-    padding: 5px 0;
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    opacity: 0;
-}
-
-/* Show menu when toggled */
+    width: 220px;
+    background: #f4f4f4;
+    border: 2px solid #7a7a7a;
+    box-shadow: 4px 4px 0 #888;
+    z-index: 1001;
+    font-family: "MS Sans Serif", sans-serif;
+    padding: 4px 0;
+  }
+  
 .dropdown.show {
     display: block;
-    opacity: 1;
-    transform: scaleY(1);
-}
+  }
+  
 
-/* Menu Items */
 .dropdown a {
     display: flex;
     align-items: center;
-    padding: 6px 10px;
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
+    justify-content: space-between;
     gap: 10px;
-    border-bottom: 1px solid #fffafa;
-}
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    background: transparent;
+    transition: background 0.2s;
+  }
 
 .dropdown a:last-child {
     border-bottom: none;
 }
 
-/* Hover effect */
+/* Hover behavior */
 .dropdown a:hover {
+    background: #2a6acc;
+    color: #fff;
+  }
+  
+.dropdown a.active {
     background: #000080;
     color: white;
-}
-
+  }
 /* Menu Icons */
 .menu-icon {
-    width: 16px;
-    height: 16px;
-}
+    width: 20px;
+    height: 20px;
+  }
 
+/* Optional arrow indicator */
+.dropdown a::after {
+    content: "▶";
+    color: transparent; /* invisible by default */
+    font-size: 12px;
+  }
+  
+  /* Show arrow only on hover */
+  .dropdown a:hover::after {
+    color: white;
+  }
 /* Desktop Icons */
 .desktop {
     position: absolute;
@@ -117,40 +136,83 @@ body {
 
 /* Positioning Desktop Icons */
 #icon-about  {
-    top: 20%;
-    left: 10%;
-    color: white;
+    top: 10%;
+    left: 2%;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
     
 }
 
-#icon-projects {
-    top: 50%;
-    left: 20%;
-    color: white;
 
+#icon-projects {
+    top: 25%;
+    left: 2.3%;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #icon-resume {
-    top: 70%;
-    left: 60%;
-    color: white;
+    top: 40%;
+    left: 2.4%;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
 
 }
 
 #icon-contact {
-    top: 30%;
-    left: 80%;
-    color: white;
+    top: 55%;
+    left: 2.4%;
+    color:black;
+    font-weight: bold;
+    font-size: 15px;
 
 }
 
 #icon-dashboard {
-    top: 40%;
-    left: 45%;
-    color: white;
+    top: 70%;
+    left: 2%;
+    color:black;
+    font-weight: bold;
+    font-size: 15px;
 
 }
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black; /* or any color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .loader-gif {
+    width: 500px; /* adjust as needed */
+    height: auto;
+  }
 
+  .progress-bar {
+    width: 300px;
+    height: 15px;
+    background: #333;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: limegreen;
+    transition: width 0.1s ease;
+  }
 /* Windows */
 .window {
     display: none;
@@ -214,22 +276,46 @@ body {
 
 /* Clock Position */
 #clock {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    color: rgb(0, 0, 0);
+    color: #000;
+    font-family: monospace;
     font-size: 16px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 0 20px;
+    white-space: nowrap;
+    overflow: visible;
+  
 }
 
+
+
 /* Mobile Styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .window {
+      width: 95vw;
+      height: 85vh;
+    }
+  
+    .icon {
+      width: 100px;
+      margin: 20px auto;
+    }
+  
     .desktop {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+@media (max-width: 600px) {
+    .taskbar {
         flex-direction: column;
-        align-items: center;
+        height: auto;
+        padding: 8px;
     }
 
-    .window {
-        width: 90%;
-        height: auto;
+    #clock {
+        margin: 10px 0 0;
+        align-self: flex-end;
     }
 }

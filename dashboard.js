@@ -1,31 +1,50 @@
-function getJoke() {
-  fetch("https://v2.jokeapi.dev/joke/Programming?type=single")
+// Password Check
+function checkPassword() {
+  const input = document.getElementById("password").value;
+  if (input === "2004@aq") {
+    document.getElementById("login-screen").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+  } else {
+    document.getElementById("error-msg").textContent = "Incorrect password. Try again.";
+  }
+}
+
+// Weather Widget
+function loadWeather() {
+  const apiKey = "52c74a789388af983452ea38763f03b7"; // Replace with your API key
+  const city = "New York";
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`)
     .then(res => res.json())
     .then(data => {
-      document.getElementById("joke-text").textContent = data.joke;
+      const weather = `${data.weather[0].main}, ${data.main.temp}°F`;
+      document.getElementById("weather-info").textContent = weather;
     })
     .catch(() => {
-      document.getElementById("joke-text").textContent = "Couldn't load a joke!";
+      document.getElementById("weather-info").textContent = "Failed to load weather.";
     });
 }
 
-const localQuotes = [
-  { content: "Creativity is intelligence having fun.", author: "Albert Einstein" },
-  { content: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
-  { content: "Design is not just what it looks like and feels like. Design is how it works.", author: "Steve Jobs" },
-  { content: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
-  { content: "Success is not in what you have, but who you are.", author: "Bo Bennett" }
-];
-
-function getQuote() {
-  const random = localQuotes[Math.floor(Math.random() * localQuotes.length)];
-  document.getElementById("quote-text").textContent = `"${random.content}" — ${random.author}`;
+// Notes Storage
+function saveNotes() {
+  const notes = document.getElementById("note-area").value;
+  localStorage.setItem("dashboard-notes", notes);
 }
 
-// Load on page load
-getJoke();
-getQuote();
+function loadNotes() {
+  const saved = localStorage.getItem("dashboard-notes");
+  if (saved) document.getElementById("note-area").value = saved;
+}
 
-// Button listeners
-document.getElementById("joke-btn").addEventListener("click", getJoke);
-document.getElementById("quote-btn").addEventListener("click", getQuote);
+// Spotify Placeholder (add auth later)
+function loadSpotify() {
+  document.getElementById("spotify-info").innerHTML = `
+    To integrate Spotify, you'll need to authenticate with the <a href="https://developer.spotify.com/documentation/web-api/" target="_blank" style="color:lightgreen;">Spotify Web API</a>.
+  `;
+}
+
+// Run on Load
+window.onload = () => {
+  loadWeather();
+  loadNotes();
+  loadSpotify();
+};

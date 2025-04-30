@@ -151,8 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "./assets/aesthetic-japan.mp4",
     "./assets/chillout.mp4",
     "./assets/aesthetic_three.mp4",
-    "./assets/asthetic_four.mp4",
-    "./assets/asthetic_six.mp4",
     "./assets/asthetic_seven.mp4",
     "./assets/asthetic_eight.mp4"
   
@@ -198,3 +196,16 @@ function playNextVideo() {
     currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
   }});
 }
+
+document.querySelectorAll(".dropdown a").forEach(link => {
+  link.classList.remove("active");
+});
+document.querySelector(`#start-btn ~ .dropdown a[href*='${id}']`)?.classList.add("active");
+
+gsap.from(".dropdown", {
+  duration: 0.3,
+  scaleY: 0,
+  transformOrigin: "top",
+  ease: "power2.out"
+});
+

@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="../about.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="../about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 
+<body>
+  <div class="content">
+    <h1>Contact Me</h1>
+    <p>If you’d like to get in touch, feel free to send me a message!</p>
 
-        <div class="content">
-            <h1>Contact Me</h1>
-            <p>If you’d like to get in touch, feel free to send me a message!</p>
-    
-            <!-- Functional Contact Form using Formspree -->
-            <form action="https://formspree.io/f/moveqndd" method="POST">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-    
-                <button type="submit">Send</button>
-            </form>
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/moveqndd" method="POST">
 
-            <div class="social-links" style="margin-top: 30px;">
-                <h2>Find Me Online</h2>
-                <ul>
-                  <li><a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank">🔗 LinkedIn</a></li>
-                  <li><a href="https://github.com/infinite2004" target="_blank">💻 GitHub</a></li>
-                  <li><a href="https://www.instagram.com/abdulq_spaam/" target="_blank">📸 Instagram</a></li>
-                </ul>
-              </div>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
 
-        </div>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-      
+      <button type="submit" class="download-btn">Send</button>
+    </form>
 
-    </body>
-    </html>  
+    <!-- Social Links -->
+    <div class="social-links" style="margin-top: 30px;">
+      <h2>Find Me Online</h2>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/infinite2004" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/abdulq_spaam/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

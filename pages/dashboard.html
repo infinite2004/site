@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdul Q's Personal Dashboard</title>
+  <link rel="stylesheet" href="../dashboard.css">
 </head>
 <body>
-  <p> under-development </p>
-  <!---
-    <div class="section" id="joke">
-        <h2> Joke of the Day </h2>
-        <p id="joke-text">Loading...</p>
-        <button id="joke-btn" class="refresh-btn">New Joke</button>
-      </div>
-      
-      <div class="section" id="quote">
-        <h2> Quote of the Moment </h2>
-        <p id="quote-text">Loading...</p>
-        <button id="quote-btn" class="refresh-btn">New Quote</button>
-      </div>
-      
-      <script src="../dashboard.js"></script>
+  <!-- PASSWORD SCREEN -->
+  <div id="login-screen">
+    <h2>Enter Password to Access Dashboard</h2>
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="error-msg"></p>
 
-      ----->
+    <p>Contact Me for the password  <a href="contact.html">click here</a> </p>
+    
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" style="display:none;">
+    <h1>Welcome, Abdul!</h1>
+
+    <!-- Spotify Widget -->
+     <!-- <section class="widget" id="spotify"> -->
+     <!--   <h2>🎵 Now Playing on Spotify</h2>
+        <div id="spotify-info">Loading song...</div> -->
+    <!--  </section> -->
+
+    <!-- Weather Widget -->
+    <section class="widget" id="weather">
+      <h2>🌤️ Current Weather</h2>
+      <div id="weather-info">Fetching weather...</div>
+    </section>
+
+    <!-- Daily Notes -->
+    <section class="widget" id="notes">
+      <h2>📝 Daily Notes</h2>
+      <textarea id="note-area" placeholder="Write your thoughts..."></textarea>
+      <button onclick="saveNotes()">Save Notes</button>
+    </section>
+
+    <!-- Future Expansion -->
+    <section class="widget">
+      <h2>📦 Coming Soon</h2>
+      <p>More features like to-do lists, quotes, and news will appear here.</p>
+    </section>
+  </div>
+
+  <script src="../dashboard.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ function checkPassword() {
 
 // Weather Widget
 function loadWeather() {
-  const apiKey = "52c74a789388af983452ea38763f03b7"; // Replace with your API key
+  const apiKey = ""; // Replace with your API key
   const city = "New York";
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`)
     .then(res => res.json())

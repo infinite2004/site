@@ -1,17 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let startBtn = document.getElementById("start-btn");
-    let dropdown = document.querySelector(".dropdown");
+    const startBtn = document.getElementById("start-btn");
+    const dropdown = document.querySelector(".dropdown");
   
     // Toggle menu visibility with animation
     startBtn.addEventListener("click", function (event) {
       event.stopPropagation();
+      const willShow = !dropdown.classList.contains("show");
       dropdown.classList.toggle("show");
+      startBtn.setAttribute("aria-expanded", String(willShow));
   
-      if (dropdown.classList.contains("show")) {
+      if (willShow) {
         gsap.fromTo(
           ".dropdown",
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+          { y: 8, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.18, ease: "power2.out" }
         );
       }
     });
@@ -20,32 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
       if (!dropdown.contains(event.target) && !startBtn.contains(event.target)) {
         dropdown.classList.remove("show");
+        startBtn.setAttribute("aria-expanded", "false");
       }
     });
   
     // Animate window open
     window.openWindow = function (id) {
-      let win = document.getElementById(`window-${id}`);
+      const win = document.getElementById(`window-${id}`);
+      if (!win) return;
       win.style.display = "block";
-  
-      setTimeout(() => {
-        win.classList.add("active");
-      }, 50);
-  
-      gsap.fromTo(
-        `#window-${id}`,
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }
-      );
+      win.classList.add("active");
+      gsap.fromTo(win, { scale: 0.9, opacity: 0 }, { scale: 1.4, opacity: 1, duration: 0.28, ease: "power2.out" });
     };
   
     // Animate window close
     window.closeWindow = function (id) {
-      let win = document.getElementById(`window-${id}`);
-      gsap.to(`#window-${id}`, {
-        scale: 0.8,
+      const win = document.getElementById(`window-${id}`);
+      if (!win) return;
+      gsap.to(win, {
+        scale: 0.9,
         opacity: 0,
-        duration: 0.3,
+        duration: 0.22,
+        ease: "power1.in",
         onComplete: () => {
           win.classList.remove("active");
           win.style.display = "none";
@@ -56,27 +54,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update Clock
     function updateClock() {
       const now = new Date();
-      document.getElementById("clock").innerText = now.toLocaleTimeString();
+      const el = document.getElementById("clock");
+      if (el) el.innerText = now.toLocaleTimeString();
     }
     setInterval(updateClock, 1000);
     updateClock();
   
-    // Animate desktop icons on load
-    gsap.from(".icon", {
+    // Animate desktop icons and groups on load
+    gsap.from(".icon, .group", {
       opacity: 0,
-      y: 30,
-      duration: 1,
-      stagger: 0.2,
+      y: 18,
+      duration: 0.6,
+      stagger: 0.12,
       ease: "power2.out"
     });
   
-    // Add hover scale to icons
-    document.querySelectorAll(".icon").forEach((icon) => {
-      icon.addEventListener("mouseenter", () => {
-        gsap.to(icon, { scale: 1.1, duration: 0.2 });
+    // Add hover scale to icons and card groups
+    document.querySelectorAll(".icon, .group").forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to(el, { scale: 1.02, duration: 0.15 });
       });
-      icon.addEventListener("mouseleave", () => {
-        gsap.to(icon, { scale: 1, duration: 0.2 });
+      el.addEventListener("mouseleave", () => {
+        gsap.to(el, { scale: 1, duration: 0.15 });
       });
     });
   });
@@ -112,25 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Replace setTimeout/openWindow with:
-window.openWindow = function (id) {
-  const win = document.getElementById(`window-${id}`);
-  win.style.display = "block";
-  gsap.fromTo(win, { scale: 0.5, opacity: 0 }, { scale: 1.4, opacity: 1, duration: 0.4, ease: "power2.out" });
-};
-
-// Replace closeWindow with:
-window.closeWindow = function (id) {
-  const win = document.getElementById(`window-${id}`);
-  gsap.to(win, {
-    scale: 0.5,
-    opacity: 0,
-    duration: 0.3,
-    ease: "power1.in",
-    onComplete: () => {
-      win.style.display = "none";
-    }
-  });
-};
+// (deduplicated openWindow/closeWindow above)
 
 document.querySelectorAll(".icon").forEach(icon => {
   icon.addEventListener("mouseenter", () => {
@@ -144,68 +125,9 @@ document.querySelectorAll(".icon").forEach(icon => {
 gsap.from(".desktop", { opacity: 0, y: 30, duration: 5, ease: "power3.out" });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const videoElement = document.getElementById("bg-video");
+// (video rotation moved into the main DOMContentLoaded above)
 
-  const videoSources = [
-    "./assets/aesthetic-japan.mp4",
-    "./assets/chillout.mp4",
-    "./assets/aesthetic_three.mp4",
-    "./assets/asthetic_seven.mp4",
-    "./assets/asthetic_eight.mp4"
-  
+// (unused helper removed)
 
-    
-    // Add more videos if needed
-  ];
-
-  let currentVideoIndex = 0;
-  let videoLooping = true;
-  let loopTimeout;
-
-  function playVideo(index) {
-    const source = videoSources[index];
-    videoElement.src = source;
-    videoElement.load();
-    videoElement.play();
-  }
-
-  function loopForDuration(duration = 30000) {
-    playVideo(currentVideoIndex);
-
-    // Allow video to loop
-    videoElement.loop = true;
-
-    // After duration ends, move to the next video
-    loopTimeout = setTimeout(() => {
-      currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-      loopForDuration(duration); // start next video looping
-    }, duration);
-  }
-
-  // Start looping the first video
-  loopForDuration();
-});
-
-function playNextVideo() {
-  gsap.to(videoElement, { opacity: 0, duration: 1, onComplete: () => {
-    videoElement.src = videoSources[currentVideoIndex];
-    videoElement.load();
-    videoElement.play();
-    gsap.to(videoElement, { opacity: 1, duration: 1 });
-    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-  }});
-}
-
-document.querySelectorAll(".dropdown a").forEach(link => {
-  link.classList.remove("active");
-});
-document.querySelector(`#start-btn ~ .dropdown a[href*='${id}']`)?.classList.add("active");
-
-gsap.from(".dropdown", {
-  duration: 0.3,
-  scaleY: 0,
-  transformOrigin: "top",
-  ease: "power2.out"
-});
+// (dead code removed)
 

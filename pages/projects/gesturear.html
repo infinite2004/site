@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GestureAR — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mx-auto max-w-4xl px-6 py-10 sm:py-14">
+    <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">GestureAR</h1>
+    <p class="mt-2 text-neutral-700">Finger tracking and real-time overlays. Control LEDs based on hand position while augmenting faces.</p>
+
+    <div class="mt-6 aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100">
+      <video class="h-full w-full object-cover" autoplay muted loop playsinline>
+        <source src="../../assets/aesthetic-japan.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <section class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="sm:col-span-2">
+        <h2 class="text-lg font-semibold">Problem</h2>
+        <p class="mt-2 text-neutral-700">Map expressive hand gestures into understandable outputs across LEDs and AR overlays without latency or ambiguity.</p>
+
+        <h2 class="mt-6 text-lg font-semibold">Process</h2>
+        <p class="mt-2 text-neutral-700">Prototyped in Python with OpenCV for hand landmarks and face detection, then tuned thresholds and smoothing for consistent UX. Designed overlays to remain legible and non-intrusive.</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <img src="../../assets/AbdulQ_resume_pic.png" alt="Detection debug" class="rounded-lg ring-1 ring-neutral-200" />
+          <img src="../../assets/raspberryOne.png" alt="LED rig" class="rounded-lg ring-1 ring-neutral-200" />
+          <img src="../../assets/raspberry%20.png" alt="Prototype" class="rounded-lg ring-1 ring-neutral-200" />
+        </div>
+
+        <h2 class="mt-6 text-lg font-semibold">Outcome</h2>
+        <p class="mt-2 text-neutral-700">Responsive, readable overlays and reliable physical feedback. Next steps: model-based gesture classification and a web UI for profiles.</p>
+      </div>
+      <aside>
+        <div class="rounded-lg border border-neutral-200 p-4 bg-white">
+          <h3 class="text-sm font-semibold">Tools</h3>
+          <ul class="mt-2 text-sm text-neutral-700 list-disc list-inside">
+            <li>Python, OpenCV</li>
+            <li>Raspberry Pi</li>
+            <li>LED hardware</li>
+          </ul>
+          <a href="https://github.com/infinite2004/GestureAR" target="_blank" rel="noopener" class="mt-4 inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:bg-neutral-800">GitHub</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
+

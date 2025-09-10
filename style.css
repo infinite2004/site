@@ -1,9 +1,8 @@
 /* General styles */
 body {
     margin: 0;
-    background: url('/site/assets/retro-wallpaper.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "MS Sans Serif", sans-serif;
+    background: #f6f6f6;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 /* Taskbar */
@@ -17,37 +16,33 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    background: linear-gradient(to top, #bababa, #e0e0e0);
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #000;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     z-index: 1000;
 }
 
 /* Start Button */
 /* Start Button */
 #start-btn {
-    background: linear-gradient(to bottom, #d9d9d9, #c3c3c3);
-    color: black;
+    background: #111;
+    color: #fff;
     font-size: 14px;
-    padding: 6px 20px;
-    border: 2px solid #7a7a7a;
-    border-radius: 60px;
-    box-shadow: inset 1px 1px #fff, inset -1px -1px #7a7a7a;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    margin-left: 25px; /* or whatever spacing you want */
-    margin-right: auto; /* push other items away */
+    gap: 8px;
+    font-weight: 600;
+    transition: background 0.18s ease;
+    margin-left: 25px;
+    margin-right: auto;
 }
 
-#start-btn:hover {
-    background: #9c2e2e;
-    color: white;
-}
+#start-btn:hover { background: #222; }
 
 .dropdown {
     display: none;
@@ -55,11 +50,11 @@ body {
     top: 45px; /* appears below top taskbar */
     left: 5px;
     width: 220px;
-    background: #f4f4f4;
-    border: 2px solid #7a7a7a;
-    box-shadow: 4px 4px 0 #888;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.06);
     z-index: 1001;
-    font-family: "MS Sans Serif", sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui;
     padding: 4px 0;
   }
   
@@ -73,12 +68,12 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 6px 12px;
+    padding: 8px 12px;
     font-size: 14px;
-    color: #000;
+    color: #111;
     text-decoration: none;
     background: transparent;
-    transition: background 0.2s;
+    transition: background 0.15s, color 0.15s;
   }
 
 .dropdown a:last-child {
@@ -86,10 +81,7 @@ body {
 }
 
 /* Hover behavior */
-.dropdown a:hover {
-    background: #2a6acc;
-    color: #fff;
-  }
+.dropdown a:hover { background: #f8f8f8; }
   
 .dropdown a.active {
     background: #000080;
@@ -222,11 +214,12 @@ body {
     left: 50%;
     width: 60vw;
     height: 60vh;
-    background: white;
-    border: 2px solid rgb(39, 162, 154);
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
     transform: translate(-50%, -50%) scale(0.8);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
     cursor: default; /* Normal cursor inside window */
 
 }
@@ -250,19 +243,26 @@ body {
 
 /* Title Bar */
 .title-bar {
-    background: black;
-    color: white;
-    padding: 5px;
+    background: #fff;
+    color: #111;
+    padding: 10px 12px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .close-btn {
-    background: red;
-    color: white;
-    border: none;
+    background: #f2f2f2;
+    color: #111;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
     cursor: pointer;
+    padding: 6px 10px;
 }
+.close-btn:hover { background: #eaeaea; }
 
 /* Background Video */
 #bg-video {

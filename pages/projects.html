@@ -4,104 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects</title>
-  <link rel="stylesheet" href="../about.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <style>
-    .tech-toggle {
-      cursor: pointer;
-      background: #000080;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      font-size: 14px;
-      margin-top: 10px;
-      border: 2px solid black;
-    }
-
-    .tech-stack {
-      font-size: 14px;
-      font-family: monospace;
-      background: #eaeaea;
-      padding: 10px;
-      border-left: 4px solid #000080;
-      box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
-      margin-top: 10px;
-      display: none; /* Hidden by default */
-    }
-
-    .project {
-      margin-bottom: 40px;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="content">
-    <h1>My Projects</h1>
-    <p>Here are some of my recent projects:</p>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="min-h-screen">
+    <section class="mx-auto max-w-4xl px-6 py-10 sm:py-14">
+      <header class="mb-8">
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Case studies</h1>
+        <p class="mt-2 text-sm sm:text-base text-neutral-600">A selection of projects across physical prototyping and digital interfaces.</p>
+      </header>
 
-    <!-- Project 1 -->
-    <div class="project">
-      <h2>Squirtle Sprayer</h2>
-      <p>
-        I 3D printed a life-sized Squirtle figure that actually sprays water!  
-        This was a fun combination of circuit design, programming, and pneumatics.
-      </p>
-      <a href="https://abdulq1660.substack.com/p/i-3d-printed-a-squirtle-that-sprays" target="_blank" class="project-link">Read on Substack</a>
-      <button class="tech-toggle">Show Tech</button>
-      <div class="tech-stack">
-        <strong>Tech:</strong> Raspberry Pi (4 or 5), OV5693 5MP camera, 12V pump, solenoid, relay, adapter, PVC tubing, clamps.
+      <!-- TimeTrace -->
+      <article id="timetrace" class="py-10 border-t border-neutral-200 first:border-0">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center ring-1 ring-neutral-200">
+              <div class="text-center">
+                <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <p class="text-lg text-blue-600 font-medium">TimeTrace</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">TimeTrace</h2>
+            <p class="mt-2 text-neutral-700">Local-first AI journaling app that automatically tracks file edits and Git commits, generating audience-specific summaries with full privacy preserved.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Make developer progress clear, shareable, and easy to reflect on.<br/>
+              <strong>Outcome</strong>: Interactive calendar timeline with privacy-preserved summaries for PM, client, and self.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">July 2025 – Present • AI • Privacy • Git</div>
+            <div class="mt-4 flex gap-3">
+              <span class="inline-flex items-center rounded-md bg-blue-100 px-3 py-1.5 text-blue-800 text-sm font-medium">In Progress</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- E-Ink Laptop -->
+      <article id="eink-laptop" class="py-10 border-t border-neutral-200">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <iframe 
+                src="https://www.youtube.com/embed/y3Hb646zEYg" 
+                title="E-Ink Laptop Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="w-full h-full">
+              </iframe>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">E-Ink Laptop</h2>
+            <p class="mt-2 text-neutral-700">3D printed a case for a custom E-Ink laptop powered by a Raspberry Pi Zero and custom software to enable seamless note-taking with keyboard shortcuts and multi-file navigation.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Reduce screen fatigue and power usage while maintaining productivity.<br/>
+              <strong>Outcome</strong>: Custom laptop with E-Ink display, keyboard shortcuts, and multi-file navigation.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">May 2025 – July 2025 • Hardware • 3D Printing • Raspberry Pi</div>
+            <div class="mt-4 flex gap-3">
+              <span class="inline-flex items-center rounded-md bg-green-100 px-3 py-1.5 text-green-800 text-sm font-medium">Completed</span>
+              <a href="https://abdulq1660.substack.com/p/building-a-minimal-e-ink-computer" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">Read case</a>
+            </div>
       </div>
     </div>
+      </article>
 
-    <!-- Project 2 -->
-    <div class="project">
-      <h2>GestureAR</h2>
-      <p>
-        Finger tracking + gesture recognition to control LEDs based on hand position. Augmented reality overlays glasses on detected faces.
-      </p>
-      <a href="https://github.com/infinite2004/GestureAR" target="_blank" class="project-link">View on GitHub</a>
-      <button class="tech-toggle">Show Tech</button>
-      <div class="tech-stack">
-        <strong>Tech:</strong> Camera, LED, breadboard, jumper wires, resistor (220Ω), Raspberry Pi, OpenCV.
+      <!-- Squirtle Sprayer -->
+      <article id="squirtle" class="py-10 border-t border-neutral-200">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <iframe 
+                src="https://www.youtube.com/embed/U98qbAz1tvc" 
+                title="Squirtle Sprayer Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="w-full h-full">
+              </iframe>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">Squirtle Sprayer</h2>
+            <p class="mt-2 text-neutral-700">A playful, functional 3D-printed figure that actually sprays water—combining circuits, pneumatics, and delight.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Make a character come alive through motion and interaction.<br/>
+              <strong>Outcome</strong>: Robust mechanism with controlled spray and safe electronics.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">Tools: Raspberry Pi, CAD, 3D printing, 12V pump, relays</div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://abdulq1660.substack.com/p/i-3d-printed-a-squirtle-that-sprays" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">Read case</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- GestureAR -->
+      <article id="gesturear" class="py-10 border-t border-neutral-200">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <iframe 
+                src="https://www.youtube.com/embed/SQhbsG9eaw4" 
+                title="GestureAR Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="w-full h-full">
+              </iframe>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">GestureAR</h2>
+            <p class="mt-2 text-neutral-700">Finger tracking and real-time overlays. Control LEDs based on hand position while augmenting faces.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Map expressive gestures to visible output.<br/>
+              <strong>Outcome</strong>: Reliable tracking with clear, legible AR treatments.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">Tools: OpenCV, Python, Raspberry Pi, LEDs</div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/infinite2004/GestureAR" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">GitHub</a>
+            </div>
       </div>
     </div>
+      </article>
 
-    <!-- Project 3 -->
-    <div class="project">
-      <h2>Hermes Lens</h2>
-      <p>
-        A wearable smart glasses system that captures outside text and translates it to your preferred language.
-      </p>
-      <a href="https://github.com/infinite2004/Hermes-Lens" target="_blank" class="project-link">View on GitHub</a>
-      <button class="tech-toggle">Show Tech</button>
-      <div class="tech-stack">
-        <strong>Tech:</strong> Pi Zero, camera, LCD screen, Python, OpenCV, Tesseract OCR, Google Translate API.
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="project">
-      <h2>O.S.M.D</h2>
-      <p>
-        A device that scans and solves handwritten math problems using a Pi Camera and MathPix API.
-      </p>
-      <a href="https://github.com/infinite2004/O.S.M.D" target="_blank" class="project-link">View on GitHub</a>
-      <button class="tech-toggle">Show Tech</button>
-      <div class="tech-stack">
-        <strong>Tech:</strong> Raspberry Pi, Pi Camera, LCD, OpenCV, Python, GPIO, JSON, MathPix API.
+      <!-- Hermes Lens -->
+      <article id="hermes" class="py-10 border-t border-neutral-200">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <iframe 
+                src="https://www.youtube.com/embed/T8eTn395SjQ" 
+                title="Hermes Lens Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="w-full h-full">
+              </iframe>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">Hermes Lens</h2>
+            <p class="mt-2 text-neutral-700">Wearable glasses that capture outside text and translate to your preferred language.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Translate on the go with minimal friction.<br/>
+              <strong>Outcome</strong>: Lightweight pipeline from OCR to on-device display.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">Tools: Tesseract, OpenCV, Python, small LCD</div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/infinite2004/Hermes-Lens" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">GitHub</a>
       </div>
     </div>
   </div>
+      </article>
 
-  <script>
-    document.querySelectorAll('.tech-toggle').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const techBox = btn.nextElementSibling;
-        const isVisible = techBox.style.display === 'block';
-        techBox.style.display = isVisible ? 'none' : 'block';
-        btn.textContent = isVisible ? 'Show Tech' : 'Hide Tech';
-      });
-    });
-  </script>
+      <!-- O.S.M.D -->
+      <article id="osmd" class="py-10 border-t border-neutral-200">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="md:col-span-3">
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <iframe 
+                src="https://www.youtube.com/embed/rReUHGr4Fmw" 
+                title="O.S.M.D Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="w-full h-full">
+              </iframe>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-xl font-semibold">O.S.M.D</h2>
+            <p class="mt-2 text-neutral-700">Scans and solves handwritten math problems using a Pi Camera and MathPix API.</p>
+            <div class="mt-3 text-sm text-neutral-600">
+              <strong>Problem</strong>: Convert messy inputs into structured answers.<br/>
+              <strong>Outcome</strong>: Repeatable pipeline from capture to solution.
+            </div>
+            <div class="mt-4 text-xs text-neutral-500">Tools: Raspberry Pi, Camera, LCD, MathPix API</div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/infinite2004/O.S.M.D" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>

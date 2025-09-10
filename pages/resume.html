@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link rel="stylesheet" href="../about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="content">
-        <h1>Resume:</h1>
-        <p>You can download my resume using the link below:</p>
-        
-        
-        <a href="../assets/Abdul_Qureshi_Resume_.pdf" download="YourName_Resume.pdf" class="download-btn">Download Resume</a>
-
-        <img src = "../assets/AbdulQ_resume_pic.png" class="resume-img" alt="Resume preview"> 
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="#" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
     </div>
-</body>
-</html>
+  </header>
+  <main class="min-h-screen px-6 py-10 sm:py-14">
+        <section class="mx-auto max-w-3xl">
+            <header class="mb-8">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Resume</h1>
+                <p class="mt-2 text-sm sm:text-base text-neutral-600">Download a copy or preview below.</p>
+            </header>
+
+            <div class="flex items-center gap-3">
+                <a href="../assets/Abdul_Qureshi_Res.pdf?v=3" download="Abdul_Qureshi_Resume.pdf" class="inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-white text-sm font-medium shadow-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900" aria-label="Download resume PDF">
+                    Download PDF
+                </a>
+                <a href="../assets/Abdul_Qureshi_Res.pdf?v=3" target="_blank" rel="noopener" class="inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900" aria-label="Open resume in new tab">
+                    Open in new tab
+                </a>
+            </div>
+
+            <div class="mt-6 rounded-lg border border-neutral-200 p-3 sm:p-4 bg-white shadow-sm">
+                <img src="../assets/resume_abdulq.png" alt="Resume preview image" class="w-full h-auto rounded-md" />
+            </div>
+        </section>
+    </main>
 </body>
 </html>

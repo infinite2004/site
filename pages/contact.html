@@ -5,48 +5,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact</title>
-  <link rel="stylesheet" href="../about.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body>
-  <div class="content">
-    <h1>Contact Me</h1>
-    <p>If you’d like to get in touch, feel free to send me a message!</p>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <main class="min-h-screen px-6 py-10 sm:py-14">
+    <section class="mx-auto max-w-xl">
+      <header class="mb-6">
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Contact Me</h1>
+        <p class="mt-2 text-sm sm:text-base text-neutral-600">If you’d like to get in touch, send me a message.</p>
+      </header>
 
-    <!-- Contact Form -->
-    <form action="https://formspree.io/f/moveqndd" method="POST">
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/moveqndd" method="POST" class="space-y-4" aria-label="Contact form">
+        <div>
+          <label for="email" class="block text-sm font-medium text-neutral-800">Your Email</label>
+          <input type="email" id="email" name="email" required class="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-1" />
+        </div>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required />
+        <div>
+          <label for="message" class="block text-sm font-medium text-neutral-800">Your Message</label>
+          <textarea id="message" name="message" rows="5" required class="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-1"></textarea>
+        </div>
 
-      <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-white text-sm font-medium shadow-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900">Send</button>
+      </form>
 
-      <button type="submit" class="download-btn">Send</button>
-    </form>
-
-    <!-- Social Links -->
-    <div class="social-links" style="margin-top: 30px;">
-      <h2>Find Me Online</h2>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/infinite2004" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/abdulq_spaam/" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+      <!-- Social Links -->
+      <div class="mt-10">
+        <h2 class="text-lg font-medium">Find Me Online</h2>
+        <ul class="mt-3 space-y-2">
+          <li>
+            <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-neutral-900 hover:text-neutral-700">
+              <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-neutral-900 hover:text-neutral-700">
+              <i class="fab fa-github"></i> <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/abdulq_spaam/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-neutral-900 hover:text-neutral-700">
+              <i class="fab fa-instagram"></i> <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

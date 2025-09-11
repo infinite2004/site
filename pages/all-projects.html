@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="all-projects.html" class="hover:text-neutral-600 transition-colors">Projects</a>
+        <a href="about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <section class="mx-auto max-w-6xl px-6 py-10 sm:py-14">
+      <header class="mb-6 sm:mb-8">
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">All projects</h1>
+        <p class="mt-2 text-sm sm:text-base text-neutral-600">Browse the full collection. Hardware builds, playful interfaces, and case studies.</p>
+      </header>
+      <div class="mb-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+        <div class="relative w-full sm:max-w-sm">
+          <input id="project-search" type="search" placeholder="Search projects…" class="w-full pl-9 pr-3 py-2 rounded-md ring-1 ring-neutral-300 focus:ring-2 focus:ring-neutral-900 outline-none text-sm" aria-label="Search projects">
+          <svg class="absolute left-2.5 top-2.5 h-4 w-4 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm" role="toolbar" aria-label="Project categories">
+          <button data-filter="all" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="true" aria-label="Show all projects">All</button>
+          <button data-filter="hardware" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="false">Hardware</button>
+          <button data-filter="software" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="false">Software</button>
+          <button data-filter="ai" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="false">AI</button>
+          <button data-filter="raspberry-pi" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="false">Raspberry Pi</button>
+          <button data-filter="ar" class="filter-chip px-3 py-1.5 rounded-md border border-neutral-300 text-neutral-800" aria-pressed="false">AR</button>
+        </div>
+      </div>
+
+      <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- TimeTrace -->
+        <a href="projects.html#timetrace" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="software,ai">
+          <div class="aspect-[16/10] rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <p class="text-sm text-blue-700 font-medium">TimeTrace</p>
+            </div>
+          </div>
+          <h3 class="mt-3 text-base font-medium">TimeTrace</h3>
+          <p class="mt-1 text-sm text-neutral-600">Local‑first AI journaling for developers.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-blue-100 px-2 py-1 text-[12px] font-medium text-blue-800">AI</span>
+            <span class="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-[12px] font-medium text-neutral-700">Software</span>
+          </div>
+        </a>
+
+        <!-- E‑Ink Laptop -->
+        <a href="projects.html#eink-laptop" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="hardware,raspberry-pi">
+          <div class="aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-neutral-200">
+            <iframe src="https://www.youtube.com/embed/y3Hb646zEYg" title="E‑Ink Laptop" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3 class="mt-3 text-base font-medium">E‑Ink Laptop</h3>
+          <p class="mt-1 text-sm text-neutral-600">Custom Raspberry Pi laptop for low‑eye‑strain productivity.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-emerald-100 px-2 py-1 text-[12px] font-medium text-emerald-800">Hardware</span>
+            <span class="inline-flex items-center rounded-md bg-orange-100 px-2 py-1 text-[12px] font-medium text-orange-800">Raspberry Pi</span>
+          </div>
+        </a>
+
+        <!-- Squirtle Sprayer (detail page exists) -->
+        <a href="projects/squirtle.html" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="hardware">
+          <div class="aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-neutral-200">
+            <iframe src="https://www.youtube.com/embed/U98qbAz1tvc" title="Squirtle Sprayer" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3 class="mt-3 text-base font-medium">Squirtle Sprayer</h3>
+          <p class="mt-1 text-sm text-neutral-600">A playful 3D‑printed figure that actually sprays water.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-emerald-100 px-2 py-1 text-[12px] font-medium text-emerald-800">Hardware</span>
+          </div>
+        </a>
+
+        <!-- GestureAR (detail page exists) -->
+        <a href="projects/gesturear.html" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="software,ar">
+          <div class="aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-neutral-200">
+            <iframe src="https://www.youtube.com/embed/SQhbsG9eaw4" title="GestureAR" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3 class="mt-3 text-base font-medium">GestureAR</h3>
+          <p class="mt-1 text-sm text-neutral-600">Finger tracking and real‑time overlays.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-[12px] font-medium text-neutral-700">Software</span>
+            <span class="inline-flex items-center rounded-md bg-purple-100 px-2 py-1 text-[12px] font-medium text-purple-800">AR</span>
+          </div>
+        </a>
+
+        <!-- Hermes Lens -->
+        <a href="projects.html#hermes" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="hardware,software">
+          <div class="aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-neutral-200">
+            <iframe src="https://www.youtube.com/embed/T8eTn395SjQ" title="Hermes Lens" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3 class="mt-3 text-base font-medium">Hermes Lens</h3>
+          <p class="mt-1 text-sm text-neutral-600">Wearable translation glasses.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-emerald-100 px-2 py-1 text-[12px] font-medium text-emerald-800">Hardware</span>
+            <span class="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-[12px] font-medium text-neutral-700">Software</span>
+          </div>
+        </a>
+
+        <!-- O.S.M.D -->
+        <a href="projects.html#osmd" class="group rounded-xl bg-white ring-1 ring-neutral-200 p-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-neutral-900" data-tags="hardware,raspberry-pi,software">
+          <div class="aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-neutral-200">
+            <iframe src="https://www.youtube.com/embed/rReUHGr4Fmw" title="O.S.M.D" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3 class="mt-3 text-base font-medium">O.S.M.D</h3>
+          <p class="mt-1 text-sm text-neutral-600">Scan and solve handwritten math on‑device.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-emerald-100 px-2 py-1 text-[12px] font-medium text-emerald-800">Hardware</span>
+            <span class="inline-flex items-center rounded-md bg-orange-100 px-2 py-1 text-[12px] font-medium text-orange-800">Raspberry Pi</span>
+            <span class="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-[12px] font-medium text-neutral-700">Software</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const searchInput = document.getElementById('project-search');
+    const chips = Array.from(document.querySelectorAll('.filter-chip'));
+    const cards = Array.from(document.querySelectorAll('#project-grid > a'));
+    let activeFilter = 'all';
+
+    function applyFilters() {
+      const query = (searchInput?.value || '').toLowerCase().trim();
+      cards.forEach(card => {
+        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+        const text = card.textContent.toLowerCase();
+        const matchesQuery = !query || text.includes(query);
+        const matchesTag = activeFilter === 'all' || tags.split(',').includes(activeFilter);
+        const visible = matchesQuery && matchesTag;
+        card.style.display = visible ? '' : 'none';
+      });
+    }
+
+    searchInput?.addEventListener('input', applyFilters);
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        activeFilter = chip.getAttribute('data-filter') || 'all';
+        chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+        applyFilters();
+      });
+    });
+  </script>
+</body>
+</html>
+

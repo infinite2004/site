@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -35,15 +36,10 @@
       <article id="timetrace" class="py-10 border-t border-neutral-200 first:border-0">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
           <div class="md:col-span-3">
-            <div class="aspect-[16/9] rounded-xl bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center ring-1 ring-neutral-200">
-              <div class="text-center">
-                <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <p class="text-lg text-blue-600 font-medium">TimeTrace</p>
-              </div>
+            <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="../assets/timetrace.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
           <div class="md:col-span-2">
@@ -84,9 +80,18 @@
               <strong>Outcome</strong>: Custom laptop with E-Ink display, keyboard shortcuts, and multi-file navigation.
             </div>
             <div class="mt-4 text-xs text-neutral-500">May 2025 – July 2025 • Hardware • 3D Printing • Raspberry Pi</div>
-            <div class="mt-4 flex gap-3">
+            <div class="mt-4 flex flex-wrap gap-3">
               <span class="inline-flex items-center rounded-md bg-green-100 px-3 py-1.5 text-green-800 text-sm font-medium">Completed</span>
               <a href="https://abdulq1660.substack.com/p/building-a-minimal-e-ink-computer" target="_blank" rel="noopener" class="inline-flex items-center rounded-md bg-neutral-900 px-3 py-1.5 text-white text-sm font-medium shadow-sm transition hover:translate-y-[-2px]">Read case</a>
+              <button id="eink-3d-toggle" class="inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors">View 3D model</button>
+              <a href="../assets/E-ink_full_model.glb" download class="inline-flex items-center rounded-md border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors">Download GLB</a>
+            </div>
+            <div id="eink-3d-wrapper" class="mt-4 hidden">
+              <div class="rounded-xl ring-1 ring-neutral-200 overflow-hidden bg-white">
+                <model-viewer id="eink-model-viewer" src="../assets/E-ink_full_model.glb" alt="E‑Ink Laptop 3D model" camera-controls style="width:100%; height:auto; aspect-ratio:16/10; display:block; background:white;" shadow-intensity="0.5" exposure="0.9" auto-rotate ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
+              </div>
+              <div id="eink-3d-status" class="mt-2 text-xs text-neutral-500">Loading model…</div>
+              <p class="mt-1 text-xs text-neutral-500">Tip: pinch/scroll to zoom, drag to orbit, two‑finger drag to pan.</p>
             </div>
       </div>
     </div>
@@ -213,5 +218,44 @@
       </article>
     </section>
   </main>
+  <script type="module">
+    const toggleBtn = document.getElementById('eink-3d-toggle');
+    const wrapper = document.getElementById('eink-3d-wrapper');
+    const viewer = document.getElementById('eink-model-viewer');
+    const statusEl = document.getElementById('eink-3d-status');
+    if (toggleBtn && wrapper && viewer) {
+      let initialized = false;
+
+      toggleBtn.addEventListener('click', async () => {
+        wrapper.classList.toggle('hidden');
+        const showing = !wrapper.classList.contains('hidden');
+        toggleBtn.textContent = showing ? 'Hide 3D model' : 'View 3D model';
+        if (showing && !initialized) {
+          await initViewer();
+          initialized = true;
+        }
+        if (showing) {
+          statusEl && (statusEl.textContent = 'Loading model…');
+        }
+      });
+
+      async function initViewer() {
+        const modelUrl = '../assets/E-ink_full_model.glb';
+        try {
+          const headResp = await fetch(modelUrl, { method: 'HEAD' });
+          if (!headResp.ok) {
+            statusEl && (statusEl.textContent = 'Model file not found.');
+          }
+        } catch {}
+        viewer.addEventListener('load', () => {
+          statusEl && (statusEl.textContent = 'Loaded.');
+        });
+        viewer.addEventListener('error', (e) => {
+          statusEl && (statusEl.textContent = 'Failed to load model.');
+          console.warn('model-viewer error', e);
+        });
+      }
+    }
+  </script>
 </body>
 </html>

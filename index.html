@@ -4,16 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdul Qureshi — Creative Technologist & Product Designer</title>
-  <meta name="description" content="Portfolio of Abdul Qureshi — projects that blend hardware, software, and design storytelling." />
+  <meta name="description" content="Abdul Qureshi is a Creative Technologist & Product Designer at NYU IDM. Explore projects blending hardware, software, and design storytelling including E-Ink laptops, AI journaling apps, and AR interfaces." />
+  <meta name="keywords" content="creative technologist, product designer, hardware, software, NYU IDM, E-Ink laptop, AI journaling, AR interfaces, Raspberry Pi, 3D printing" />
   <meta property="og:title" content="Abdul Qureshi — Creative Technologist & Product Designer" />
-  <meta property="og:description" content="Projects that blend hardware, software, and design storytelling." />
+  <meta property="og:description" content="NYU IDM student creating projects that blend hardware, software, and design storytelling. Featured work includes E-Ink laptops, AI journaling apps, and AR interfaces." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/" />
-  <meta property="og:image" content="assets/resume_abdulq.png" />
+  <meta property="og:url" content="https://abdulq.dev/" />
+  <meta property="og:image" content="https://abdulq.dev/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Abdul Qureshi — Creative Technologist & Product Designer" />
-  <meta name="twitter:description" content="Projects that blend hardware, software, and design storytelling." />
-  <meta name="twitter:image" content="assets/resume_abdulq.png" />
+  <meta name="twitter:description" content="NYU IDM student creating projects that blend hardware, software, and design storytelling." />
+  <meta name="twitter:image" content="https://abdulq.dev/assets/og-image.jpg" />
+  <meta name="twitter:creator" content="@abdulq_dev" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Qureshi",
+    "jobTitle": "Creative Technologist & Product Designer",
+    "description": "NYU IDM student creating projects that blend hardware, software, and design storytelling",
+    "url": "https://abdulq.dev",
+    "sameAs": [
+      "https://github.com/infinite2004",
+      "https://www.linkedin.com/in/abdulrahman-qureshi/",
+      "https://www.instagram.com/obssyn/"
+    ],
+    "alumniOf": "New York University",
+    "knowsAbout": ["Creative Technology", "Product Design", "Hardware Prototyping", "Software Development", "3D Printing", "Raspberry Pi", "AI/ML", "AR/VR"]
+  }
+  </script>
   <meta name="theme-color" content="#111111" />
   <link rel="canonical" href="/" />
   <link rel="icon" href="assets/logo.png" type="image/png" />
@@ -22,7 +43,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-modern.css" />
+  <link rel="preload" href="assets/obsyn.MP4" as="video" type="video/mp4" />
 </head>
 <body class="font-[Inter] text-neutral-900 bg-neutral-50">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -59,17 +81,46 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <p class="text-sm font-medium uppercase tracking-wider text-neutral-500">Creative Technologist & Designer</p>
-          <h1 class="mt-3 text-3xl sm:text-5xl font-semibold leading-tight tracking-tight"><span id="hero-typed"></span></h1>
+          <h1 class="mt-3 text-3xl sm:text-5xl font-semibold leading-tight tracking-tight"><span id="hero-typed" data-text="I design and build projects that are at the intersection of hardware, software, and story."></span></h1>
           <p class="mt-4 text-neutral-600"> NYU IDM Senior blending physical prototyping with digital interfaces. I enjoy turning rough sketches into thoughtful, tactile products.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="#work" class="inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-white text-sm font-medium shadow-sm transition-transform hover:-translate-y-0.5">See featured projects</a>
             <a href="#contact" class="inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors">Get in touch</a>
           </div>
         </div>
-        <div class="relative aspect-[4/3] rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 overflow-hidden">
-          <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
+        <div class="relative aspect-[4/3] rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 overflow-hidden video-container">
+          <video 
+            class="absolute inset-0 h-full w-full object-cover" 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            preload="auto"
+            poster="assets/logo.png"
+            controls
+            aria-label="Portfolio showcase video">
             <source src="assets/obsyn.MP4" type="video/mp4" />
+            <source src="assets/obsyn.mp4" type="video/mp4" />
+            <p>Your browser doesn't support HTML5 video. <a href="assets/obsyn.MP4" class="text-blue-600 underline">Download the video</a> instead.</p>
           </video>
+          <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity play-button">
+            <button class="bg-white bg-opacity-90 rounded-full p-3 hover:bg-opacity-100 transition-all" onclick="this.parentElement.parentElement.querySelector('video').play()">
+              <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="video-fallback absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center" style="display: none;">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <p class="text-sm text-blue-600 font-medium">Portfolio Showcase</p>
+              <p class="text-xs text-blue-500 mt-1">Video temporarily unavailable</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -147,35 +198,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Mobile menu toggle
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        const open = menu.classList.contains('hidden');
-        btn.setAttribute('aria-expanded', String(open));
-        menu.classList.toggle('hidden');
-      });
-    }
-
-    // Hero typing effect
-    (function(){
-      const el = document.getElementById('hero-typed');
-      if (!el) return;
-      const text = 'I design and build projects that are at the intersection of hardware, software, and story.';
-      let i = 0;
-      function type(){
-        if (i <= text.length){
-          el.textContent = text.slice(0, i);
-          i++;
-          const delay = text[i-0.5] === ',' ? 40 : 40;
-          setTimeout(type, delay);
-        }
-      }
-      setTimeout(type, 250);
-    })();
-  </script>
+  <script src="script-modern.js" defer></script>
 </body>
 </html>

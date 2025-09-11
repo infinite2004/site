@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GestureAR — Case Study</title>
+  <title>GestureAR — Case Study | Abdul Qureshi</title>
+  <meta name="description" content="GestureAR: Finger tracking and real-time overlays project by Abdul Qureshi. Control LEDs based on hand position while augmenting faces with AR technology." />
+  <meta name="keywords" content="gesturear, finger tracking, AR overlays, computer vision, opencv, python, abdul qureshi project" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../style-modern.css" />
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -29,9 +32,14 @@
     <p class="mt-2 text-neutral-700">Finger tracking and real-time overlays. Control LEDs based on hand position while augmenting faces.</p>
 
     <div class="mt-6 aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100">
-      <video class="h-full w-full object-cover" autoplay muted loop playsinline>
-        <source src="../../assets/aesthetic-japan.mp4" type="video/mp4" />
-      </video>
+      <iframe 
+        src="https://www.youtube.com/embed/SQhbsG9eaw4" 
+        title="GestureAR Project Demo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        class="w-full h-full">
+      </iframe>
     </div>
 
     <section class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -42,9 +50,37 @@
         <h2 class="mt-6 text-lg font-semibold">Process</h2>
         <p class="mt-2 text-neutral-700">Prototyped in Python with OpenCV for hand landmarks and face detection, then tuned thresholds and smoothing for consistent UX. Designed overlays to remain legible and non-intrusive.</p>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <img src="../../assets/resume_abdulq.png" alt="Detection debug" class="rounded-lg ring-1 ring-neutral-200" />
-          <img src="../../assets/raspberryOne.png" alt="LED rig" class="rounded-lg ring-1 ring-neutral-200" />
-          <img src="../../assets/raspberry%20.png" alt="Prototype" class="rounded-lg ring-1 ring-neutral-200" />
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-blue-700 font-medium">Hand Detection</p>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-green-700 font-medium">LED Control</p>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-purple-700 font-medium">AR Overlay</p>
+            </div>
+          </div>
         </div>
 
         <h2 class="mt-6 text-lg font-semibold">Outcome</h2>
@@ -63,6 +99,7 @@
       </aside>
     </section>
   </main>
+  <script src="../../script-modern.js" defer></script>
 </body>
 </html>
 

@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>All Projects</title>
+  <title>All Projects — Abdul Qureshi's Portfolio</title>
+  <meta name="description" content="Browse all of Abdul Qureshi's creative technology projects. Filter by category and search through hardware builds, software applications, AI projects, and AR interfaces." />
+  <meta name="keywords" content="all projects, abdul qureshi portfolio, creative technology projects, hardware, software, AI, AR, filter projects, search projects" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style-modern.css" />
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -132,33 +135,7 @@
       </div>
     </section>
   </main>
-  <script>
-    const searchInput = document.getElementById('project-search');
-    const chips = Array.from(document.querySelectorAll('.filter-chip'));
-    const cards = Array.from(document.querySelectorAll('#project-grid > a'));
-    let activeFilter = 'all';
-
-    function applyFilters() {
-      const query = (searchInput?.value || '').toLowerCase().trim();
-      cards.forEach(card => {
-        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
-        const text = card.textContent.toLowerCase();
-        const matchesQuery = !query || text.includes(query);
-        const matchesTag = activeFilter === 'all' || tags.split(',').includes(activeFilter);
-        const visible = matchesQuery && matchesTag;
-        card.style.display = visible ? '' : 'none';
-      });
-    }
-
-    searchInput?.addEventListener('input', applyFilters);
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        activeFilter = chip.getAttribute('data-filter') || 'all';
-        chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
-        applyFilters();
-      });
-    });
-  </script>
+  <script src="../script-modern.js" defer></script>
 </body>
 </html>
 

@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Squirtle Sprayer — Case Study</title>
+  <title>Squirtle Sprayer — Case Study | Abdul Qureshi</title>
+  <meta name="description" content="Squirtle Sprayer: A playful 3D-printed figure that actually sprays water project by Abdul Qureshi. Combining circuits, pneumatics, and delight." />
+  <meta name="keywords" content="squirtle sprayer, 3d printing, water spray, playful design, raspberry pi, abdul qureshi project" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../style-modern.css" />
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -29,7 +32,14 @@
     <p class="mt-2 text-neutral-700">A playful, functional 3D-printed figure that actually sprays water—combining circuits, pneumatics, and delight.</p>
 
     <div class="mt-6 aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100">
-      <img src="../../assets/resume_abdulq.png" alt="Squirtle Sprayer hero" class="h-full w-full object-cover" />
+      <iframe 
+        src="https://www.youtube.com/embed/U98qbAz1tvc" 
+        title="Squirtle Sprayer Project Demo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        class="w-full h-full">
+      </iframe>
     </div>
 
     <section class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -40,9 +50,36 @@
         <h2 class="mt-6 text-lg font-semibold">Process</h2>
         <p class="mt-2 text-neutral-700">CAD for enclosure, control circuit planning, relay-driven pump actuation, 3D-printed parts and iterative assembly. Tested flow rate, sealing, and power safety.</p>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <img src="../../assets/raspberryOne.png" alt="Electronics" class="rounded-lg ring-1 ring-neutral-200" />
-          <img src="../../assets/resume_abdulq.png" alt="Prototype" class="rounded-lg ring-1 ring-neutral-200" />
-          <img src="../../assets/raspberry%20.png" alt="Assembly" class="rounded-lg ring-1 ring-neutral-200" />
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-orange-50 to-red-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-orange-700 font-medium">Electronics</p>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-blue-50 to-cyan-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-blue-700 font-medium">3D Printing</p>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg ring-1 ring-neutral-200 bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </div>
+              <p class="text-xs text-green-700 font-medium">Assembly</p>
+            </div>
+          </div>
         </div>
 
         <h2 class="mt-6 text-lg font-semibold">Outcome</h2>
@@ -61,6 +98,7 @@
       </aside>
     </section>
   </main>
+  <script src="../../script-modern.js" defer></script>
 </body>
 </html>
 

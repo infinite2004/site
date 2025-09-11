@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me</title>
+  <title>About Abdul Qureshi — Creative Technologist & Product Designer</title>
+  <meta name="description" content="Learn about Abdul Qureshi, a Creative Technologist and Product Designer at NYU IDM. Discover his journey, skills, and passion for blending hardware and software." />
+  <meta name="keywords" content="about abdul qureshi, creative technologist, product designer, NYU IDM, skills, background, portfolio" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style-modern.css" />
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
@@ -32,7 +35,7 @@
 
       <div class="prose prose-neutral max-w-none">
         <div class="text-lg leading-relaxed text-neutral-700 space-y-6">
-          <p id="intro-typed" class="text-xl font-light leading-relaxed min-h-[3.5rem]"></p>
+          <p id="intro-typed" class="text-xl font-light leading-relaxed min-h-[3.5rem]" data-text="Hey! I'm Abdul Qureshi — a creative technologist and student at NYU studying Integrated Design & Media (IDM). I love blending design and engineering to build interactive experiences."></p>
 
           <p class="leading-relaxed">
             My interests span from <span class="font-medium text-neutral-800">computer vision</span> and <span class="font-medium text-neutral-800">augmented reality</span> to <span class="font-medium text-neutral-800">embedded systems</span>
@@ -173,55 +176,9 @@
       </section>
     </article>
   </main>
-  <script>
-    // Typing effect for intro text
-    (function(){
-      const el = document.getElementById('intro-typed');
-      if (!el) return;
-      const text = "Hey! I'm Abdul Qureshi — a creative technologist and student at NYU studying Integrated Design & Media (IDM). I love blending design and engineering to build interactive experiences.";
-      let i = 0;
-      function type(){
-        if (i <= text.length){
-          el.textContent = text.slice(0, i);
-          i++;
-          const delay = text[i-2] === '.' ? 90 : 26;
-          setTimeout(type, delay);
-        }
-      }
-      type();
-    })();
-
-    // Chip style via JS inject (keeps HTML clean)
-    (function(){
-      const style = document.createElement('style');
-      style.textContent = ".chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:9999px;background:#11111108;color:#111;font-size:12px;font-weight:500;border:1px solid #e5e5e5} .chip:hover{background:#f5f5f5} .skill-acc{padding:8px 10px} .skill-acc__toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 12px;border-radius:12px;background:#fafafa;border:1px solid #eee;font-weight:600} .skill-acc__toggle:hover{background:#f5f5f5} .skill-acc__panel{overflow:hidden;max-height:0;transition:max-height .35s ease,opacity .25s ease,transform .25s ease;opacity:.0;transform:translateY(-4px)} .skill-acc.open .skill-acc__panel{opacity:1;transform:translateY(0)} .chev{transition:transform .25s ease} .skill-acc.open .chev{transform:rotate(180deg)} .chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px}";
-      document.head.appendChild(style);
-    })();
-
-    // Accordion interactions
-    (function(){
-      const items = Array.from(document.querySelectorAll('.skill-acc'));
-      items.forEach((item)=>{
-        const btn = item.querySelector('.skill-acc__toggle');
-        const panel = item.querySelector('.skill-acc__panel');
-        if (!btn || !panel) return;
-        const setOpen = (open)=>{
-          item.classList.toggle('open', open);
-          btn.setAttribute('aria-expanded', String(open));
-          if (open){
-            panel.style.maxHeight = panel.scrollHeight + 'px';
-          } else {
-            panel.style.maxHeight = '0px';
-          }
-        };
-        btn.addEventListener('click', ()=>{
-          const willOpen = !item.classList.contains('open');
-          // close others
-          items.forEach(i=>{ if (i!==item) { i.classList.remove('open'); const p=i.querySelector('.skill-acc__panel'); const b=i.querySelector('.skill-acc__toggle'); if(p) p.style.maxHeight='0px'; if(b) b.setAttribute('aria-expanded','false'); }});
-          setOpen(willOpen);
-        });
-      });
-    })();
-  </script>
+  <script src="../script-modern.js" defer></script>
+  <style>
+    .chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:9999px;background:#11111108;color:#111;font-size:12px;font-weight:500;border:1px solid #e5e5e5} .chip:hover{background:#f5f5f5} .skill-acc{padding:8px 10px} .skill-acc__toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 12px;border-radius:12px;background:#fafafa;border:1px solid #eee;font-weight:600} .skill-acc__toggle:hover{background:#f5f5f5} .skill-acc__panel{overflow:hidden;max-height:0;transition:max-height .35s ease,opacity .25s ease,transform .25s ease;opacity:.0;transform:translateY(-4px)} .skill-acc.open .skill-acc__panel{opacity:1;transform:translateY(0)} .chev{transition:transform .25s ease} .skill-acc.open .chev{transform:rotate(180deg)} .chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px}
+  </style>
 </body>
 </html>

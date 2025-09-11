@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects</title>
+  <title>Projects — Abdul Qureshi's Portfolio</title>
+  <meta name="description" content="Explore Abdul Qureshi's creative technology projects including E-Ink laptops, AI journaling apps, AR interfaces, and hardware prototypes. Case studies and detailed project breakdowns." />
+  <meta name="keywords" content="abdul qureshi projects, creative technology, E-Ink laptop, AI journaling, AR interfaces, hardware prototypes, case studies, portfolio" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style-modern.css" />
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body class="font-[Inter] text-neutral-900 bg-white">
@@ -218,44 +221,6 @@
       </article>
     </section>
   </main>
-  <script type="module">
-    const toggleBtn = document.getElementById('eink-3d-toggle');
-    const wrapper = document.getElementById('eink-3d-wrapper');
-    const viewer = document.getElementById('eink-model-viewer');
-    const statusEl = document.getElementById('eink-3d-status');
-    if (toggleBtn && wrapper && viewer) {
-      let initialized = false;
-
-      toggleBtn.addEventListener('click', async () => {
-        wrapper.classList.toggle('hidden');
-        const showing = !wrapper.classList.contains('hidden');
-        toggleBtn.textContent = showing ? 'Hide 3D model' : 'View 3D model';
-        if (showing && !initialized) {
-          await initViewer();
-          initialized = true;
-        }
-        if (showing) {
-          statusEl && (statusEl.textContent = 'Loading model…');
-        }
-      });
-
-      async function initViewer() {
-        const modelUrl = '../assets/E-ink_full_model.glb';
-        try {
-          const headResp = await fetch(modelUrl, { method: 'HEAD' });
-          if (!headResp.ok) {
-            statusEl && (statusEl.textContent = 'Model file not found.');
-          }
-        } catch {}
-        viewer.addEventListener('load', () => {
-          statusEl && (statusEl.textContent = 'Loaded.');
-        });
-        viewer.addEventListener('error', (e) => {
-          statusEl && (statusEl.textContent = 'Failed to load model.');
-          console.warn('model-viewer error', e);
-        });
-      }
-    }
-  </script>
+  <script src="../script-modern.js" defer></script>
 </body>
 </html>

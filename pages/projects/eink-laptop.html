@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Ink Laptop Case Study — Abdul Qureshi</title>
+  <meta name="description" content="Building a minimal E-Ink computer - A custom laptop powered by Raspberry Pi Zero with E-Ink display, keyboard shortcuts, and multi-file navigation." />
+  <meta name="keywords" content="E-Ink laptop, Raspberry Pi, hardware prototype, 3D printing, case study" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../style-modern.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="mx-auto max-w-4xl px-6 py-10 sm:py-14">
+      <div class="mb-6">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Projects
+        </a>
+      </div>
+      
+      <header class="mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">E-Ink Laptop</h1>
+        <p class="mt-3 text-lg text-neutral-600">Building a minimal E-Ink computer for distraction-free productivity</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm text-neutral-500">
+          <span>May 2025 – July 2025</span>
+          <span>•</span>
+          <span>Hardware • 3D Printing • Raspberry Pi</span>
+        </div>
+      </header>
+
+      <!-- Featured Video -->
+      <div class="mb-12">
+        <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+          <iframe 
+            src="https://www.youtube.com/embed/y3Hb646zEYg" 
+            title="E-Ink Laptop Project Demo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            class="w-full h-full">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Overview</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-lg text-neutral-700 leading-relaxed">
+          This project explores how to create a minimal, distraction-free computing device using E-Ink technology. 
+          The goal was to reduce screen fatigue and power consumption while maintaining productivity for tasks 
+          like note-taking and code editing.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h3 class="font-semibold mb-2">Problem</h3>
+          <p class="text-sm text-neutral-600">Traditional screens cause fatigue during extended use and consume significant power.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h3 class="font-semibold mb-2">Solution</h3>
+          <p class="text-sm text-neutral-600">Custom E-Ink laptop with optimized software for text-based workflows.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h3 class="font-semibold mb-2">Outcome</h3>
+          <p class="text-sm text-neutral-600">Functional prototype with keyboard shortcuts and multi-file navigation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Evolution -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Design Evolution</h2>
+      <p class="text-sm text-neutral-600 mb-8">
+        The E-Ink laptop went through four major iterations, refining ergonomics, component integration, and manufacturing feasibility.
+      </p>
+
+      <!-- Version 1 -->
+        <div class="mb-12">
+          <h4 class="text-lg font-semibold mb-3 flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Version 1</span>
+            Concept & Exploration
+          </h4>
+          <p class="text-sm text-neutral-600 mb-4">
+            The initial concept phase exploring form factor and feasibility. Early sketches and component testing.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <img src="../../assets/eink_scree_documentation/version1_1.png" alt="Version 1 - Early concept exploration" class="rounded-lg ring-1 ring-neutral-200 w-full h-64 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version1_2.png" alt="Version 1 - Concept exploration 2" class="rounded-lg ring-1 ring-neutral-200 w-full h-64 object-contain bg-white" />
+          </div>
+          <div class="rounded-lg ring-1 ring-neutral-200 overflow-hidden bg-white">
+            <model-viewer 
+              src="../../assets/E-ink_full_model.glb" 
+              alt="Version 1 3D Model" 
+              camera-controls 
+              style="width:100%; height:450px; display:block; background:white;" 
+              shadow-intensity="0.5" 
+              exposure="0.9" 
+              auto-rotate 
+              ar 
+              ar-modes="webxr scene-viewer quick-look">
+            </model-viewer>
+          </div>
+          <p class="text-xs text-neutral-500 mt-2">
+            Interactive 3D model - rotate, zoom, and inspect. <a href="../../assets/E-ink_full_model.glb" download class="underline hover:text-neutral-700">Download GLB</a>
+          </p>
+        </div>
+
+        <!-- Version 2 -->
+        <div class="mb-12">
+          <h4 class="text-lg font-semibold mb-3 flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium">Version 2</span>
+            First Prototype
+          </h4>
+          <p class="text-sm text-neutral-600 mb-4">
+            First working prototype with basic form factor and component placement. Established core structure and proved concept viability.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <img src="../../assets/eink_scree_documentation/version2_1.png" alt="Version 2 - First prototype build" class="rounded-lg ring-1 ring-neutral-200 w-full h-64 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version2_2.png" alt="Version 2 - Prototype assembly" class="rounded-lg ring-1 ring-neutral-200 w-full h-64 object-contain bg-white" />
+          </div>
+          <div class="rounded-lg ring-1 ring-neutral-200 overflow-hidden bg-white">
+            <model-viewer 
+              src="../../assets/Eink_version2.glb" 
+              alt="Version 2 3D Model" 
+              camera-controls 
+              style="width:100%; height:450px; display:block; background:white;" 
+              shadow-intensity="0.5" 
+              exposure="0.9" 
+              auto-rotate 
+              ar 
+              ar-modes="webxr scene-viewer quick-look">
+            </model-viewer>
+          </div>
+          <p class="text-xs text-neutral-500 mt-2">
+            Interactive 3D model - rotate, zoom, and inspect. <a href="../../assets/Eink_version2.glb" download class="underline hover:text-neutral-700">Download GLB</a>
+          </p>
+        </div>
+
+        <!-- Version 3 -->
+        <div class="mb-12">
+          <h4 class="text-lg font-semibold mb-3 flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">Version 3</span>
+            Design Refinement
+          </h4>
+          <p class="text-sm text-neutral-600 mb-4">
+            Improved ergonomics, internal structure, and component integration. Multiple iterations on keyboard mounting and display housing.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+            <img src="../../assets/eink_scree_documentation/version3_1.png" alt="Version 3 - Iteration 1" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version3_2.png" alt="Version 3 - Iteration 2" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version3_3.png" alt="Version 3 - Iteration 3" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version3_4.png" alt="Version 3 - Iteration 4" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version3_5.png" alt="Version 3 - Final iteration" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+          </div>
+          <div class="rounded-lg ring-1 ring-neutral-200 overflow-hidden bg-white">
+            <model-viewer 
+              src="../../assets/Eink_version3.glb" 
+              alt="Version 3 3D Model" 
+              camera-controls 
+              style="width:100%; height:450px; display:block; background:white;" 
+              shadow-intensity="0.5" 
+              exposure="0.9" 
+              auto-rotate 
+              ar 
+              ar-modes="webxr scene-viewer quick-look">
+            </model-viewer>
+          </div>
+          <p class="text-xs text-neutral-500 mt-2">
+            Interactive 3D model - rotate, zoom, and inspect. <a href="../../assets/Eink_version3.glb" download class="underline hover:text-neutral-700">Download GLB</a>
+          </p>
+        </div>
+
+        <!-- Version 4 -->
+        <div class="mb-12">
+          <h4 class="text-lg font-semibold mb-3 flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">Version 4</span>
+            Final Optimized Design
+          </h4>
+          <p class="text-sm text-neutral-600 mb-4">
+            Final optimized design with manufacturing refinements, enhanced structural integrity, and finalized tolerances for production.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <img src="../../assets/eink_scree_documentation/version4_1.png" alt="Version 4 - Final design 1" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_2.png" alt="Version 4 - Final design 2" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_3.png" alt="Version 4 - Final design 3" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_4.png" alt="Version 4 - Final design 4" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_5.png" alt="Version 4 - Final design 5" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_6.png" alt="Version 4 - Final design 6" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/version4_7.png" alt="Version 4 - Final design 7" class="rounded-lg ring-1 ring-neutral-200 w-full h-48 object-contain bg-white" />
+          </div>
+        </div>
+    </section>
+
+    <!-- Build Process - Building Section -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-4">Building Process</h2>
+      <p class="text-neutral-600 mb-6">
+        Complete journey from concept to final assembly, showcasing prototyping, testing, and refinement.
+      </p>
+      
+      <div class="space-y-8">
+        <!-- Building Section Images -->
+        <div>
+          <h3 class="text-lg font-semibold mb-3">Assembly & Testing</h3>
+          <p class="text-sm text-neutral-600 mb-3">
+            Step-by-step assembly process and component testing throughout the build.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="../../assets/eink_scree_documentation/building_v4_1.png" alt="Building process - Assembly stage 1" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/uilding_v4_2.png" alt="Building process - Assembly stage 2" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-white" />
+            <img src="../../assets/eink_scree_documentation/uilding_v4_3.png" alt="Building process - Assembly stage 3" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-white" />
+          </div>
+        </div>
+
+        <!-- Current State -->
+        <div class="mt-8 pt-8 border-t border-neutral-200">
+          <div class="p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+            <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+              <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              Current State
+            </h3>
+            <p class="text-sm text-neutral-700 mb-4">
+              The video below shows the most recent version with all improvements and refinements implemented.
+            </p>
+            <div class="aspect-video rounded-lg overflow-hidden ring-1 ring-neutral-200">
+              <video controls class="w-full h-full object-cover">
+                <source src="../../assets/eink_scree_documentation/most recent version.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="text-xs text-neutral-600 mt-3">
+              Latest fully assembled and tested prototype with all design iterations integrated.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Technical Specifications</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold mb-3">Hardware</h3>
+          <ul class="space-y-2 text-neutral-700">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Raspberry Pi Zero</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>E-Ink Display</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Custom 3D-printed enclosure</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Battery power system</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold mb-3">Software</h3>
+          <ul class="space-y-2 text-neutral-700">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Custom Python-based interface</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Keyboard shortcut system</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Multi-file navigation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Optimized refresh algorithms</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Next Steps -->
+    <section class="mx-auto max-w-4xl px-6 py-10 pb-20 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Future Improvements</h2>
+      
+      <ul class="space-y-3 text-neutral-700">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-neutral-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span>Improve user experience with redesigned interface - move away from terminal UI to a more intuitive, user-friendly design that's easier to navigate</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-neutral-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span>Integrate AI summary feature to automatically generate document summaries and quick overviews</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-neutral-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span>Add cloud sync feature for seamless file synchronization and access across devices</span>
+        </li>
+      </ul>
+
+      <div class="mt-10 pt-10 border-t border-neutral-200">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to All Projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <button onclick="prevImage()" class="absolute left-4 text-white hover:text-gray-300 transition-colors z-10">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <button onclick="nextImage()" class="absolute right-4 text-white hover:text-gray-300 transition-colors z-10">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain" onclick="event.stopPropagation()">
+  </div>
+
+  <script src="../../script-modern.js" defer></script>
+  <script>
+    // Lightbox functionality
+    let currentImageIndex = 0;
+    let imageElements = [];
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all images except logos and icons
+      imageElements = Array.from(document.querySelectorAll('main img')).filter(img => {
+        return !img.src.includes('logo') && !img.closest('svg');
+      });
+
+      // Add click event to each image
+      imageElements.forEach((img, index) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+          openLightbox(index);
+        });
+      });
+    });
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imageElements[currentImageIndex].src;
+      lightboxImg.alt = imageElements[currentImageIndex].alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (event && event.target.id !== 'lightbox') return;
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % imageElements.length;
+      document.getElementById('lightbox-img').src = imageElements[currentImageIndex].src;
+      document.getElementById('lightbox-img').alt = imageElements[currentImageIndex].alt;
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + imageElements.length) % imageElements.length;
+      document.getElementById('lightbox-img').src = imageElements[currentImageIndex].src;
+      document.getElementById('lightbox-img').alt = imageElements[currentImageIndex].alt;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tally Case Study — Abdul Qureshi</title>
+  <meta name="description" content="Tally - From Local Dev Journal to GitHub-Native Code Review Copilot. Transforming code reviews with AI-powered risk scoring, time estimation, and team analytics." />
+  <meta name="keywords" content="Tally, TimeTrace, code review, GitHub, AI, developer tools, case study" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="mx-auto max-w-4xl px-6 py-10 sm:py-14">
+      <div class="mb-6">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Projects
+        </a>
+      </div>
+      
+      <header class="mb-8">
+        <div class="inline-flex items-center rounded-md bg-blue-100 px-3 py-1.5 text-blue-800 text-sm font-medium mb-4">
+          In Progress
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Tally</h1>
+        <p class="mt-3 text-lg text-neutral-600">From Local Dev Journal to GitHub-Native Code Review Copilot</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm text-neutral-500">
+          <span>July 2025 – Present</span>
+          <span>•</span>
+          <span>AI • Privacy • Git • GitHub • Code Review</span>
+        </div>
+      </header>
+
+      <!-- Featured Video -->
+      <div class="mb-12">
+        <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+          <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="../../assets/timetrace.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context & Problem -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Context & Problem</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-lg text-neutral-700 leading-relaxed mb-6">
+          Software teams don't really struggle with "not enough data." They struggle with <strong>time</strong>:
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <div class="text-2xl mb-2">⏱️</div>
+            <p class="text-sm text-red-900">PRs that sit untouched for days</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <div class="text-2xl mb-2">📦</div>
+            <p class="text-sm text-red-900">Huge "God PRs" that nobody wants to review</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <div class="text-2xl mb-2">🌊</div>
+            <p class="text-sm text-red-900">Junior devs drowning in context when they join a project</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <div class="text-2xl mb-2">❓</div>
+            <p class="text-sm text-red-900">PMs asking "What actually happened this week?"</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200 mb-6">
+          <h3 class="font-semibold mb-3">The Result:</h3>
+          <ul class="space-y-2 text-neutral-700">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Slower cycle times</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Burned-out reviewers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>No shared memory of why decisions were made</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
+          <h3 class="font-semibold text-blue-900 mb-2">Core Question</h3>
+          <p class="text-blue-800 text-lg">
+            "Can we turn the mess of commits, diffs, and ad-hoc notes into usable, team-wide understanding of code changes?"
+          </p>
+          <p class="text-sm text-blue-700 mt-3">
+            That started as <strong>TimeTrace</strong>, a personal developer journal, and evolved into <strong>Tally</strong>, a GitHub-native code review copilot.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Origins - TimeTrace -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Origins – TimeTrace (v0)</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Initial Idea</h3>
+        <p class="text-neutral-700 mb-4">
+          TimeTrace began as an AI-powered developer journal:
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-neutral-700">Watch local file changes and Git commits</span>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-neutral-700">Automatically generate daily summaries of work</span>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div class="text-neutral-700">
+              Show everything on a calendar/timeline to answer:
+              <ul class="mt-2 ml-4 space-y-1 text-sm text-neutral-600">
+                <li>• "What did I actually do yesterday?"</li>
+                <li>• "What changed before that bug appeared?"</li>
+                <li>• "How did this feature evolve?"</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Early Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">File Watcher</h4>
+            <p class="text-sm text-neutral-600">Tracked edits to source files</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">Git Watcher</h4>
+            <p class="text-sm text-neutral-600">Captured commits with metadata</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">AI Summarization</h4>
+            <p class="text-sm text-neutral-600">Technical summary + client/PM summary</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">Timeline UI</h4>
+            <p class="text-sm text-neutral-600">React calendar view of days, sessions, commits</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">Tauri Desktop App</h4>
+            <p class="text-sm text-neutral-600">Local-first, cross-platform</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <h4 class="font-semibold mb-2">Privacy by Design</h4>
+            <p class="text-sm text-neutral-600">Local storage + optional local models (Ollama)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-lg bg-green-50 border border-green-200">
+          <h3 class="font-semibold text-green-900 mb-3">✓ What Worked</h3>
+          <ul class="space-y-2 text-sm text-green-800">
+            <li>• Individual devs loved reconstructing their week without manual notes</li>
+            <li>• Persona-aware summaries made standups and updates easy</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-lg bg-yellow-50 border border-yellow-200">
+          <h3 class="font-semibold text-yellow-900 mb-3">⚠ What Didn't</h3>
+          <p class="text-sm text-yellow-800 italic">
+            "Daily summaries are nice, but our real bottleneck is PRs: code reviews are slow, risky, and inconsistent."
+          </p>
+          <p class="text-sm text-yellow-800 mt-2">
+            TimeTrace was helping <em>after the fact</em>. Teams needed help <strong>inside the PR workflow</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Pivot -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">The Pivot – From TimeTrace to Tally</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Insight</h3>
+        <p class="text-neutral-700 mb-4">
+          From conversations with engineers, team leads, and students, the most stressful part of the workflow wasn't "What did I do this week?"
+        </p>
+        <p class="text-neutral-700 mb-4">It was:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-red-900">"Is this PR safe to merge?"</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-red-900">"How long will this review take?"</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-red-900">"Who should review it?"</p>
+          </div>
+          <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-red-900">"Why are our reviews getting slower?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-lg bg-blue-50 border border-blue-200 mb-8">
+        <h3 class="font-semibold text-blue-900 mb-3">TimeTrace Already Had:</h3>
+        <ul class="space-y-2 text-blue-800">
+          <li class="flex items-start gap-2">
+            <span>✓</span>
+            <span>Parsing of diffs and code changes</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span>✓</span>
+            <span>Persona-based summaries</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span>✓</span>
+            <span>A solid local-first architecture</span>
+          </li>
+        </ul>
+        <p class="mt-4 text-blue-900 font-semibold text-lg">
+          The next step was obvious: Move from "logging the past" → to "shaping and de-risking PRs in real time."
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Rebrand & Repositioning</h3>
+        <div class="space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-32 font-semibold text-neutral-600">Name shift:</div>
+            <div class="text-neutral-700">From "tracing time" to "keeping score" of code changes and review health</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-32 font-semibold text-neutral-600">Product shift:</div>
+            <div class="text-neutral-700">From personal notebook → GitHub-native code review copilot</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-32 font-semibold text-neutral-600">User shift:</div>
+            <div class="text-neutral-700">From individual developers only → to teams: devs, tech leads, and eng managers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Tally Is Today -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">What Tally Is Today</h2>
+      
+      <div class="p-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 mb-8">
+        <p class="text-lg text-neutral-800 leading-relaxed">
+          Tally is a <strong>GitHub-native code review copilot</strong> that scores PR risk, estimates review time, generates persona-aware summaries & checklists, suggests how to split large PRs, and shows teams how pickup & review times change over time.
+        </p>
+        <p class="mt-4 text-sm text-neutral-600">
+          Tally is live right now as a Mac desktop app, with the GitHub App + team analytics layer in active development.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-6">Core Use Cases</h3>
+      
+      <div class="space-y-6">
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-neutral-50 px-6 py-4 border-b border-neutral-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="text-2xl">👤</span>
+              <span>For Individual Developers</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 text-neutral-700">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>See a timeline of work: files edited, commits, branches</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Get auto-generated summaries for yourself (technical) and PM/client (plain-language)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Use Tally as a personal dev journal to prepare PR descriptions and standup updates faster</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-blue-50 px-6 py-4 border-b border-blue-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="text-2xl">👥</span>
+              <span>For Reviewers & Tech Leads <span class="text-sm font-normal text-blue-600">(Tally V2)</span></span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <p class="text-neutral-700 mb-4">Open a PR and see:</p>
+            <ul class="space-y-3 text-neutral-700">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Risk score</strong> (based on size, churn, critical files, test coverage)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Estimated review time</strong> (5 minutes, 20 minutes, 1+ hour)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Auto-generated checklist</strong> ("Run migrations", "Check config flags", etc.)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Persona-aware summary</strong> (Engineer view + PM view)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Split suggestions</strong> for oversized PRs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-purple-50 px-6 py-4 border-b border-purple-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="text-2xl">📊</span>
+              <span>For Teams / Managers <span class="text-sm font-normal text-purple-600">(Tally V2)</span></span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <p class="text-neutral-700 mb-4">Team dashboard with:</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 rounded-lg bg-purple-50 border border-purple-200 text-center">
+                <div class="text-2xl font-bold text-purple-900">Pickup Time</div>
+                <div class="text-sm text-purple-700 mt-1">First review response delay</div>
+              </div>
+              <div class="p-4 rounded-lg bg-purple-50 border border-purple-200 text-center">
+                <div class="text-2xl font-bold text-purple-900">Review Time</div>
+                <div class="text-sm text-purple-700 mt-1">Comment to approval</div>
+              </div>
+              <div class="p-4 rounded-lg bg-purple-50 border border-purple-200 text-center">
+                <div class="text-2xl font-bold text-purple-900">Merge Time</div>
+                <div class="text-sm text-purple-700 mt-1">Total cycle time</div>
+              </div>
+            </div>
+            <p class="text-sm text-neutral-600 mt-4">
+              Track how these metrics move over time as you adopt Tally, change review policies, or introduce new team members.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">System Architecture</h2>
+      
+      <p class="text-neutral-700 mb-6">
+        Tally's architecture grew out of TimeTrace's multi-process design and is evolving into a hybrid desktop + GitHub App system.
+      </p>
+
+      <h3 class="text-xl font-semibold mb-4">High-Level Architecture</h3>
+      
+      <div class="space-y-6 mb-8">
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-green-50 px-6 py-4 border-b border-green-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white text-sm">1</span>
+              <span>Desktop Client (Tauri + React) – Live Now</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-2 text-neutral-700">
+              <li>• Runs on macOS as a Tauri app</li>
+              <li>• Watches local repositories (Node file watcher + Git utilities)</li>
+              <li>• Stores data locally for privacy</li>
+              <li>• Talks to local AI (Ollama) or remote AI APIs (OpenAI)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-blue-50 px-6 py-4 border-b border-blue-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm">2</span>
+              <span>Backend Services (Node/TypeScript + Fastify)</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-2 text-neutral-700">
+              <li>• Ingests events (local file/commit events + GitHub webhooks for PRs)</li>
+              <li>• Processes & normalizes data (repos, branches, sessions, PRs, diffs)</li>
+              <li>• Runs AI pipelines (summaries, risk scoring, time estimation, checklists)</li>
+              <li>• Exposes APIs for desktop client and future web dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <div class="bg-purple-50 px-6 py-4 border-b border-purple-200">
+            <h4 class="font-semibold flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-purple-600 text-white text-sm">3</span>
+              <span>GitHub App & Integrations (Tally V2)</span>
+            </h4>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-2 text-neutral-700">
+              <li>• GitHub App for PR opened/updated/merged events</li>
+              <li>• Webhook handler receives PR diff & metadata</li>
+              <li>• Surfaces results as status checks on PRs</li>
+              <li>• Slack/Notion integrations (planned)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100 flex items-center justify-center mb-8">
+        <span class="text-neutral-400">Architecture Diagram Placeholder</span>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-4">Key Components (Tech Stack)</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h4 class="font-semibold mb-2">Frontend</h4>
+          <ul class="text-sm text-neutral-600 space-y-1">
+            <li>• React + TypeScript</li>
+            <li>• Calendar & timeline views</li>
+            <li>• PR details & summaries</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h4 class="font-semibold mb-2">Desktop Container</h4>
+          <ul class="text-sm text-neutral-600 space-y-1">
+            <li>• Tauri (Rust)</li>
+            <li>• System-level access</li>
+            <li>• File & Git watchers</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h4 class="font-semibold mb-2">AI Engine</h4>
+          <ul class="text-sm text-neutral-600 space-y-1">
+            <li>• Node service orchestration</li>
+            <li>• Persona-aware summarization</li>
+            <li>• Risk scoring heuristics</li>
+            <li>• Local (Ollama) or Cloud LLMs</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+          <h4 class="font-semibold mb-2">Data Storage</h4>
+          <ul class="text-sm text-neutral-600 space-y-1">
+            <li>• Local JSON/files (current)</li>
+            <li>• SQLite (local)</li>
+            <li>• Postgres (team mode)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evolution Timeline -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Versions & Evolution</h2>
+      
+      <div class="space-y-6">
+        <div class="relative pl-8 pb-8 border-l-2 border-neutral-200">
+          <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-neutral-300 border-4 border-white"></div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">v0 – TimeTrace Prototype</h3>
+            <ul class="text-sm text-neutral-600 space-y-1 mb-2">
+              <li>• Local file watcher</li>
+              <li>• Git commit ingestion</li>
+              <li>• Single AI summarizer</li>
+              <li>• Calendar UI for daily work logs</li>
+            </ul>
+            <p class="text-sm text-neutral-700 italic">
+              <strong>Outcome:</strong> Validated that automatic, persona-aware summaries were useful and technically feasible.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-8 border-l-2 border-neutral-200">
+          <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-neutral-400 border-4 border-white"></div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">v0.5 – TimeTrace Advanced</h3>
+            <ul class="text-sm text-neutral-600 space-y-1 mb-2">
+              <li>• Better timeline & UI polish</li>
+              <li>• Dedicated "technical" vs "client" summaries</li>
+              <li>• Improved AI prompts and context windows</li>
+            </ul>
+            <p class="text-sm text-neutral-700 italic">
+              <strong>Outcome:</strong> Teams wanted help specifically at the PR stage, not just day/week summaries.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-8 border-l-2 border-green-300">
+          <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-green-500 border-4 border-white"></div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">v1.0 – Tally (Rebrand + Desktop App) – Live Now</h3>
+            <ul class="text-sm text-neutral-600 space-y-1 mb-2">
+              <li>• TimeTrace → Tally rebrand</li>
+              <li>• macOS Tauri app packaged and shipped</li>
+              <li>• Refined onboarding for individual devs</li>
+              <li>• Stable local workflow</li>
+            </ul>
+            <div class="inline-flex items-center rounded-md bg-green-100 px-3 py-1.5 text-green-800 text-sm font-medium">
+              Currently Live
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 pb-8 border-l-2 border-blue-300">
+          <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-blue-400 border-4 border-white"></div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">v1.1 – Tally UX & Stability Improvements (In Progress)</h3>
+            <ul class="text-sm text-neutral-600 space-y-1 mb-2">
+              <li>• UI refinements based on internal UX audit</li>
+              <li>• Clearer navigation between days, sessions, commits</li>
+              <li>• Better error handling and resilience</li>
+              <li>• Foundation for GitHub App integration</li>
+            </ul>
+            <div class="inline-flex items-center rounded-md bg-blue-100 px-3 py-1.5 text-blue-800 text-sm font-medium">
+              In Progress
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8">
+          <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-purple-500 border-4 border-white"></div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">v2.0 – GitHub-Native Code Review Copilot (Planned)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">GitHub App</div>
+                <p class="text-xs text-purple-700">Installs per repo/org, listens to PR events</p>
+              </div>
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">PR Risk Scoring</div>
+                <p class="text-xs text-purple-700">Size, churn, critical files, test coverage</p>
+              </div>
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">Review Time Estimation</div>
+                <p class="text-xs text-purple-700">5 min, 25 min, 60+ min predictions</p>
+              </div>
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">Checklist Generator</div>
+                <p class="text-xs text-purple-700">Auto-generated review checklists</p>
+              </div>
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">Split Suggestions</div>
+                <p class="text-xs text-purple-700">Break down oversized PRs</p>
+              </div>
+              <div class="p-3 rounded-lg bg-purple-50 border border-purple-200">
+                <div class="font-semibold text-sm text-purple-900 mb-1">Team Dashboard</div>
+                <p class="text-xs text-purple-700">Pickup, review, merge time trends</p>
+              </div>
+            </div>
+            <div class="inline-flex items-center rounded-md bg-purple-100 px-3 py-1.5 text-purple-800 text-sm font-medium">
+              Planned for Competitions & Early Pilots
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Impact So Far</h2>
+      
+      <div class="space-y-4">
+        <div class="p-6 rounded-lg bg-green-50 border border-green-200">
+          <h3 class="font-semibold text-green-900 mb-2">Reduced Cognitive Load</h3>
+          <p class="text-green-800">
+            Developers don't have to remember everything they did yesterday to write a PR description or standup update—Tally reconstructs it.
+          </p>
+        </div>
+        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
+          <h3 class="font-semibold text-blue-900 mb-2">Clear Narratives for Non-Engineers</h3>
+          <p class="text-blue-800">
+            Persona-aware summaries help communicate work to PMs, clients, or professors without rewriting everything by hand.
+          </p>
+        </div>
+        <div class="p-6 rounded-lg bg-purple-50 border border-purple-200">
+          <h3 class="font-semibold text-purple-900 mb-2">Clear Path to Team Value</h3>
+          <p class="text-purple-800 mb-3">
+            Conversations with engineers and leads have consistently reinforced the core insight: speeding up and de-risking PRs is a top-of-mind problem.
+          </p>
+          <ul class="space-y-2 text-sm text-purple-700">
+            <li>• Teams are already paying for tools that try to solve it</li>
+            <li>• Few combine local-first privacy, AI summaries, and concrete time metrics</li>
+            <li>• Even fewer treat PRs as narratives instead of just diffs</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-6 text-neutral-700 text-center p-6 bg-neutral-50 rounded-lg border border-neutral-200">
+        <strong>Tally's current live Mac app proves out the summarization + timeline + local-first engine.</strong><br/>
+        <strong>Tally v2 applies that engine exactly where teams feel the most pain: code review.</strong>
+      </p>
+    </section>
+
+    <!-- Future Vision -->
+    <section class="mx-auto max-w-4xl px-6 py-10 pb-20 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Future of Tally</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Roadmap</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-semibold flex items-center justify-center text-sm">1</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Tally v2 – GitHub App + Team Dashboard</h4>
+                <p class="text-sm text-neutral-600">Fully functional PR copilot with risk scoring, time estimation, checklists, split suggestions, and live metrics on pickup/review/merge time</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-semibold flex items-center justify-center text-sm">2</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Local-First & Privacy as a Differentiator</h4>
+                <p class="text-sm text-neutral-600">Stronger offline capabilities with local models (Ollama) as first-class citizens, optional encrypted sync for team analytics</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-semibold flex items-center justify-center text-sm">3</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Deeper Workflow Integrations</h4>
+                <p class="text-sm text-neutral-600">Notion/Confluence changelog generation, Jira/Linear ticket linking, IDE extensions (VSCode/JetBrains)</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-semibold flex items-center justify-center text-sm">4</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Learning From Teams</h4>
+                <p class="text-sm text-neutral-600">2–3 pilot teams using Tally, with anonymized metrics to improve risk models and discover patterns of healthy vs unhealthy PRs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
+          <h3 class="text-xl font-semibold mb-4">Long-Term Vision</h3>
+          <p class="text-lg text-neutral-800 mb-4">
+            Tally's endgame is to be the <strong>shared memory and real-time health monitor</strong> of a team's code changes.
+          </p>
+          <p class="text-neutral-700 mb-4">Not just "What changed?" but:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="p-3 rounded-lg bg-white border border-blue-200">
+              <p class="text-sm text-neutral-700">"Who needs help right now?"</p>
+            </div>
+            <div class="p-3 rounded-lg bg-white border border-blue-200">
+              <p class="text-sm text-neutral-700">"Which PR is risky?"</p>
+            </div>
+            <div class="p-3 rounded-lg bg-white border border-blue-200">
+              <p class="text-sm text-neutral-700">"Is our review culture getting better?"</p>
+            </div>
+            <div class="p-3 rounded-lg bg-white border border-blue-200">
+              <p class="text-sm text-neutral-700">"How can we make this change safer?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-10 border-t border-neutral-200">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to All Projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../script-modern.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 01 — Setup — E-Ink Laptop Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../../style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <!-- Main Header -->
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../../../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../../../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <!-- Project Navigation -->
+    <nav class="border-b border-neutral-200 bg-neutral-50 mb-10">
+        <div class="mx-auto max-w-4xl px-6 py-3 flex overflow-x-auto gap-6 text-sm whitespace-nowrap">
+            <a href="../../eink-laptop.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">About</a>
+            <a href="../blog.html" class="font-semibold text-neutral-900">Blog (Process)</a>
+            <a href="../research.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Research Library</a>
+            <a href="../presentations.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Presentations</a>
+            <a href="../tasks.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Tasks / Timeline</a>
+        </div>
+    </nav>
+
+    <article class="mx-auto max-w-2xl px-6 pb-20">
+        <header class="mb-10">
+            <div class="text-sm text-neutral-500 mb-2">
+                <a href="../blog.html" class="hover:text-neutral-900">← Back to Blog</a>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Week 01 — Project Setup & Initial Planning</h1>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-neutral-600 border-l-2 border-neutral-200 pl-4">
+                <div><strong>Date range:</strong> Jan 20 – Jan 26</div>
+                <div class="hidden sm:block text-neutral-300">•</div>
+                <div><strong>Time spent:</strong> ~5 hours</div>
+                <div class="hidden sm:block text-neutral-300">•</div>
+                <div><strong>Status:</strong> <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">In progress</span></div>
+            </div>
+            <p class="mt-4 text-lg text-neutral-700 italic">Focus: Setting up the project structure and defining core requirements for the MVP.</p>
+        </header>
+
+        <div class="prose prose-neutral max-w-none">
+            
+            <h2>1) Summary</h2>
+            <ul>
+                <li>✅ Defined project site structure</li>
+                <li>✅ Created blog templates</li>
+                <li>⚠️ Pending e-ink display selection</li>
+                <li>➜ Next: Initial hardware component sourcing</li>
+            </ul>
+
+            <hr>
+
+            <h2>2) What I did</h2>
+            
+            <h3>Build / Design / Dev</h3>
+            <ul>
+                <li><strong>Site Structure</strong> — Implemented the "thesis" folder structure for the documentation site. Added blog, research, and task tracking sections.</li>
+                <li><strong>Research setup</strong> — Created a template for tracking research papers and inspiration sources.</li>
+            </ul>
+
+            <h3>Research</h3>
+            <ul>
+                <li><strong>E-Ink Refresh Rates</strong> — Investigated partial refresh capabilities of WaveShare displays. Critical for typing latency.</li>
+            </ul>
+
+            <hr>
+
+            <h2>3) Decisions made</h2>
+            <ul>
+                <li><strong>Decision:</strong> Use Jekyll or static HTML for documentation.
+                    <ul>
+                        <li><strong>Reason:</strong> Simplicity and ease of hosting on GitHub Pages.</li>
+                        <li><strong>Tradeoff:</strong> Less dynamic features, but lower maintenance.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>4) Issues / blockers</h2>
+            <ul>
+                <li><strong>Blocker:</strong> Selecting the right screen size (10.3" vs 13.3").
+                    <ul>
+                        <li><strong>What I tried:</strong> mocking up UI on paper.</li>
+                        <li><strong>Next attempt:</strong> cardboard mockups of physical dimensions.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>5) Tasks completed</h2>
+            <p><strong>Done</strong></p>
+            <ul class="contains-task-list">
+                <li class="task-list-item"><input type="checkbox" checked disabled> Setup project blog</li>
+                <li class="task-list-item"><input type="checkbox" checked disabled> Define MVP features</li>
+            </ul>
+
+            <p><strong>Next</strong></p>
+            <ul class="contains-task-list">
+                <li class="task-list-item"><input type="checkbox" disabled> Order Raspberry Pi Zero 2 W</li>
+                <li class="task-list-item"><input type="checkbox" disabled> 3D print test case</li>
+            </ul>
+
+            <hr>
+
+            <h2>6) What’s next week</h2>
+            <ol>
+                <li>Finalize screen component selection.</li>
+                <li>Initial CAD mockups for the chassis.</li>
+                <li>Hello World on the E-Ink display driver.</li>
+            </ol>
+        </div>
+    </article>
+  </main>
+</body>
+</html>

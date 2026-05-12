@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subtext Case Study — Abdul Qureshi</title>
+  <meta name="description" content="Subtext - Prompt Intelligence for Power Users. A Chrome extension that analyzes and improves AI prompts with structured feedback and reusable templates." />
+  <meta name="keywords" content="Subtext, AI prompts, ChatGPT, Chrome extension, prompt engineering, case study" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="mx-auto max-w-4xl px-6 py-10 sm:py-14">
+      <div class="mb-6">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Projects
+        </a>
+      </div>
+      
+      <header class="mb-8">
+        <div class="inline-flex items-center rounded-md bg-blue-100 px-3 py-1.5 text-blue-800 text-sm font-medium mb-4">
+          Private Preview
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Subtext</h1>
+        <p class="mt-3 text-lg text-neutral-600">Prompt Intelligence for Power Users</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm text-neutral-500">
+          <span>2024 – 2025 (ongoing)</span>
+          <span>•</span>
+          <span>Chrome Extension • React • FastAPI • OpenAI</span>
+        </div>
+      </header>
+
+      <!-- Featured Video -->
+      <div class="mb-12">
+        <div class="aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-neutral-200">
+          <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="../../assets/demo1_1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context & Role -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Context & Role</h2>
+      <div class="prose prose-neutral max-w-none">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-sm font-semibold text-neutral-500 mb-2">PRODUCT</h3>
+            <p class="text-neutral-700">A Chrome extension + backend service for analyzing and improving AI prompts</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-neutral-500 mb-2">MY ROLE</h3>
+            <p class="text-neutral-700">Solo founder / designer / full-stack developer</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-neutral-500 mb-2">TIMELINE</h3>
+            <p class="text-neutral-700">2024–2025 (ongoing)</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-neutral-500 mb-2">STACK</h3>
+            <p class="text-neutral-700">Chrome Extension, React, FastAPI, Firebase/Firestore, Redis, OpenAI API</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Problem</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-lg text-neutral-700 leading-relaxed mb-6">
+          As AI tools like ChatGPT became part of daily workflows, I noticed three recurring issues:
+        </p>
+        
+        <div class="space-y-4">
+          <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+            <h3 class="font-semibold mb-2">1. People don't know what makes a "good" prompt</h3>
+            <p class="text-sm text-neutral-600">Prompts are written by trial-and-error, with no systematic feedback.</p>
+          </div>
+          <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+            <h3 class="font-semibold mb-2">2. High-value prompts get lost</h3>
+            <p class="text-sm text-neutral-600">Great prompts live in random chats, docs, or sticky notes. There's no memory, analytics, or versioning.</p>
+          </div>
+          <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200">
+            <h3 class="font-semibold mb-2">3. Teams can't standardize</h3>
+            <p class="text-sm text-neutral-600">Everyone rewrites the same instructions instead of sharing battle-tested prompt patterns and guidelines.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 rounded-lg bg-blue-50 border border-blue-200">
+          <h3 class="font-semibold text-blue-900 mb-2">Core Question</h3>
+          <p class="text-blue-800">How can we turn prompt-writing from a messy, individual habit into something trackable, improvable, and shareable?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hypothesis -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Hypothesis</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-neutral-700 mb-4">
+          If we build a lightweight layer on top of existing AI chats that:
+        </p>
+        <ul class="space-y-2 text-neutral-700 mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Captures prompts in context</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Analyzes them with clear criteria</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Turns those into reusable, team-ready patterns</span>
+          </li>
+        </ul>
+        <p class="text-neutral-700">
+          Then people will write better prompts faster, get more consistent outputs, and start building a shared library of "prompt playbooks."
+        </p>
+      </div>
+    </section>
+
+    <!-- Users & Use Cases -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Users & Use Cases</h2>
+      
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-4">Primary Users</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <div class="text-2xl mb-2">🎓</div>
+            <h4 class="font-semibold mb-1">Students & Solo Builders</h4>
+            <p class="text-sm text-neutral-600">Using ChatGPT all day</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <div class="text-2xl mb-2">👥</div>
+            <h4 class="font-semibold mb-1">Product Teams</h4>
+            <p class="text-sm text-neutral-600">Experimenting with AI workflows</p>
+          </div>
+          <div class="p-4 rounded-lg border border-neutral-200">
+            <div class="text-2xl mb-2">🚀</div>
+            <h4 class="font-semibold mb-1">Founders</h4>
+            <p class="text-sm text-neutral-600">Writing prompts for support, content, or coding agents</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Example Scenarios</h3>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <span class="text-neutral-400 flex-shrink-0">•</span>
+            <p class="text-neutral-700">A founder wants to refine a system prompt for their support chatbot</p>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <span class="text-neutral-400 flex-shrink-0">•</span>
+            <p class="text-neutral-700">A student wants to make sure their prompts sound less "AI-ish" and more human</p>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+            <span class="text-neutral-400 flex-shrink-0">•</span>
+            <p class="text-neutral-700">A small team wants to capture and share the 10 prompts that work best for their product</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Overview -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Solution Overview</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-lg text-neutral-700 mb-6">
+          Subtext is a GitHub-style "lint + analytics" layer, but for prompts, embedded directly in ChatGPT via a Chrome extension.
+        </p>
+
+        <div class="mb-6">
+          <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100 flex items-center justify-center">
+            <span class="text-neutral-400">UI Screenshot Placeholder</span>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4">How it Works</h3>
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-semibold flex items-center justify-center">1</div>
+            <div class="pt-1">
+              <p class="text-neutral-700">User clicks a floating action button (FAB) injected into the ChatGPT UI</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-semibold flex items-center justify-center">2</div>
+            <div class="pt-1">
+              <p class="text-neutral-700">Subtext sends the prompt to the backend for analysis</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-semibold flex items-center justify-center">3</div>
+            <div class="pt-1">
+              <p class="text-neutral-700 mb-2">The backend returns:</p>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-neutral-400">•</span>
+                  <span>A structured scorecard (clarity, constraints, persona, context, tone, risks)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-neutral-400">•</span>
+                  <span>Rewrite suggestions and alternative phrasings</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-neutral-400">•</span>
+                  <span>A quick guide explaining why the prompt is strong or weak</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-semibold flex items-center justify-center">4</div>
+            <div class="pt-1">
+              <p class="text-neutral-700">User can preview and apply improvements directly in the chat box</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-neutral-700">
+          Over time, prompts and their "performance metadata" can be stored (via Firestore) and reused as templates.
+        </p>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Architecture & Implementation</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Frontend (Chrome Extension + UI)</h3>
+          <ul class="space-y-2 text-neutral-700">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Injected into ChatGPT using a Shadow DOM host to avoid style conflicts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Floating action button opens panels for: "Analyze Prompt", "Preview Rewrites", "Guides & Patterns"</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Uses XMLHttpRequest to communicate with backend API</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Toast notifications for success/error states</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Accessible labels & keyboard focus management</span>
+            </li>
+          </ul>
+          <div class="mt-4 aspect-video rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100 flex items-center justify-center">
+            <span class="text-neutral-400">Extension UI Screenshot Placeholder</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Backend (FastAPI 1.2.0)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <h4 class="font-semibold mb-2">Endpoints</h4>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li>• Prompt analysis (single call)</li>
+                <li>• Full analysis with OpenAI</li>
+                <li>• Prompt clarification</li>
+                <li>• Prompt guides</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <h4 class="font-semibold mb-2">Firestore Collections</h4>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li>• Users</li>
+                <li>• Prompts</li>
+                <li>• Events</li>
+                <li>• Templates</li>
+                <li>• Vectors</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="space-y-2 text-neutral-700">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span><strong>Redis:</strong> Caches repeated analyses to reduce cost and latency</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span><strong>OpenAI + embeddings:</strong> Evaluates prompts and stores vector embeddings for similarity search</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span><strong>Safety & robustness:</strong> Circuit breaker for OpenAI failures with fallback responses and retries</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span><strong>Security:</strong> Input validation & sanitization for all user data</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 aspect-video rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100 flex items-center justify-center">
+        <span class="text-neutral-400">Architecture Diagram Placeholder</span>
+      </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Design Process</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Discovery</h3>
+          <p class="text-neutral-700 mb-4">
+            I shadowed my own usage and friends' workflows:
+          </p>
+          <ul class="space-y-2 text-neutral-700 mb-4">
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Screenshotted messy prompts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Marked when a prompt "worked" vs "failed"</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-neutral-400">•</span>
+              <span>Identified patterns in strong prompts: clear role/persona, specific constraints, context and examples, explicit success criteria</span>
+            </li>
+          </ul>
+          <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-neutral-200 bg-neutral-100 flex items-center justify-center">
+            <span class="text-neutral-400">Discovery Research Placeholder</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Defining the "Scorecard"</h3>
+          <p class="text-neutral-700 mb-4">
+            I turned those patterns into a simple rubric. Each analysis returns ratings on these dimensions + explanation:
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Clarity</div>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Context</div>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Constraints</div>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Persona & Audience</div>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Examples</div>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50 border border-blue-200 text-center">
+              <div class="font-semibold text-blue-900">Risks / Ambiguity</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-4">UX Constraints</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <p class="text-neutral-700">Extension must feel lightweight, not like a second app</p>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <p class="text-neutral-700">Never block the user from sending their prompt</p>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-50">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <p class="text-neutral-700">Show value in under 3 seconds</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Iteration</h3>
+          <div class="p-6 rounded-lg border border-neutral-200">
+            <p class="text-neutral-700 mb-3">
+              <strong>Early versions were too verbose:</strong> walls of text about how to improve.
+            </p>
+            <p class="text-neutral-700">
+              <strong>I iterated to:</strong>
+            </p>
+            <ul class="mt-2 space-y-1 text-neutral-700">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">→</span>
+                <span>Short bullet improvements</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">→</span>
+                <span>A single "Try this rewrite" button</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">→</span>
+                <span>Optional "deep dive" for users who want the why</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Status & Impact -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Current Status & Impact</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Status: MVP Fully Working in Development</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-green-900">Chrome extension injects UI into ChatGPT</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-green-900">FastAPI backend handles analysis reliably</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-green-900">Firestore + Redis integration confirmed</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200">
+            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-green-900">Circuit breaker logic in place</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Impact (Qualitative)</h3>
+        <p class="text-neutral-700 mb-4">Users become more aware of:</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-400">💡</span>
+            <p class="text-blue-900">How vague their prompts are</p>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-400">💡</span>
+            <p class="text-blue-900">When they forgot to specify tone or format</p>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-400">💡</span>
+            <p class="text-blue-900">When they're asking for too many things at once</p>
+          </div>
+        </div>
+        <p class="mt-6 text-neutral-700">
+          Rewrites often read more natural and human, improving the chance of passing AI-detection in writing-heavy contexts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="mx-auto max-w-4xl px-6 py-10 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">Key Learnings</h2>
+      
+      <div class="space-y-4">
+        <div class="p-6 rounded-lg border border-neutral-200">
+          <h3 class="font-semibold mb-2">Prompt quality is teachable</h3>
+          <p class="text-neutral-700">Users quickly internalize patterns after a few analyses.</p>
+        </div>
+        <div class="p-6 rounded-lg border border-neutral-200">
+          <h3 class="font-semibold mb-2">Inline > separate tool</h3>
+          <p class="text-neutral-700">People won't go to another tab just to "fix" a prompt. Embedding into ChatGPT was crucial.</p>
+        </div>
+        <div class="p-6 rounded-lg border border-neutral-200">
+          <h3 class="font-semibold mb-2">Explain the "why," not just the "what"</h3>
+          <p class="text-neutral-700">The educational layer (small guides) turned out as important as the raw score.</p>
+        </div>
+        <div class="p-6 rounded-lg border border-neutral-200">
+          <h3 class="font-semibold mb-2">Local-first and privacy matter</h3>
+          <p class="text-neutral-700">Next steps include moving more analysis on-device or via local LLMs for users who care about privacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Next -->
+    <section class="mx-auto max-w-4xl px-6 py-10 pb-20 border-t border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-6">What's Next</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-3">Short-term Roadmap</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 text-neutral-600 font-semibold flex items-center justify-center">1</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Template Library</h4>
+                <p class="text-sm text-neutral-600">Save successful prompts and organize them by use case (coding, research, content, teaching).</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 text-neutral-600 font-semibold flex items-center justify-center">2</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Team Features</h4>
+                <p class="text-sm text-neutral-600">Shared prompt libraries, usage analytics, and tags for org-wide "prompt standards."</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 text-neutral-600 font-semibold flex items-center justify-center">3</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Local Models</h4>
+                <p class="text-sm text-neutral-600">Optional integration with local LLMs (e.g., via Ollama) for offline / private analysis.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 text-neutral-600 font-semibold flex items-center justify-center">4</div>
+              <div class="pt-1">
+                <h4 class="font-semibold mb-1">Multi-tool Expansion</h4>
+                <p class="text-sm text-neutral-600">Extend beyond ChatGPT to other AI tools (Notion AI, Gemini, etc.), making Subtext a general "prompt intelligence layer" for any AI interface.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-10 border-t border-neutral-200">
+        <a href="../projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to All Projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../script-modern.js" defer></script>
+</body>
+</html>

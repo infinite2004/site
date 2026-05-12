@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 12 — E-Ink Laptop Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../../style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <!-- Main Header -->
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../../../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../../../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <!-- Project Navigation -->
+    <nav class="border-b border-neutral-200 bg-neutral-50 mb-10">
+        <div class="mx-auto max-w-4xl px-6 py-3 flex overflow-x-auto gap-6 text-sm whitespace-nowrap">
+            <a href="../../eink-laptop.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">About</a>
+            <a href="../blog.html" class="font-semibold text-neutral-900">Blog (Process)</a>
+            <a href="../research.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Research Library</a>
+            <a href="../presentations.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Presentations</a>
+            <a href="../tasks.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Tasks / Timeline</a>
+        </div>
+    </nav>
+
+    <article class="mx-auto max-w-2xl px-6 pb-20">
+        <header class="mb-10">
+            <div class="text-sm text-neutral-500 mb-2">
+                <a href="../blog.html" class="hover:text-neutral-900">← Back to Blog</a>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Week 12 — Export Features (ICS)</h1>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-neutral-600 border-l-2 border-neutral-200 pl-4">
+                <div><strong>Date range:</strong> Apr 7 – Apr 13</div>
+            </div>
+        </header>
+
+        <div class="prose prose-neutral max-w-none">
+            <h2>1) Summary</h2>
+            <ul>
+                <li>✅ Implemented calendar export to .ics format</li>
+                <li>✅ Generated .ics files from writing sessions</li>
+                <li>✅ Enabled tracking writing habits over time</li>
+                <li>✅ Debugged time sync and formatting issues</li>
+            </ul>
+
+            <hr>
+
+            <h2>2) What I did</h2>
+            
+            <h3>Calendar Export</h3>
+            <ul>
+                <li><strong>.ics generation</strong> — Created iCalendar format files containing all writing sessions.</li>
+                <li><strong>Event details</strong> — Each writing session appears as calendar event with title, time, and duration.</li>
+                <li><strong>Compatibility</strong> — Ensured generated files work with all major calendar applications.</li>
+            </ul>
+
+            <h3>Debugging & Testing</h3>
+            <ul>
+                <li><strong>Time formatting</strong> — Fixed UTC/local time issues in .ics output.</li>
+                <li><strong>NTP accuracy</strong> — Resolved time synchronization bugs.</li>
+                <li><strong>Export verification</strong> — Tested .ics files with Google Calendar, Apple Calendar, and others.</li>
+            </ul>
+
+            <hr>
+
+            <h2>3) Export capabilities</h2>
+            <ul>
+                <li>Single session export to .ics</li>
+                <li>Daily summary to calendar</li>
+                <li>Weekly/monthly activity overview</li>
+                <li>Import into calendar apps</li>
+                <li>External data analysis</li>
+            </ul>
+
+            <hr>
+
+            <h2>4) Process images</h2>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <img src="../../../../assets/pictures%20for%20week%202-5/week%2012/IMG_5835.png" alt="Week 12 process image 1" class="h-full w-full object-cover" loading="lazy" />
+              </figure>
+              <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <img src="../../../../assets/pictures%20for%20week%202-5/week%2012/IMG_5836.png" alt="Week 12 process image 2" class="h-full w-full object-cover" loading="lazy" />
+              </figure>
+              <figure class="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm sm:col-span-2">
+                <img src="../../../../assets/pictures%20for%20week%202-5/week%2012/IMG_5838.png" alt="Week 12 process image 3" class="h-full w-full object-cover" loading="lazy" />
+              </figure>
+            </div>
+        </div>
+    </article>
+  </main>
+</body>
+</html>

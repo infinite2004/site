@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Abdul Qureshi</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Abdul Qureshi's portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-neutral-50">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="pages/all-projects.html" class="hover:text-neutral-600 transition-colors">Projects</a>
+        <a href="pages/about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="pages/resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen flex items-center justify-center px-6">
+    <div class="text-center max-w-md">
+      <div class="mb-8">
+        <h1 class="text-6xl sm:text-8xl font-bold text-neutral-200 mb-4">404</h1>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-4">Page Not Found</h2>
+        <p class="text-neutral-600 mb-8">The page you're looking for doesn't exist or has been moved.</p>
+      </div>
+      
+      <div class="space-y-4">
+        <a href="index.html" class="inline-flex items-center rounded-md bg-neutral-900 px-6 py-3 text-white font-medium shadow-sm transition hover:bg-neutral-800">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          Go Home
+        </a>
+        
+        <div class="text-sm text-neutral-500">
+          <p>Or try one of these pages:</p>
+          <div class="mt-2 space-x-4">
+            <a href="pages/about.html" class="hover:text-neutral-700 transition-colors">About</a>
+            <a href="pages/all-projects.html" class="hover:text-neutral-700 transition-colors">Projects</a>
+            <a href="pages/resume.html" class="hover:text-neutral-700 transition-colors">Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-5 py-10 text-sm text-neutral-500">
+    <div class="flex items-center justify-between">
+      <p>© <span id="year"></span> Abdul Qureshi</p>
+      <div class="flex gap-4">
+        <a href="https://github.com/infinite2004" target="_blank" class="hover:text-neutral-700">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" class="hover:text-neutral-700">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script-modern.js" defer></script>
+</body>
+</html>

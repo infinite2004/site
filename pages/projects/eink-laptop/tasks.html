@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tasks & Timeline — E-Ink Laptop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../style-modern.css" />
+</head>
+<body class="font-[Inter] text-neutral-900 bg-white">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
+      <a href="../../../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="../../../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
+        <span>Abdul Q</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="../../../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
+        <a href="../../about.html" class="hover:text-neutral-600 transition-colors">About</a>
+        <a href="../../resume.html" class="hover:text-neutral-600 transition-colors">Resume</a>
+        <a href="../../../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen">
+    <nav class="border-b border-neutral-200 bg-neutral-50 mb-10">
+        <div class="mx-auto max-w-4xl px-6 py-3 flex overflow-x-auto gap-6 text-sm whitespace-nowrap">
+            <a href="../eink-laptop.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">About</a>
+            <a href="blog.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Blog (Process)</a>
+            <a href="research.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Research Library</a>
+            <a href="presentations.html" class="text-neutral-600 hover:text-neutral-900 transition-colors">Presentations</a>
+            <a href="tasks.html" class="font-semibold text-neutral-900">Tasks / Timeline</a>
+        </div>
+    </nav>
+
+    <section class="mx-auto max-w-4xl px-6 pb-20">
+      <header class="mb-10">
+        <h1 class="text-3xl font-bold tracking-tight mb-4">Tasks & Timeline</h1>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Milestones -->
+        <div>
+            <h2 class="text-xl font-semibold mb-6">Milestones</h2>
+            <div class="space-y-4 relative border-l border-neutral-200 ml-3 pl-6 pb-2">
+                 <div class="relative">
+                    <span class="absolute -left-[29px] top-1.5 h-3 w-3 rounded-full bg-green-500 ring-4 ring-white"></span>
+                    <h3 class="font-medium">M1: Project Proposal & Setup</h3>
+                    <p class="text-sm text-neutral-500">Jan 20 — Completed</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-1.5 h-3 w-3 rounded-full bg-blue-500 ring-4 ring-white"></span>
+                    <h3 class="font-medium">M2: Hardware Sourcing</h3>
+                    <p class="text-sm text-neutral-500">Feb 15 — In Progress</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-1.5 h-3 w-3 rounded-full bg-neutral-200 ring-4 ring-white"></span>
+                    <h3 class="font-medium">M3: First Prototype</h3>
+                    <p class="text-sm text-neutral-500">Mar 10 — Planned</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Sprint -->
+        <div>
+            <h2 class="text-xl font-semibold mb-6">Current Sprint</h2>
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <input type="checkbox" checked disabled class="mt-1">
+                        <span class="text-neutral-500 line-through">Setup project blog structure</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <input type="checkbox" disabled class="mt-1">
+                        <span>Research display drivers</span>
+                    </li>
+                     <li class="flex items-start gap-3">
+                        <input type="checkbox" disabled class="mt-1">
+                        <span>Sketch initial case design</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

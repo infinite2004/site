@@ -1,0 +1,94 @@
+{
+  "_comment": "Single source of truth for project hierarchy and positioning. Used to keep the homepage, work page, archive, and case-study pages in sync across refactor phases. Static site has no build step yet, so this is currently a reference/data file; later phases may render from it.",
+  "identity": {
+    "name": "Abdul Qureshi",
+    "title": "Product Designer & Creative Technologist",
+    "location": "New York",
+    "shortBio": "Abdul Qureshi is a Product Designer & Creative Technologist based in New York. He recently graduated from NYU's Integrated Design & Media program and builds physical-digital products across UX, embedded systems, AI tools, 3D printing, and interaction design.",
+    "description": "I design and prototype physical-digital products that connect hardware, software, and human experience. I recently graduated from NYU's Integrated Design & Media program, where my work focused on E-Ink devices, embedded systems, AI tools, 3D printing, and interaction design.",
+    "availability": "Currently looking for product design, UX, creative technology, hardware prototyping, and early-stage product opportunities.",
+    "links": {
+      "email": "mailto:aq2073@nyu.edu",
+      "github": "https://github.com/infinite2004",
+      "linkedin": "https://www.linkedin.com/in/abdulrahman-qureshi/",
+      "resume": "/assets/resume/abdul-qureshi-resume.pdf",
+      "domain": "https://abdulq.com"
+    }
+  },
+  "featuredCaseStudies": [
+    {
+      "id": "monoscribe",
+      "title": "Monoscribe",
+      "order": 1,
+      "centerpiece": true,
+      "url": "/pages/projects/monoscribe.html",
+      "summary": "A distraction-free E-Ink writing device for focused note-taking, file navigation, and quiet AI assistance.",
+      "proves": "Complete product vision, hardware/software integration, systems thinking, interface design, physical prototyping.",
+      "predecessor": "eink-laptop",
+      "tags": ["hardware", "software", "embedded", "industrial-design"]
+    },
+    {
+      "id": "seed-planter",
+      "title": "3D Printer Seed Planter",
+      "order": 2,
+      "url": "/pages/projects/seed-planter.html",
+      "summary": "A repurposed 3D printer that plants seeds using G-code motion, an ESP32, and a servo-controlled dropper.",
+      "proves": "Resourcefulness, mechanism design, physical computing, prototyping under constraints, sustainability.",
+      "tags": ["hardware", "physical-computing", "sustainability"]
+    },
+    {
+      "id": "signal",
+      "title": "Signal",
+      "order": 3,
+      "url": "/pages/projects/signal.html",
+      "summary": "A traditional product-design / UX case study from Agile Product Design.",
+      "proves": "Traditional UX/product process, research, user flows, agile iteration, interface design.",
+      "tags": ["ux", "product-design"]
+    }
+  ],
+  "selectedExperiments": [
+    { "id": "subtext", "title": "Subtext", "url": "/pages/projects/subtext.html", "tags": ["ai", "software"] },
+    { "id": "hermes-lens", "title": "Hermes Lens", "url": "/pages/projects/hermes-lens.html", "tags": ["hardware", "computer-vision"] },
+    { "id": "timetrace", "title": "TimeTrace", "url": "/pages/projects/timetrace.html", "tags": ["ai", "privacy"] },
+    { "id": "buildledger", "title": "BuildLedger", "url": "/pages/projects/buildledger.html", "tags": ["software", "tooling"] },
+    { "id": "filter-reality", "title": "Filter Reality", "url": "/pages/projects/filter-reality.html", "tags": ["ar", "computer-vision"], "note": "Absorbs the older GestureAR experiment." },
+    { "id": "ar-headphone-album", "title": "AR Headphone Album", "url": "/pages/projects/ar-headphone-album.html", "tags": ["ar", "interaction"] }
+  ],
+  "archiveAndExternal": [
+    { "id": "osmd", "title": "O.S.M.D", "url": "https://github.com/infinite2004/O.S.M.D", "external": true },
+    { "id": "squirtle", "title": "Squirtle Sprayer", "url": "https://abdulq1660.substack.com/p/i-3d-printed-a-squirtle-that-sprays", "external": true }
+  ],
+  "redirects": {
+    "/pages/projects/eink-laptop.html": "/pages/projects/monoscribe.html",
+    "/pages/projects.html": "/pages/work.html",
+    "/pages/projects/tally.html": "/pages/projects/timetrace.html",
+    "/pages/projects/gesturear.html": "/pages/projects/filter-reality.html",
+    "/pages/projects/squirtle.html": "/pages/all-projects.html"
+  },
+  "legacy": {
+    "files": ["style.css", "script.js", "dashboard.css", "dashboard.js", "pages/dashboard.html", "components/navigation.html"],
+    "notes": "style.css/script.js are the old desktop/window UI (archival only). dashboard.* is a personal prototype, not linked from hiring nav and marked noindex. components/navigation.html is a source reference for the canonical header.",
+    "einkLaptopSubsite": "pages/projects/eink-laptop/ is preserved as the Monoscribe process archive (weekly build log)."
+  },
+  "assetCleanupPlan": {
+    "status": "planned-not-executed",
+    "canonicalResume": "assets/resume/abdul-qureshi-resume.pdf",
+    "duplicateResumePdfsToRemoveLater": [
+      "assets/Abdul_Qureshi_Res.pdf",
+      "assets/Abdul_Qureshi_Resume_.pdf",
+      "assets/Abdul_Qureshi_Resume___pdf.pdf",
+      "assets/Abdul_Qureshi_Resumee.pdf",
+      "assets/Abdul_Qureshi___Resume___.pdf",
+      "assets/Abdul_Qureshi___Resume____.pdf"
+    ],
+    "filenamesWithSpacesToNormalizeLater": [
+      "assets/raspberry .png",
+      "assets/asthetic _five.mp4",
+      "assets/IMG_1915 (1).mov",
+      "assets/eink_scree_documentation/most recent version.mp4",
+      "assets/pictures for week 2-5/"
+    ],
+    "recommendedStructure": "assets/{brand,resume,og,projects/<slug>/{images,models,video}}",
+    "note": "Do not bulk-delete now. The canonical resume is copied to the new path and all links updated; old PDFs are left in place to avoid breaking any external references until a dedicated cleanup pass."
+  }
+}

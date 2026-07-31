@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal — Abdul Qureshi</title>
+  <meta name="description" content="Signal is a cross-platform trust assistant that helps users identify suspicious AI-generated political content in real time, understand why it was flagged, and make more informed decisions before trusting or sharing it." />
+  <meta name="keywords" content="Signal, product design, UX case study, AI misinformation, political content, trust assistant, Figma, usability testing, live monitored browsing" />
+  <meta property="og:title" content="Signal — Abdul Qureshi" />
+  <meta property="og:description" content="A product design case study for a cross-platform trust assistant that adds in-feed guidance, explanations, evidence, and share warnings for suspicious AI-generated political content." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/signal.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/signal.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-21-qm2" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-21-qm2" />
+  <style>
+    .signal-video-frame {
+      width: min(100%, 360px);
+      margin-inline: auto;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: #101114;
+      box-shadow: var(--ds-shadow-card);
+    }
+
+    .signal-video-frame video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      height: auto;
+      background: #101114;
+      object-fit: cover;
+    }
+
+    .signal-scroll-showcase {
+      border-top: 1px solid var(--border);
+      padding-block: clamp(1rem, 3vw, 2rem);
+    }
+
+    .signal-scroll-showcase__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: start;
+    }
+
+    .signal-sticky-video {
+      margin: 0;
+    }
+
+    .signal-sticky-video figcaption {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    @media (min-width: 1024px) {
+      .signal-scroll-showcase__grid {
+        grid-template-columns: minmax(380px, 0.98fr) minmax(0, 1.02fr);
+      }
+
+      .signal-scroll-showcase__media {
+        position: sticky;
+        top: 5rem;
+      }
+
+      .signal-video-frame--sticky video {
+        max-height: calc(100vh - 8rem);
+      }
+
+      .signal-video-frame--sticky {
+        width: min(100%, 440px);
+      }
+
+      .signal-scroll-showcase__copy .case-section {
+        border-top: 1px solid var(--border);
+      }
+
+      .signal-scroll-showcase__copy .case-section:first-child {
+        border-top: 0;
+      }
+
+      .signal-scroll-showcase__copy .section-tight {
+        padding-block: clamp(2rem, 4vw, 3.5rem);
+      }
+
+      .signal-scroll-showcase__copy .site-container {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+      }
+
+      .signal-scroll-showcase__copy .case-section-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .signal-scroll-showcase__copy .section-heading {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body class="text-neutral-900 ds-theme" data-scroll-theme="signal">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" />
+        <span>Abdul Qureshi</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="site-container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Project Hero -->
+    <section class="project-hero section">
+      <div class="site-container">
+        <a href="/pages/work.html" class="case-back-link">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Back to work
+        </a>
+        <p class="eyebrow">Featured Case Study</p>
+        <h1 class="page-title">Signal</h1>
+        <p class="project-subtitle">A cross-platform trust assistant for suspicious AI-generated political content.</p>
+        <p class="body-large mt-4 max-w-3xl">
+          Signal helps everyday social media users identify suspicious AI-generated political content in real time,
+          understand why it was flagged, and make more informed decisions before trusting or sharing it.
+        </p>
+        <div class="button-row mt-5">
+          <a
+            href="https://embed.figma.com/proto/KbVDUjBkZf6PpUbtjkPMjJ/lofi?node-id=1-13&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A13&embed-host=share"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+          >
+            View low-fi wireframes in Figma →
+          </a>
+          <a href="#prototype" class="btn btn-secondary">Jump to prototype</a>
+          <a href="#testing" class="btn btn-ghost">Read testing results</a>
+        </div>
+        <figure class="case-figure hero-figure reveal-blur">
+          <div class="signal-video-frame">
+            <video data-signal-walkthrough src="/assets/signal-walkthrough.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="Signal app walkthrough video"></video>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="signal-scroll-showcase" aria-label="Signal scrolling case study with product video">
+      <div class="site-container signal-scroll-showcase__grid">
+        <aside class="signal-scroll-showcase__media" aria-label="Signal product walkthrough">
+          <figure class="case-figure signal-sticky-video">
+            <div class="signal-video-frame signal-video-frame--sticky">
+              <video data-signal-walkthrough src="/assets/signal-walkthrough.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="Signal app walkthrough video"></video>
+            </div>
+          </figure>
+        </aside>
+        <div class="signal-scroll-showcase__copy">
+
+    <!-- 3. Problem -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Problem</p>
+          <h2 class="section-title">Suspicious political content spreads faster than people can verify it</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            During election season, users encounter political content that may be AI-generated, misleading, or missing context.
+            Because that content spreads quickly across social platforms, people may trust or share it before verifying it.
+          </p>
+          <p>
+            Signal addresses this gap by adding real-time trust guidance directly into the browsing experience, helping users
+            pause, understand why content was flagged, and review evidence before they share.
+          </p>
+          <div class="insight-grid">
+            <div class="insight-card"><h3>Realistic fakes</h3><p>AI-generated political posts can look credible at a glance.</p></div>
+            <div class="insight-card"><h3>Fast spread</h3><p>Misleading content moves through communities before context catches up.</p></div>
+            <div class="insight-card"><h3>Verification gap</h3><p>Most users do not have time to fact-check every post while scrolling.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Goal -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Goal</p>
+          <h2 class="section-title">Help users pause before trusting or sharing</h2>
+        </div>
+        <div class="case-section-body">
+          <div class="callout">
+            <h3 class="font-semibold">Success criteria</h3>
+            <p class="mt-2 text-neutral-700">Users should understand why political content was flagged, see supporting evidence, and stay in control of monitored platforms, alerts, and privacy.</p>
+          </div>
+          <ul class="space-y-3 text-neutral-700">
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Flag suspicious political content in real time.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Explain why content was flagged and provide evidence before sharing.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Keep monitoring, privacy, alerts, and platform controls user-controlled.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Target User / Context -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Target User</p>
+          <h2 class="section-title">Everyday social media users trying to stay informed</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Signal is designed for people who encounter political content while browsing platforms like Instagram, X, TikTok,
+            and YouTube. The prototype centers on Lamar, a 26-year-old community-oriented user in Akron, Ohio who wants to stay
+            informed during election season without becoming a professional fact-checker.
+          </p>
+          <p>
+            Lamar represents the core audience: thoughtful but not expert, politically aware but not professionally trained,
+            and exposed to real-time content that shapes what people around him believe and share.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Process Overview -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Process</p>
+          <h2 class="section-title">An agile, iterative design process</h2>
+        </div>
+        <div class="case-section-body">
+          <div class="timeline">
+            <div class="timeline-step"><h3 class="font-semibold">1 · Problem framing</h3><p class="mt-1 text-sm text-neutral-600">Scoped the risk around AI-generated political content during election cycles.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">2 · User context</h3><p class="mt-1 text-sm text-neutral-600">Defined everyday social media users like Lamar as the primary audience.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">3 · Product model</h3><p class="mt-1 text-sm text-neutral-600">Separated Signal into a standalone app and a live monitored browsing layer.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">4 · Prototype</h3><p class="mt-1 text-sm text-neutral-600">Built low- and high-fidelity Figma flows around in-feed trust labels and evidence.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">5 · Testing</h3><p class="mt-1 text-sm text-neutral-600">Ran usability sessions to test clarity, hierarchy, onboarding, and trust cues.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">6 · Iteration</h3><p class="mt-1 text-sm text-neutral-600">Refined explanations, visual hierarchy, navigation, and exposure history.</p></div>
+            <div class="timeline-step"><h3 class="font-semibold">7 · Final direction</h3><p class="mt-1 text-sm text-neutral-600">Delivered a trust assistant concept focused on judgment support, not automation.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Research / Discovery -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2 class="section-title">Understanding trust decisions in the feed</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            I reframed the project around how everyday users decide whether political content is trustworthy while browsing.
+            The product needed to support quick judgment without feeling like surveillance, censorship, or an expert-only tool.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div class="card p-5">
+              <h3 class="font-semibold mb-2">What I did</h3>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li>Persona framing around Lamar and election-season browsing</li>
+                <li>Journey mapping for live monitored browsing</li>
+                <li>Trust label, evidence, and warning pattern exploration</li>
+                <li>Competitive review of fact-checking and platform safety patterns</li>
+              </ul>
+            </div>
+            <div class="card p-5">
+              <h3 class="font-semibold mb-2">What I learned</h3>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li>Users need context at the moment suspicious content appears</li>
+                <li>Trust labels must explain the reason behind each flag</li>
+                <li>Monitoring needs clear platform, privacy, and alert controls</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Design Decisions -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Design Decisions</p>
+          <h2 class="section-title">Choices that shaped the product</h2>
+        </div>
+        <div class="case-section-body">
+          <div class="decision-grid">
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Design Signal as one product with two connected layers.</p>
+              <p class="decision-label">Reason</p>
+              <p>The standalone app gives users a home base, while live monitored browsing helps them in the exact moment suspicious content appears.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>The product model is more complex to explain than a single dashboard.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Use in-feed trust labels instead of blocking or hiding content.</p>
+              <p class="decision-label">Reason</p>
+              <p>Signal should support judgment, not make the final decision for the user.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Labels must stay subtle enough to feel calm but visible enough to interrupt risky sharing.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Pair every flag with reasons, evidence, and a share warning.</p>
+              <p class="decision-label">Reason</p>
+              <p>Users need to understand whether a claim is disputed, a source is questionable, or a synthetic marker appears.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Evidence screens can become dense if hierarchy and plain language are not handled carefully.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Make platform monitoring, alerts, and privacy explicitly user-controlled.</p>
+              <p class="decision-label">Reason</p>
+              <p>Trust guidance should not feel like secret background surveillance.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>More controls require careful onboarding so the experience still feels approachable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. System / Prototype -->
+    <section id="prototype" class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Prototype</p>
+          <h2 class="section-title">From flows to interactive screens</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            The core journey moves from the Signal app into live monitored browsing: the user opens a supported platform,
+            browses normally, encounters suspicious political content, sees an in-feed trust label, reviews an explanation and
+            evidence, and pauses before sharing.
+          </p>
+          <figure class="case-figure mt-4">
+            <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-5 sm:p-6 overflow-x-auto">
+              <div class="system-flow">
+                <span class="flow-node">Open with Signal</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-node">Browse platform</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-node">Trust label appears</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-node flow-node--accent">Review evidence before sharing</span>
+              </div>
+            </div>
+            <figcaption>Core interaction loop: Signal adds context during live browsing, explains why content was flagged, and helps users pause before sharing.</figcaption>
+          </figure>
+          <div class="grid grid-cols-1 gap-4 mt-6">
+            <figure class="case-figure">
+              <div class="rounded-xl ring-1 ring-neutral-200 bg-white overflow-hidden">
+                <iframe
+                  src="/assets/Midway%20passed%20%281%29%20%281%29.pdf"
+                  title="Signal original user flow"
+                  loading="lazy"
+                  class="block w-full aspect-[16/9] border-0"
+                ></iframe>
+              </div>
+              <div class="button-row mt-3">
+                <a href="/assets/Midway%20passed%20%281%29%20%281%29.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Open user flow PDF</a>
+              </div>
+              <figcaption>Original user-flow diagram showing the live monitored browsing structure behind the Signal prototype.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <div class="rounded-xl ring-1 ring-neutral-200 bg-white overflow-hidden">
+                <iframe
+                  src="https://embed.figma.com/proto/KbVDUjBkZf6PpUbtjkPMjJ/lofi?node-id=1-13&amp;p=f&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A13&amp;embed-host=share"
+                  title="Signal low-fidelity Figma prototype"
+                  loading="lazy"
+                  class="block w-full aspect-[16/9] border-0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <figcaption>Low-fidelity wireframes built in Figma to test monitored browsing, trust labels, evidence, and share warnings.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <div class="rounded-xl ring-1 ring-neutral-200 bg-white overflow-hidden">
+                <iframe
+                  src="https://embed.figma.com/proto/oxnBWnDLN8iT0P13PDO83m/file_signal?node-id=1-17&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A17&amp;embed-host=share"
+                  title="Signal high-fidelity Figma prototype"
+                  loading="lazy"
+                  class="block w-full aspect-[16/9] border-0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <figcaption>High-fidelity product screens in Figma — the final trust-assistant interface after testing and iteration.</figcaption>
+            </figure>
+          </div>
+
+          <div class="callout mt-6">
+            <h3 class="font-semibold">Walk through the Figma screens</h3>
+            <p class="mt-2 text-neutral-700">
+              The embedded Figma flows show how Signal moves from early structure into a high-fidelity trust assistant with
+              live browsing, in-feed labels, evidence drawers, and user-controlled settings.
+            </p>
+            <div class="button-row mt-4">
+              <a
+                href="https://embed.figma.com/proto/KbVDUjBkZf6PpUbtjkPMjJ/lofi?node-id=1-13&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A13&embed-host=share"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                View low-fi wireframes in Figma →
+              </a>
+              <a
+                href="https://embed.figma.com/proto/oxnBWnDLN8iT0P13PDO83m/file_signal?node-id=1-17&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A17&embed-host=share"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-secondary"
+              >
+                View high-fi screens in Figma →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9b. Usability Testing -->
+    <section id="testing" class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Usability Testing</p>
+          <h2 class="section-title">What users actually said</h2>
+          <p class="body mt-3 text-neutral-600">
+            I ran moderated usability sessions on the low-fidelity Figma flows. Participants understood that Signal helps
+            identify suspicious political content and gives context before sharing, but the tests surfaced problems with
+            clarity, hierarchy, onboarding, navigation, and dense explanation screens.
+          </p>
+        </div>
+        <div class="case-section-body">
+          <div class="callout">
+            <h3 class="font-semibold">Overall result</h3>
+            <p class="mt-2 text-neutral-700">
+              The concept was strong, but the interface needed to communicate trust faster. Users needed clearer value up front,
+              more visual content previews, and stronger hierarchy around why a post was flagged.
+            </p>
+          </div>
+
+          <h3 class="card-title mt-8">Six patterns from the feedback</h3>
+          <div class="insight-grid mt-3">
+            <div class="insight-card">
+              <h3>1 · Too much text, not enough visuals</h3>
+              <p>The app felt text-heavy. Users wanted more icons, images, stronger visual cues, and real content thumbnails — especially for Instagram and Reels.</p>
+            </div>
+            <div class="insight-card">
+              <h3>2 · Onboarding was unclear</h3>
+              <p>The flow was confusing. Users asked for fewer "Skip for now" outs, a clearer upfront benefit, a simpler step-by-step structure, and larger, more obvious checkboxes and buttons.</p>
+            </div>
+            <div class="insight-card">
+              <h3>3 · Navigation needed work</h3>
+              <p>The back arrow felt unclear. Users wanted wording that showed when they were returning to the main app, and stronger labeling and hierarchy across navigation buttons.</p>
+            </div>
+            <div class="insight-card">
+              <h3>4 · Buttons weren't always obvious</h3>
+              <p>Some controls read as decoration, not as interactive elements. Onboarding controls especially needed to look tappable, and primary actions needed to stand out more.</p>
+            </div>
+            <div class="insight-card">
+              <h3>5 · Trust screens lacked structure</h3>
+              <p>Users wanted clearer structure in the explanation and evidence areas, plus a faster way to scan <em>why</em> content was flagged.</p>
+            </div>
+            <div class="insight-card">
+              <h3>6 · Exposure history felt bloated</h3>
+              <p>Too much information and too much reading. Users wanted it more concise, more visual, and easier to scan quickly.</p>
+            </div>
+          </div>
+
+          <h3 class="card-title mt-10">A clearer onboarding flow, derived from feedback</h3>
+          <p class="caption mt-1">Three steps users could repeat back unprompted after the second round of testing.</p>
+          <figure class="case-figure mt-3">
+            <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-5 sm:p-6 overflow-x-auto">
+              <div class="system-flow">
+                <span class="flow-node">1 · Choose monitored platforms</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-node">2 · Browse with live trust labels</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-node flow-node--accent">3 · Review evidence before sharing</span>
+              </div>
+            </div>
+            <figcaption>Rewritten onboarding flow — one outcome per step, with the user benefit stated up front.</figcaption>
+          </figure>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            <div class="card p-5">
+              <h3 class="font-semibold">3 key insights</h3>
+              <ul class="mt-3 space-y-2 text-sm text-neutral-700">
+                <li>→ Users understood the concept — just not immediately.</li>
+                <li>→ The interface needed stronger visual hierarchy and less text.</li>
+                <li>→ Real content previews and clearer UI cues were what made the app feel trustworthy.</li>
+              </ul>
+            </div>
+            <div class="card p-5">
+              <h3 class="font-semibold">2 biggest struggle areas</h3>
+              <ul class="mt-3 space-y-2 text-sm text-neutral-700">
+                <li>→ Onboarding and first-time understanding</li>
+                <li>→ Navigation and dense information screens</li>
+              </ul>
+            </div>
+          </div>
+
+          <blockquote class="pull-quote mt-8">
+            The biggest single change: make trust guidance visible in the moment of browsing, then simplify the explanation
+            screens so users can understand the flag before deciding whether to share.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Iterations -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Iterations</p>
+          <h2 class="section-title">How testing reshaped the design</h2>
+          <p class="body mt-3 text-neutral-600">Each iteration responds directly to a pattern from the usability sessions above.</p>
+        </div>
+        <div class="case-section-body">
+          <div class="iteration-list">
+            <article class="iteration-block">
+              <span class="iteration-step">Sprint 1 · Onboarding</span>
+              <h3>Cut the setup, lead with the benefit</h3>
+              <p><strong>What it was:</strong> A setup flow that did not clearly explain what live monitoring did or how users stayed in control.</p>
+              <p><strong>What testing said:</strong> Users understood the broad idea, but needed the value and privacy boundaries explained earlier.</p>
+              <p><strong>What changed next:</strong> Rewrote onboarding around three plain-language steps: choose monitored platforms, browse with live labels, review evidence before sharing.</p>
+            </article>
+            <article class="iteration-block">
+              <span class="iteration-step">Sprint 2 · Visual hierarchy</span>
+              <h3>Show, don't write</h3>
+              <p><strong>What it was:</strong> Text-heavy screens explaining trust labels and flagged content in long paragraphs.</p>
+              <p><strong>What testing said:</strong> The app felt dense; users wanted icons, content thumbnails, and visual cues over walls of copy — especially for Instagram/Reels.</p>
+              <p><strong>What changed next:</strong> Replaced paragraph-led screens with thumbnail-first cards, iconography for flag categories, and reduced body text by roughly half.</p>
+            </article>
+            <article class="iteration-block">
+              <span class="iteration-step">Sprint 3 · Navigation &amp; buttons</span>
+              <h3>Make controls unambiguous</h3>
+              <p><strong>What it was:</strong> A bare back arrow, low-contrast buttons, and onboarding controls that didn't look interactive.</p>
+              <p><strong>What testing said:</strong> Users weren't sure where the back arrow led, mistook buttons for labels, and missed primary actions.</p>
+              <p><strong>What changed next:</strong> Labeled the back arrow ("Back to feed"), promoted primary actions visually, and gave every interactive control a button-shaped, high-contrast treatment.</p>
+            </article>
+            <article class="iteration-block">
+              <span class="iteration-step">Sprint 4 · Trust &amp; history</span>
+              <h3>Structure the "why flagged" screens</h3>
+              <p><strong>What it was:</strong> A single trust/evidence screen with mixed information types, and an exposure history list that read like a log.</p>
+              <p><strong>What testing said:</strong> Users wanted clearer sections for disputed claims, source issues, synthetic markers, and context.</p>
+              <p><strong>What changed next:</strong> Introduced a more structured evidence layout and rebuilt exposure history into a compact, visual review surface.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Final Outcome -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Outcome</p>
+          <h2 class="section-title">A trust assistant for live social browsing</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Signal delivers a high-fidelity concept for a cross-platform trust assistant. Instead of hiding content or making
+            decisions for the user, Signal adds trust labels directly in-feed, explains why posts were flagged, provides
+            evidence before sharing, and gives users control over monitored platforms, alerts, and privacy.
+          </p>
+          <figure class="case-figure mt-4">
+            <div class="rounded-xl ring-1 ring-neutral-200 bg-white overflow-hidden">
+              <iframe
+                src="https://cargo-cast-97673796.figma.site/"
+                title="Signal final high-fidelity screens"
+                loading="lazy"
+                class="block w-full aspect-[16/9] border-0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="button-row mt-4">
+              <a
+                href="https://cargo-cast-97673796.figma.site/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                Open final screens
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14m-4-4v10a1 1 0 001 1h10"/></svg>
+              </a>
+            </div>
+            <figcaption>Final interface direction: live monitored browsing, in-feed trust labels, evidence, share warnings, and user-controlled settings.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Reflection -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Reflection</p>
+          <h2 class="section-title">What I took away</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Designing for trust means designing for agency. Signal cannot feel like it is policing content or secretly watching
+            users. It has to explain what it is doing, show why something was flagged, and leave the final decision with the user.
+          </p>
+          <p>
+            The strongest version of the concept emerged when the product moved closer to the moment of risk: live browsing,
+            in-feed labels, and evidence before sharing. The standalone app still matters, but the trust layer becomes most useful
+            when it appears in context.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Next Steps -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Next Steps</p>
+          <h2 class="section-title">If I continued the project</h2>
+        </div>
+        <div class="case-section-body">
+          <ul class="space-y-3 text-neutral-700">
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Prototype live monitored browsing with real platform-like content streams.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Test whether users trust labels, evidence, and share warnings during realistic browsing sessions.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Refine privacy controls so monitoring feels transparent, optional, and user-controlled.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Related Projects / CTA -->
+    <section class="case-section section">
+      <div class="site-container">
+        <div class="case-cta">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Keep exploring</p>
+            <h2 class="section-title text-white mt-2">See the centerpiece project</h2>
+            <p class="body mt-3">Return to Monoscribe for the full hardware-software product case study, or get in touch about product design roles.</p>
+          </div>
+          <div class="button-row">
+            <a href="/pages/projects/monoscribe.html" class="btn btn-accent btn-lg">Monoscribe →</a>
+            <a href="/pages/work.html" class="btn btn-on-dark btn-lg">Back to Work</a>
+            <a href="/pages/contact.html" class="btn btn-on-dark btn-lg">Contact Me</a>
+            <a href="/assets/resume/abdul-qureshi-resume.pdf" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="site-container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function syncSignalWalkthrough() {
+      const videos = Array.from(document.querySelectorAll("[data-signal-walkthrough]"));
+      if (videos.length < 2) return;
+
+      let syncing = false;
+      let lastTimeSync = 0;
+
+      function syncFrom(source, syncPlayback) {
+        if (syncing) return;
+        syncing = true;
+
+        videos.forEach((video) => {
+          if (video === source) return;
+          if (Number.isFinite(source.currentTime) && Math.abs(video.currentTime - source.currentTime) > 0.35) {
+            video.currentTime = source.currentTime;
+          }
+          video.muted = source.muted;
+          video.playbackRate = source.playbackRate;
+
+          if (syncPlayback) {
+            if (source.paused) {
+              video.pause();
+            } else {
+              video.play().catch(() => {});
+            }
+          }
+        });
+
+        requestAnimationFrame(() => {
+          syncing = false;
+        });
+      }
+
+      videos.forEach((video) => {
+        video.addEventListener("play", () => syncFrom(video, true));
+        video.addEventListener("pause", () => syncFrom(video, true));
+        video.addEventListener("seeked", () => syncFrom(video, false));
+        video.addEventListener("ratechange", () => syncFrom(video, false));
+        video.addEventListener("volumechange", () => syncFrom(video, false));
+        video.addEventListener("timeupdate", () => {
+          const now = performance.now();
+          if (now - lastTimeSync < 700) return;
+          lastTimeSync = now;
+          syncFrom(video, false);
+        });
+      });
+
+      videos[0].addEventListener("loadedmetadata", () => syncFrom(videos[0], true), { once: true });
+    })();
+  </script>
+  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+</body>
+</html>

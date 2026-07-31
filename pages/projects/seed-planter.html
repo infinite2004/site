@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Printer Seed Planter — Abdul Qureshi</title>
+  <meta name="description" content="A physical computing case study about repurposing a broken 3D printer into a seed planting machine using an ESP32, a servo-controlled seed dropper, and a Python GUI." />
+  <meta name="keywords" content="3D printer seed planter, ESP32, G-code, servo, physical computing, mechanism design, sustainability, creative reuse, case study" />
+  <meta property="og:title" content="3D Printer Seed Planter — Abdul Qureshi" />
+  <meta property="og:description" content="Repurposing a broken 3D printer into a low-cost seed planting machine with ESP32 servo control and a Python GUI, driven by hand from Pronterface." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/seed-planter.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/seed-planter.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-23-cutting-mat" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-23-seed-layout" />
+  <script type="module" src="/assets/vendor/model-viewer.min.js"></script>
+</head>
+<body class="text-neutral-900 ds-theme" data-scroll-theme="seed-planter">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" />
+        <span>Abdul Qureshi</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="site-container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="project-hero section">
+      <div class="site-container">
+        <a href="/pages/work.html" class="case-back-link">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Back to work
+        </a>
+        <p class="eyebrow">Featured Case Study · Physical Computing</p>
+        <h1 class="page-title">Seed Dropper System</h1>
+        <p class="project-subtitle">Practicing resilience through reuse — a seed dropper built from a broken 3D printer.</p>
+        <p class="body-large mt-4 max-w-3xl">
+          This project explores how an old 3D printer can be transformed into a planting tool. Instead of building a motion
+          system from scratch, I reused the printer's existing X/Y movement and designed a seed-dropping mechanism controlled
+          by an ESP32 and servo motor, driven by a custom Python GUI that places seeds precisely onto soil.
+        </p>
+        <div class="button-row mt-5">
+          <a href="#story-demo" class="btn btn-primary btn-lg">Watch Demo</a>
+          <a href="/pages/projects/monoscribe.html" class="btn btn-secondary btn-lg">See Monoscribe</a>
+        </div>
+        <figure class="case-figure hero-figure hero-figure--seed mt-8 reveal-blur">
+          <img
+            src="/assets/pictures%20of%20the%20planting%20device/IMG_5925.jpeg"
+            alt="Repurposed Prusa i3 printer mounted with a seed-dropper syringe and a soil bed underneath, ready to plant"
+            loading="eager"
+            data-parallax="0.04"
+            class="block w-full rounded-xl ring-1 ring-neutral-200 bg-white object-contain"
+          />
+          <figcaption>Complete system: printer gantry for positioning, custom dropper on carriage, soil bed below.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Project Snapshot -->
+    <section class="site-container project-snapshot section-tight" aria-label="Project snapshot">
+      <div><span>Role</span><strong>Designer, Fabricator, Developer</strong></div>
+      <div><span>Tools</span><strong>ESP32, MG90S servo, Python, G-code, Pronterface, 3D printing</strong></div>
+      <div><span>Skills</span><strong>Physical computing, mechanism design, prototyping, automation, creative reuse</strong></div>
+      <div><span>Status</span><strong>Working prototype / class project refinement</strong></div>
+      <div><span>Core idea</span><strong>Broken printer motion + custom seed dropper = automated planting</strong></div>
+    </section>
+
+    <div class="story-progress" aria-hidden="true"><div class="story-progress__bar"></div></div>
+    <nav class="story-rail" aria-label="Story chapters">
+      <a href="#story-problem" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Problem</span></a>
+      <a href="#story-concept" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Concept</span></a>
+      <a href="#story-prototype" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Prototype</span></a>
+      <a href="#story-software" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Software</span></a>
+      <a href="#story-iterations" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Iterations</span></a>
+      <a href="#story-demo" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Demo</span></a>
+      <a href="#story-outcome" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Outcome</span></a>
+      <a href="#story-reflection" class="story-rail__link"><span class="story-rail__dot"></span><span class="story-rail__label">Reflection</span></a>
+    </nav>
+
+    <div class="seed-story">
+
+    <!-- 1. Problem -->
+    <section id="story-problem" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail">
+          <span class="story-chapter__num">01</span>
+          <p class="eyebrow">The Problem</p>
+          <h2 class="section-title">Repetitive planting, idle machines</h2>
+        </div>
+        <div class="story-chapter__content">
+          <div class="story-beat">
+            <p>
+              Small-scale planting can be repetitive and inconsistent. At the same time, old or broken 3D printers often still
+              have usable motion systems. I wanted to explore whether a discarded fabrication tool could be repurposed into a
+              useful planting machine.
+            </p>
+          </div>
+          <div class="story-beat">
+            <p>
+              The value of this project is not that it solves farming at scale. The value is that it shows how an existing
+              machine can be reimagined as a new tool through design, fabrication, and physical computing.
+            </p>
+          </div>
+          <div class="story-beat insight-grid mt-4">
+            <div class="insight-card"><h3>Inconsistency</h3><p>Hand planting varies in spacing and depth.</p></div>
+            <div class="insight-card"><h3>Idle hardware</h3><p>Broken printers still have working motion systems.</p></div>
+            <div class="insight-card"><h3>Access</h3><p>Planting automation is rarely accessible to small growers.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Design Concept -->
+    <section id="story-concept" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail">
+          <span class="story-chapter__num">02</span>
+          <p class="eyebrow">Design Concept</p>
+          <h2 class="section-title">Giving an old printer a second life</h2>
+        </div>
+        <div class="story-chapter__content">
+          <div class="story-beat">
+            <p>
+              The concept was to use the printer as a positioning system. The printer moves to specific X/Y coordinates above
+              the soil bed, pauses, and the seed dropper releases seeds through a tube.
+            </p>
+          </div>
+          <div class="story-beat">
+            <figure class="case-figure mt-2">
+              <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-4 sm:p-5 overflow-x-auto">
+                <div class="system-flow">
+                  <span class="flow-node">Printer moves head</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node">Pause at point</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node">GUI sends DROP1 / DROP3</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node">ESP32 over USB</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node">Servo opens gate</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node">Seeds fall</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-node flow-node--accent">Next point</span>
+                </div>
+              </div>
+              <figcaption>System flow: positioning on the printer, release on the ESP32.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. What I Built -->
+    <section id="story-built" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail">
+          <span class="story-chapter__num">03</span>
+          <p class="eyebrow">What I Built</p>
+          <h2 class="section-title">Four connected systems</h2>
+        </div>
+        <div class="story-chapter__content">
+          <div class="story-beat decision-grid">
+            <div class="decision-card">
+              <p class="decision-label">Mechanical</p>
+              <p class="decision-value">3D-printed seed holder + tube assembly</p>
+              <p>Mounted to the printer carriage with a custom bracket.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Electronic</p>
+              <p class="decision-value">ESP32 + MG90S servo</p>
+              <p>Microcontroller drives the servo that opens and closes the seed gate.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Software</p>
+              <p class="decision-value">Python GUI over USB serial</p>
+              <p>Buttons and slider to send OPEN, CLOSE, DROP, and angle values.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Motion</p>
+              <p class="decision-value">Pronterface manual jog</p>
+              <p>Printer's existing firmware moves the head — positioned by hand for now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Prototype Breakdown -->
+    <section id="story-prototype" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail">
+          <span class="story-chapter__num">04</span>
+          <p class="eyebrow">Prototype Breakdown</p>
+          <h2 class="section-title">Labeled system anatomy</h2>
+        </div>
+        <div class="story-chapter__content">
+          <div class="story-beat">
+            <p>The system splits responsibility between the printer and the seed dropper. The printer handles precise positioning, while the ESP32 and servo handle seed release. Explore the model, then scroll through the build →</p>
+          </div>
+          <div class="story-beat">
+            <figure class="case-figure seed-model-card">
+              <div class="seed-model-card__header">
+                <div>
+                  <p class="decision-label">Interactive 3D model</p>
+                  <h3 class="card-title">Seed dropper connector</h3>
+                </div>
+                <a href="/assets/connecter_dowload.glb" download class="btn btn-secondary btn-sm">Download GLB</a>
+              </div>
+              <model-viewer
+                id="seed-connector-model"
+                src="/assets/connecter_dowload.glb"
+                poster="/assets/seed-planter-cutting-mat-grid.png"
+                alt="Interactive 3D model of the connector used to mount the seed dropper"
+                camera-controls
+                auto-rotate
+                auto-rotate-delay="1200"
+                rotation-per-second="18deg"
+                camera-orbit="35deg 68deg 115%"
+                shadow-intensity="0.8"
+                environment-image="neutral"
+                exposure="1"
+                interaction-prompt="auto"
+                touch-action="pan-y"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+              ></model-viewer>
+              <div class="seed-model-card__footer">
+                <p>Drag to rotate · Scroll or pinch to zoom</p>
+                <p id="seed-model-status" class="seed-model-status" role="status" aria-live="polite">Loading 3D model…</p>
+              </div>
+            </figure>
+          </div>
+          <div class="story-beat story-hscroll-wrap">
+            <div class="story-hscroll" tabindex="0" aria-label="Prototype photo gallery">
+              <div class="story-hscroll__slide"><figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/presentation.png" alt="Labeled anatomy" loading="lazy" class="w-full object-contain aspect-[4/3] bg-white" /><figcaption>Labeled anatomy</figcaption></figure></div>
+              <div class="story-hscroll__slide"><figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5918.jpeg" alt="Full mounted system" loading="lazy" class="w-full object-cover aspect-[4/3] bg-white" /><figcaption>Full mounted system</figcaption></figure></div>
+              <div class="story-hscroll__slide"><figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5919.jpeg" alt="Dropper close-up" loading="lazy" class="w-full object-cover aspect-[4/3] bg-white" /><figcaption>Dropper close-up</figcaption></figure></div>
+              <div class="story-hscroll__slide"><figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5922.jpeg" alt="Servo wiring" loading="lazy" class="w-full object-cover aspect-[4/3] bg-white" /><figcaption>Servo + wiring</figcaption></figure></div>
+            </div>
+            <p class="story-hscroll-hint">← Swipe or scroll to walk through the prototype →</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Software -->
+    <section id="story-software" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail">
+          <span class="story-chapter__num">05</span>
+          <p class="eyebrow">Software &amp; Interaction</p>
+          <h2 class="section-title">Text commands became physical movement</h2>
+        </div>
+        <div class="story-chapter__content">
+          <div class="story-beat"><p>The software was split into two parts. The Python GUI gave me a simple control panel to send commands. The ESP32 listened for serial text commands and translated them into servo angles.</p></div>
+          <div class="story-beat story-pipeline" aria-label="Software pipeline">
+            <div class="story-pipeline__step"><strong>1 · Pronterface</strong><span>Jog the printer head to a planting coordinate.</span></div>
+            <div class="story-pipeline__step"><strong>2 · Python GUI</strong><span>Press DROP1 or DROP3 — text command over USB serial.</span></div>
+            <div class="story-pipeline__step"><strong>3 · ESP32 firmware</strong><span>Parses OPEN / CLOSE / DROP1 / DROP3 → servo angles.</span></div>
+            <div class="story-pipeline__step"><strong>4 · MG90S servo</strong><span>Opens gate at 180°, closes at 60° — seeds fall.</span></div>
+            <div class="story-pipeline__step"><strong>5 · Soil bed</strong><span>Seeds land at the coordinate. Repeat.</span></div>
+          </div>
+          <div class="story-beat grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="card p-5"><h3 class="font-semibold">ESP32 firmware</h3><ul class="mt-3 space-y-2 text-sm text-neutral-700"><li>→ Serial at 115200 baud</li><li>→ OPEN, CLOSE, DROP1, DROP3</li><li>→ MG90S on GPIO 13</li></ul></div>
+            <div class="card p-5"><h3 class="font-semibold">Python GUI</h3><ul class="mt-3 space-y-2 text-sm text-neutral-700"><li>→ USB serial port</li><li>→ Buttons + slider</li><li>→ Live tuning without reflashing</li></ul></div>
+          </div>
+          <div class="story-beat grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/ppythongui%20.jpeg" alt="Pronterface" loading="lazy" class="w-full rounded-lg ring-1 ring-neutral-200 bg-white object-contain aspect-[16/10]" /><figcaption>Pronterface — manual XY jog.</figcaption></figure>
+            <figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5921.jpeg" alt="ESP32 wiring" loading="lazy" class="w-full rounded-lg ring-1 ring-neutral-200 bg-white object-cover aspect-[16/10]" /><figcaption>ESP32 wiring on carriage.</figcaption></figure>
+          </div>
+          <div class="story-beat"><h3 class="card-title">Serial command protocol</h3><p class="caption mt-1">Text in, motion out. Anything that isn't a named command is treated as a raw servo angle.</p><pre class="mt-3 p-4 rounded-lg bg-neutral-900 text-neutral-100 text-sm overflow-x-auto font-mono" aria-label="Serial command protocol"><code>OPEN     → servo to 180°
+CLOSE    → servo to 60°
+DROP1    → open, wait 400ms, close (single seed)
+DROP3    → repeat drop 3× with 400ms gaps
+0–180    → raw angle for manual tuning</code></pre></div>
+          <div class="story-beat"><h3 class="card-title mt-4">Python GUI — Tkinter + pyserial</h3><p class="caption mt-1">Buttons fire named commands; the slider streams integer angles as they change.</p><pre class="mt-3 p-4 rounded-lg bg-neutral-900 text-neutral-100 text-sm overflow-x-auto font-mono leading-snug" aria-label="Python GUI source"><code>import tkinter as tk
+import serial
+
+ser = serial.Serial('/dev/cu.usbserial-0285FFE6', 115200)
+
+def send(cmd):
+    ser.write((cmd + "\n").encode())
+
+root = tk.Tk()
+root.title("Seed Servo Control")
+root.geometry("400x400")
+
+slider = tk.Scale(root, from_=0, to=180,
+                  orient="horizontal",
+                  command=lambda v: send(v))
+slider.pack(fill="x", padx=20, pady=20)
+
+tk.Button(root, text="OPEN",   command=lambda: send("OPEN")).pack(fill="x")
+tk.Button(root, text="CLOSE",  command=lambda: send("CLOSE")).pack(fill="x")
+tk.Button(root, text="DROP 1", command=lambda: send("DROP1")).pack(fill="x")
+tk.Button(root, text="DROP 3", command=lambda: send("DROP3")).pack(fill="x")
+
+root.mainloop()
+</code></pre></div>
+          <div class="story-beat"><h3 class="card-title mt-4">ESP32 firmware — Arduino + ESP32Servo</h3><p class="caption mt-1">Reads a line, matches it against the protocol, and writes to the servo on GPIO 13.</p><pre class="mt-3 p-4 rounded-lg bg-neutral-900 text-neutral-100 text-sm overflow-x-auto font-mono leading-snug" aria-label="ESP32 firmware source"><code>#include &lt;ESP32Servo.h&gt;
+
+Servo myServo;
+
+const int SERVO_PIN = 13;
+
+int openAngle  = 180;
+int closeAngle = 60;
+
+void setup() {
+  Serial.begin(115200);
+  myServo.setPeriodHertz(50);
+  myServo.attach(SERVO_PIN, 500, 2400);
+  myServo.write(closeAngle);
+
+  Serial.println("READY");
+}
+
+void loop() {
+  if (Serial.available()) {
+    String cmd = Serial.readStringUntil('\n');
+    cmd.trim();
+
+    if (cmd == "OPEN") {
+      myServo.write(openAngle);
+    }
+    else if (cmd == "CLOSE") {
+      myServo.write(closeAngle);
+    }
+    else if (cmd == "DROP1") {
+      myServo.write(openAngle);
+      delay(400);
+      myServo.write(closeAngle);
+    }
+    else if (cmd == "DROP3") {
+      for (int i = 0; i &lt; 3; i++) {
+        myServo.write(openAngle);
+        delay(400);
+        myServo.write(closeAngle);
+        delay(400);
+      }
+    }
+    else {
+      int angle = cmd.toInt();
+      if (angle &gt;= 0 &amp;&amp; angle &lt;= 180) {
+        myServo.write(angle);
+      }
+    }
+  }
+}
+</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Iterations -->
+    <section id="story-iterations" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail"><span class="story-chapter__num">06</span><p class="eyebrow">Iterations</p><h2 class="section-title">From servo press to working prototype</h2></div>
+        <div class="story-chapter__content">
+          <div class="story-beat story-timeline-connector iteration-list">
+            <article class="iteration-block"><span class="iteration-step">V1</span><h3>Basic servo press</h3><p>Alignment and force mattered more than expected.</p></article>
+            <article class="iteration-block"><span class="iteration-step">V2</span><h3>Tube + gate</h3><p>Improved control but revealed jamming.</p></article>
+            <article class="iteration-block"><span class="iteration-step">V3</span><h3>Printer-mounted</h3><p>First seeds dropping at coordinates.</p></article>
+            <article class="iteration-block"><span class="iteration-step">V4</span><h3>Working prototype</h3><p>Full click-to-seed interaction loop.</p></article>
+          </div>
+          <div class="story-beat grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5917.jpeg" alt="Bracket iterations" loading="lazy" class="w-full rounded-lg ring-1 ring-neutral-200 bg-white object-cover aspect-[4/3]" /><figcaption>Seven bracket iterations on the bench.</figcaption></figure>
+            <figure class="case-figure"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5920.jpeg" alt="Final dropper" loading="lazy" class="w-full rounded-lg ring-1 ring-neutral-200 bg-white object-cover aspect-[4/3]" /><figcaption>Final mounted dropper, loaded with seeds.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="story-demo" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail"><span class="story-chapter__num">07</span><p class="eyebrow">Demo</p><h2 class="section-title">Working Demo</h2></div>
+        <div class="story-chapter__content">
+          <div class="story-beat">
+            <figure class="case-figure">
+              <div class="demo-video-wrap relative">
+                <video id="seed-planter-demo-video" class="w-full" controls preload="metadata" playsinline><source src="/assets/IMG_5651.mp4" type="video/mp4" /></video>
+                <div id="seed-planter-demo-placeholder" class="demo-video-placeholder hidden"><p class="font-semibold text-lg">Demo unavailable</p></div>
+              </div>
+              <figcaption>Full loop: printer movement → command trigger → servo → seed drop.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenges -->
+    <section id="story-challenges" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail"><span class="story-chapter__num">08</span><p class="eyebrow">Challenges</p><h2 class="section-title">Constraints that shaped the build</h2></div>
+        <div class="story-chapter__content">
+          <div class="story-beat build-process-grid">
+            <div class="insight-card"><h3>Time constraints</h3><p>Senior project overlap compressed the window.</p></div>
+            <div class="insight-card"><h3>3D modeling</h3><p>Bracket, hopper, and gate took several CAD passes.</p></div>
+            <div class="insight-card"><h3>HW + SW debugging</h3><p>Mechanical and firmware issues showed up together.</p></div>
+            <div class="insight-card"><h3>Physical iteration</h3><p>Each tweak meant reprint, remount, re-test.</p></div>
+          </div>
+          <blockquote class="story-beat pull-quote mt-6">Physical prototyping is often less about the idea and more about tolerances, timing, alignment, and repeatability.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section id="story-outcome" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail"><span class="story-chapter__num">09</span><p class="eyebrow">Outcome</p><h2 class="section-title">A working planting flow</h2></div>
+        <div class="story-chapter__content">
+          <div class="story-beat"><p>The final prototype demonstrated a working planting flow: the printer moved to set coordinates, paused, and the seed dropper released seeds through a controlled mechanism.</p></div>
+          <div class="story-beat">
+            <figure class="case-figure mt-4"><img src="/assets/pictures%20of%20the%20planting%20device/IMG_5923.jpeg" alt="Soil bed test" loading="lazy" class="w-full rounded-xl ring-1 ring-neutral-200 bg-white object-cover aspect-[4/3]" /><figcaption>Soil bed test rig — newspaper-lined container within the printer's reach.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section id="story-reflection" class="story-chapter case-section section-tight">
+      <div class="site-container story-chapter__inner">
+        <div class="story-chapter__rail"><span class="story-chapter__num">10</span><p class="eyebrow">Reflection</p><h2 class="section-title">Adaptation over discard</h2></div>
+        <div class="story-chapter__content">
+          <div class="story-beat"><p>This project taught me how to repurpose existing hardware into a new tool — sustainability through reuse, not just material choice.</p></div>
+          <div class="story-beat principle-grid mt-4">
+            <div class="principle-card"><h3>Care for materials</h3><p>Reusing a broken printer instead of discarding it.</p></div>
+            <div class="principle-card"><h3>Care for food systems</h3><p>Small-scale planting at a human pace.</p></div>
+            <div class="principle-card"><h3>Care through precision</h3><p>Repeatable spacing the printer can hold to.</p></div>
+            <div class="principle-card"><h3>Care as maintenance</h3><p>Adapting existing systems rather than building new.</p></div>
+          </div>
+          <blockquote class="story-beat pull-quote mt-6">Resilience is not building new systems, but adapting and sustaining existing ones.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    </div><!-- /.seed-story -->
+
+    <!-- CTA -->
+    <section class="case-section section">
+      <div class="site-container">
+        <div class="case-cta">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Let's connect</p>
+            <h2 class="section-title text-white mt-2">Want to talk about product design, prototyping, or physical-digital systems?</h2>
+            <p class="body mt-3">I'm currently looking for product design, UX, creative technology, hardware prototyping, and early product roles.</p>
+          </div>
+          <div class="button-row">
+            <a href="/pages/work.html" class="btn btn-accent btn-lg">Back to Work</a>
+            <a href="/pages/contact.html" class="btn btn-on-dark btn-lg">Contact Me</a>
+            <a href="/assets/resume/abdul-qureshi-resume.pdf" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="site-container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/work.html" class="hover:text-neutral-800">Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var video = document.getElementById('seed-planter-demo-video');
+      var placeholder = document.getElementById('seed-planter-demo-placeholder');
+      if (video && placeholder) {
+        fetch('/assets/IMG_5651.mp4', { method: 'HEAD' }).then(function (res) {
+          if (!res.ok) {
+            video.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+          } else {
+            placeholder.classList.add('hidden');
+          }
+        }).catch(function () {
+          video.classList.add('hidden');
+          placeholder.classList.remove('hidden');
+        });
+        video.addEventListener('error', function () {
+          video.classList.add('hidden');
+          placeholder.classList.remove('hidden');
+        });
+      }
+
+      var model = document.getElementById('seed-connector-model');
+      var modelStatus = document.getElementById('seed-model-status');
+      if (model && modelStatus) {
+        model.addEventListener('load', function () {
+          modelStatus.textContent = '3D model ready';
+          modelStatus.classList.add('is-ready');
+        });
+        model.addEventListener('error', function () {
+          modelStatus.innerHTML = 'Preview unavailable — <a href="/assets/connecter_dowload.glb" download>download the GLB</a>.';
+          modelStatus.classList.add('has-error');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

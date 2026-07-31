@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume — Abdul Qureshi</title>
-    <meta name="description" content="Download Abdul Qureshi's resume. Creative Technologist and Product Designer with experience in hardware prototyping, software development, and design." />
-    <meta name="keywords" content="abdul qureshi resume, creative technologist resume, product designer resume, download resume, PDF resume" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../style-modern.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Abdul Qureshi</title>
+  <meta name="description" content="Download or preview Abdul Qureshi's resume — product designer and creative technologist with experience in UX, hardware prototyping, and software." />
+  <meta name="keywords" content="abdul qureshi resume, product designer resume, creative technologist resume, UX, hardware prototyping" />
+  <meta property="og:title" content="Resume — Abdul Qureshi" />
+  <meta property="og:description" content="Product designer & creative technologist resume." />
+  <meta property="og:url" content="https://abdulq.com/pages/resume.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/resume.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-06-ds" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-06-ds" />
 </head>
-<body class="font-[Inter] text-neutral-900 bg-white">
-  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
-    <div class="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
-      <a href="../index.html" class="inline-flex items-center gap-2 font-semibold tracking-tight">
-        <img src="../assets/logo.png" alt="Abdul Q" class="h-6 w-6" />
-        <span>Abdul Q</span>
-      </a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="../index.html#work" class="hover:text-neutral-600 transition-colors">Work</a>
-        <a href="all-projects.html" class="hover:text-neutral-600 transition-colors">Projects</a>
-        <a href="about.html" class="hover:text-neutral-600 transition-colors">About</a>
-        <a href="#" class="hover:text-neutral-600 transition-colors">Resume</a>
-        <a href="../index.html#contact" class="px-3 py-1.5 rounded-md bg-neutral-900 text-white hover:bg-neutral-800 transition-colors">Contact</a>
+<body class="text-neutral-900 ds-theme">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight"><img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" /><span>Abdul Qureshi</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
       </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
     </div>
   </header>
-  <main class="min-h-screen px-6 py-10 sm:py-14">
-        <section class="mx-auto max-w-3xl">
-            <header class="mb-8">
-                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Resume</h1>
-                <p class="mt-2 text-sm sm:text-base text-neutral-600">Download a copy or preview below.</p>
-            </header>
 
-            <div class="flex items-center gap-3">
-                <a href="../assets/Abdul_Qureshi_Resume___pdf.pdf" download="Abdul_Qureshi_Resume.pdf" class="inline-flex items-center rounded-md bg-neutral-900 px-4 py-2 text-white text-sm font-medium shadow-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900" aria-label="Download resume PDF">
-                    Download PDF
-                </a>
-                <a href="../assets/Abdul_Qureshi_Resume___pdf.pdf" target="_blank" rel="noopener" class="inline-flex items-center rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-900" aria-label="Open resume in new tab">
-                    Open in new tab
-                </a>
-            </div>
+  <main id="main">
+    <section class="container-narrow py-12 sm:py-16">
+      <p class="eyebrow">Resume</p>
+      <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Abdul Qureshi</h1>
+      <p class="mt-3 lead">Product Designer &amp; Creative Technologist · Recent NYU Integrated Design &amp; Media graduate.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="/assets/resume/abdul-qureshi-resume.pdf?v=2026-07-31" download="Abdul_Qureshi_Resume.pdf" class="btn btn-primary">Download PDF</a>
+        <a href="/assets/resume/abdul-qureshi-resume.pdf?v=2026-07-31" target="_blank" rel="noopener" class="btn btn-secondary">Open in new tab</a>
+        <a href="/pages/contact.html" class="btn btn-ghost">Contact me</a>
+      </div>
+      <figure class="figure mt-8">
+        <div class="rounded-xl border border-neutral-200 p-3 sm:p-4 bg-white shadow-sm">
+          <img src="/assets/Screenshot_resume_abdulq.png?v=2026-07-31" alt="Preview of Abdul Qureshi's resume" class="w-full h-auto rounded-md" />
+        </div>
+        <figcaption>Resume preview. Download the PDF above for the latest version.</figcaption>
+      </figure>
+    </section>
+  </main>
 
-            <div class="mt-6 rounded-lg border border-neutral-200 p-3 sm:p-4 bg-white shadow-sm">
-                <img src="../assets/Screenshot_resume_abdulq.png" alt="Resume preview image" class="w-full h-auto rounded-md" />
-            </div>
-        </section>
-    </main>
-    <script src="../script-modern.js" defer></script>
+  <footer class="border-t border-neutral-200">
+    <div class="container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/script-modern.js?v=2026-07-06-ds" defer></script>
 </body>
 </html>

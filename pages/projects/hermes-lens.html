@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermes Lens — Wearable Translation Glasses · Abdul Qureshi</title>
+  <meta name="description" content="Hermes Lens is a wearable prototype that captures real-world text and translates it on the go, combining computer vision, OCR, and a compact on-device display." />
+  <meta name="keywords" content="Hermes Lens, wearable, translation glasses, OCR, computer vision, Raspberry Pi, hardware prototype" />
+  <meta property="og:title" content="Hermes Lens — Wearable Translation Glasses" />
+  <meta property="og:description" content="A wearable prototype that captures and translates real-world text on the go." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/hermes-lens.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/hermes-lens.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-06-ds" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-06-ds" />
+</head>
+<body class="text-neutral-900 bg-white" data-scroll-theme="ar-visual">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight"><img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" /><span>Abdul Qureshi</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container-narrow pt-8 sm:pt-12 pb-6">
+      <a href="/pages/all-projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg> Back to projects</a>
+      <div class="mt-6 flex items-center gap-2"><span class="tag">Selected Experiment</span><span class="tag">Hardware · Computer Vision</span></div>
+      <h1 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">Hermes Lens</h1>
+      <p class="mt-4 lead">Wearable glasses that capture outside text and translate it into your preferred language — a lightweight pipeline from camera to OCR to an on-device display.</p>
+    </section>
+
+    <section class="container-narrow pb-10">
+      <figure class="figure"><div class="media rounded-xl ring-1 ring-neutral-200 aspect-video"><iframe src="https://www.youtube.com/embed/T8eTn395SjQ" title="Hermes Lens demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><figcaption>Demo of the capture-to-translation pipeline running on the wearable.</figcaption></figure>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <h2 class="text-2xl font-bold tracking-tight mb-6">Snapshot</h2>
+      <dl class="snapshot-grid">
+        <div><dt>Role</dt><dd>Designer &amp; builder</dd></div>
+        <div><dt>Type</dt><dd>Wearable hardware prototype</dd></div>
+        <div><dt>Pipeline</dt><dd>Camera → OCR → translate → display</dd></div>
+        <div><dt>Tools</dt><dd>Tesseract · OpenCV · Python · small LCD</dd></div>
+      </dl>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Overview</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">Translation, hands-free and in context</h2>
+      <p class="mt-4 text-neutral-700">Reading signage, menus, or labels in another language usually means stopping to pull out a phone. Hermes Lens explores doing it hands-free: a wearable captures text in the user's view, runs OCR, translates it, and shows the result on a compact display — keeping the interaction in the flow of looking at the world.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card p-6"><h3 class="font-semibold mb-2">Approach</h3><ul class="space-y-2 text-sm text-neutral-700"><li class="flex gap-2"><span class="text-neutral-400">•</span><span>Captured frames and isolated text regions with OpenCV</span></li><li class="flex gap-2"><span class="text-neutral-400">•</span><span>Ran OCR to extract text, then translated it</span></li><li class="flex gap-2"><span class="text-neutral-400">•</span><span>Rendered output to a small on-device display</span></li></ul></div>
+        <div class="card p-6"><h3 class="font-semibold mb-2">Outcome</h3><p class="text-sm text-neutral-700">A working prototype demonstrating an end-to-end, low-friction translation pipeline in a wearable form factor — a study in lightweight on-device computer vision.</p></div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://github.com/infinite2004/Hermes-Lens" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="container-narrow py-12">
+      <div class="rounded-2xl bg-neutral-900 text-white p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+        <h2 class="text-xl font-bold tracking-tight">See the featured case studies</h2>
+        <div class="flex flex-wrap gap-3"><a href="/pages/work.html" class="btn btn-accent">View work →</a><a href="/pages/contact.html" class="btn btn-secondary">Contact me</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/script-modern.js?v=2026-07-06-ds" defer></script>
+</body>
+</html>

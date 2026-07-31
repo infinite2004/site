@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildLedger — Tracking Hardware Build Progress · Abdul Qureshi</title>
+  <meta name="description" content="BuildLedger is a lightweight tool for tracking build progress, parts, and design decisions across hardware projects — a system for keeping prototyping organized." />
+  <meta name="keywords" content="BuildLedger, project tracking, hardware build log, bill of materials, design decisions, tooling" />
+  <meta property="og:title" content="BuildLedger — Tracking Hardware Build Progress" />
+  <meta property="og:description" content="A lightweight system for tracking build progress, parts, and decisions across projects." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/buildledger.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/buildledger.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-06-ds" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-06-ds" />
+</head>
+<body class="text-neutral-900 bg-white" data-scroll-theme="software">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight"><img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" /><span>Abdul Qureshi</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container-narrow pt-8 sm:pt-12 pb-6">
+      <a href="/pages/all-projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg> Back to projects</a>
+      <div class="mt-6 flex items-center gap-2"><span class="tag">Selected Experiment</span><span class="tag">Software · Tooling</span></div>
+      <h1 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">BuildLedger</h1>
+      <p class="mt-4 lead">A lightweight system for tracking build progress, parts, and design decisions across hardware projects — so prototyping stays organized instead of scattered across notes and chats.</p>
+    </section>
+
+    <section class="container-narrow pb-10">
+      <figure class="figure"><div class="media media-fallback rounded-xl ring-1 ring-neutral-200 aspect-[16/9]"><span class="media-fallback__label">BuildLedger — project &amp; parts tracking</span></div><figcaption>One place for the running log, the bill of materials, and the "why" behind each decision.</figcaption></figure>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <h2 class="text-2xl font-bold tracking-tight mb-6">Snapshot</h2>
+      <dl class="snapshot-grid">
+        <div><dt>Role</dt><dd>Designer &amp; developer</dd></div>
+        <div><dt>Type</dt><dd>Project-tracking tool</dd></div>
+        <div><dt>Tracks</dt><dd>Progress · parts · decisions</dd></div>
+        <div><dt>Theme</dt><dd>Maker workflow &amp; documentation</dd></div>
+      </dl>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Overview</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">Keep the build's memory in one place</h2>
+      <p class="mt-4 text-neutral-700">Hardware projects accumulate context fast: which parts were ordered, which approach was abandoned and why, what's left to do. BuildLedger explores a single, low-friction home for that context — a running build log tied to a bill of materials and a record of decisions — so picking a project back up doesn't mean re-deriving everything from memory.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card p-6"><h3 class="font-semibold mb-2">Problem</h3><p class="text-sm text-neutral-700">Build context is scattered across notes, photos, receipts, and chats — and lost between sessions.</p></div>
+        <div class="card p-6"><h3 class="font-semibold mb-2">Approach</h3><p class="text-sm text-neutral-700">A structured but quick-to-update log linking tasks, parts, and the reasoning behind design choices.</p></div>
+      </div>
+    </section>
+
+    <section class="container-narrow py-12">
+      <div class="rounded-2xl bg-neutral-900 text-white p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+        <h2 class="text-xl font-bold tracking-tight">See the featured case studies</h2>
+        <div class="flex flex-wrap gap-3"><a href="/pages/work.html" class="btn btn-accent">View work →</a><a href="/pages/contact.html" class="btn btn-secondary">Contact me</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/script-modern.js?v=2026-07-06-ds" defer></script>
+</body>
+</html>

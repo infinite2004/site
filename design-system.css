@@ -2080,3 +2080,93 @@ body.ds-theme[data-scroll-theme] .story-chapter .section-title {
   body.qm-home .project-card { box-shadow: 6px 6px 0 color-mix(in srgb, var(--card-accent) 68%, var(--qm-paper)); }
   body.ds-theme[data-scroll-theme] .project-hero .hero-figure { box-shadow: 8px 8px 0 var(--qm-graphite); }
 }
+
+/* =====================================================================
+   Portfolio cleanup — calmer surfaces, direct project access, real media
+   ===================================================================== */
+body.ds-theme {
+  --qm-paper: #f5f5f2;
+  --qm-surface: #ffffff;
+  --qm-surface-raised: #ffffff;
+  background-color: var(--qm-paper);
+  background-image: none;
+}
+
+body.ds-theme .site-header {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: #deded8;
+  box-shadow: 0 1px 0 rgba(23, 26, 24, 0.03);
+}
+
+body.qm-home .hero-color-panels {
+  min-height: auto;
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(63, 89, 110, 0.22), transparent 34%),
+    var(--qm-graphite);
+  border-bottom-width: 5px;
+}
+
+body.qm-home .hero-title {
+  max-width: 10ch;
+  font-size: clamp(3.2rem, 7.5vw, 6.25rem);
+  line-height: 0.92;
+}
+
+body.qm-home .hero-color-panels__visual {
+  min-height: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  background: #252a27;
+  box-shadow: 14px 14px 0 var(--qm-utility);
+}
+
+body.qm-home .hero-color-panels__visual::after {
+  background: linear-gradient(180deg, transparent 65%, rgba(23, 26, 24, 0.2));
+}
+
+body.qm-home .hero-color-panels__visual > img,
+body.qm-home .hero-color-panels__mobile-visual > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.qm-home .hero-color-panels__mobile-visual {
+  height: 240px;
+  border-radius: 12px;
+  background: #252a27;
+}
+
+body:not(.qm-work).ds-theme .ds-page-hero {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  background: var(--qm-surface);
+  border-bottom: 1px solid var(--qm-line);
+}
+
+body:not(.qm-work).ds-theme .ds-page-hero__inner {
+  max-width: 920px !important;
+}
+
+body:not(.qm-work).ds-theme .ds-page-hero .page-title {
+  max-width: 17ch;
+  font-size: clamp(3rem, 6.5vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+body.ds-theme .card,
+body.ds-theme .project-card,
+body.ds-theme .experiment-card,
+body.ds-theme .skill-card {
+  background: #fff;
+}
+
+@media (max-width: 899px) {
+  body.qm-home .hero-title {
+    max-width: 12ch;
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+}

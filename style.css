@@ -1,3 +1,12 @@
+/*
+  ============================================================================
+  LEGACY — desktop/window UI styles.
+  Preserved for archival/experimental pages only and NOT used by the modern
+  hiring portfolio. The production site uses style-modern.css.
+  Do not extend this file; build new styles in style-modern.css.
+  ============================================================================
+*/
+
 /* General styles */
 body {
     margin: 0;

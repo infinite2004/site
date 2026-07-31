@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiet Machines Design System — Abdul Qureshi</title>
+  <meta name="description" content="The design system behind Abdul Qureshi's portfolio: calm utility, visible systems, human agency, and material reuse." />
+  <link rel="canonical" href="https://abdulq.com/pages/design-system.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-21-qm2" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-21-qm2" />
+</head>
+<body class="text-neutral-900 ds-theme">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" />
+        <span>Abdul Qureshi</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" class="nav-link">Work</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/resume.html" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="site-container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="qm-system-hero">
+      <div class="site-container qm-system-hero__grid">
+        <div>
+          <p class="qm-kicker">Portfolio design system / v3.0</p>
+          <h1 class="qm-type-display">Quiet<br>Machines</h1>
+          <p class="body-large mt-6 max-w-2xl">A visual and interaction language for calm, legible tools that return control to people.</p>
+        </div>
+        <div class="qm-system-meta">
+          <p><strong>Derived from:</strong> Monoscribe, Seed Dropper, and Signal.</p>
+          <p class="mt-3"><strong>Built for:</strong> product stories spanning interfaces, electronics, fabrication, and research.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="qm-system-section" aria-labelledby="principles-title">
+      <div class="site-container">
+        <div class="qm-system-section__head">
+          <p class="qm-system-section__num">01 / PRINCIPLES</p>
+          <div><h2 id="principles-title" class="section-title">One point of view, three expressions</h2><p class="qm-type-body mt-3">The work is not connected by a technology or medium. It is connected by a way of handling complexity.</p></div>
+        </div>
+        <div class="qm-principle-grid">
+          <article class="qm-principle"><span class="qm-principle__index">MONOSCRIBE</span><h3>Reduce noise</h3><p>Keep the essential action present. Remove features and decoration that compete with it.</p></article>
+          <article class="qm-principle"><span class="qm-principle__index">SEED DROPPER</span><h3>Reveal the mechanism</h3><p>Show the parts, flow, constraints, and iterations so the system feels understandable.</p></article>
+          <article class="qm-principle"><span class="qm-principle__index">SIGNAL</span><h3>Protect judgment</h3><p>Provide evidence and useful friction, but preserve the user's final decision.</p></article>
+        </div>
+        <ul class="qm-rule-list mt-6">
+          <li><span>04</span><p><strong>Reuse before replacement.</strong> Treat constraints and existing material as design inputs.</p></li>
+          <li><span>05</span><p><strong>Show the work.</strong> Process, tests, failure, and revision carry as much meaning as the final artifact.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="qm-system-section" aria-labelledby="color-title">
+      <div class="site-container">
+        <div class="qm-system-section__head">
+          <p class="qm-system-section__num">02 / COLOR</p>
+          <div><h2 id="color-title" class="section-title">Material neutrals, functional accents</h2><p class="qm-type-body mt-3">Warm paper and graphite keep the portfolio tactile. Blue marks utility, green marks growth and reuse, and clay marks intervention or attention.</p></div>
+        </div>
+        <div class="qm-swatch-grid">
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#f2f0e8"></div><div class="qm-swatch__meta"><strong>Paper</strong><code>#F2F0E8 · --qm-paper</code></div></div>
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#fbfaf5"></div><div class="qm-swatch__meta"><strong>Surface</strong><code>#FBFAF5 · --qm-surface</code></div></div>
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#171a18"></div><div class="qm-swatch__meta"><strong>Graphite</strong><code>#171A18 · --qm-graphite</code></div></div>
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#3f596e"></div><div class="qm-swatch__meta"><strong>Utility blue</strong><code>#3F596E · --qm-utility</code></div></div>
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#5d6f54"></div><div class="qm-swatch__meta"><strong>Growth moss</strong><code>#5D6F54 · --qm-growth</code></div></div>
+          <div class="qm-swatch"><div class="qm-swatch__color" style="--swatch:#9b5c42"></div><div class="qm-swatch__meta"><strong>Signal clay</strong><code>#9B5C42 · --qm-signal</code></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qm-system-section" aria-labelledby="type-title">
+      <div class="site-container">
+        <div class="qm-system-section__head">
+          <p class="qm-system-section__num">03 / TYPE</p>
+          <div><h2 id="type-title" class="section-title">Editorial clarity with technical annotation</h2><p class="qm-type-body mt-3">Space Grotesk gives ideas a direct, engineered voice. Inter carries longer explanations. Monospace labels behave like part numbers and system notes.</p></div>
+        </div>
+        <div class="qm-specimen">
+          <p class="qm-token">DISPLAY / SPACE GROTESK / 700</p>
+          <p class="qm-type-display mt-5">Make the system legible.</p>
+        </div>
+        <div class="qm-component-grid mt-4">
+          <div class="qm-specimen"><p class="qm-token">BODY / INTER / 400</p><p class="qm-type-body mt-4">The interface should explain what is happening, why it matters, and what the person can do next.</p></div>
+          <div class="qm-specimen"><p class="qm-kicker">Annotation / mono / 700</p><p class="text-sm text-neutral-600 mt-4">Use for steps, states, measurements, version labels, and short functional metadata—not paragraphs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qm-system-section" aria-labelledby="components-title">
+      <div class="site-container">
+        <div class="qm-system-section__head">
+          <p class="qm-system-section__num">04 / COMPONENTS</p>
+          <div><h2 id="components-title" class="section-title">Surfaces behave like labeled assemblies</h2><p class="qm-type-body mt-3">Components use solid surfaces, fine rules, restrained corners, and one clear accent. Structure does the visual work.</p></div>
+        </div>
+        <div class="qm-component-grid">
+          <article class="qm-specimen" style="border-top:3px solid var(--qm-utility)"><p class="qm-token">ACTION</p><h3 class="card-title mt-4">Primary and secondary</h3><div class="button-row"><a href="#components-title" class="btn btn-primary">Primary action</a><a href="#components-title" class="btn btn-secondary">Secondary</a></div></article>
+          <article class="qm-specimen" style="border-top:3px solid var(--qm-growth)"><p class="qm-token">STATUS</p><h3 class="card-title mt-4">Compact metadata</h3><div class="tag-list mt-4"><span class="tag tag-accent">Working prototype</span><span class="tag">ESP32</span><span class="tag">V4</span></div></article>
+          <article class="qm-specimen" style="border-top:3px solid var(--qm-signal)"><p class="qm-token">DECISION</p><h3 class="card-title mt-4">Decision / reason / tradeoff</h3><p class="text-sm text-neutral-600 mt-3">Every major choice should reveal its intent and constraint.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="qm-system-section" aria-labelledby="motion-title">
+      <div class="site-container">
+        <div class="qm-system-section__head">
+          <p class="qm-system-section__num">05 / BEHAVIOR</p>
+          <div><h2 id="motion-title" class="section-title">Motion explains change</h2><p class="qm-type-body mt-3">Use movement to show sequence, progress, spatial relationship, or state. Keep it quiet, brief, and removable.</p></div>
+        </div>
+        <ul class="qm-rule-list">
+          <li><span>01</span><p>Default transitions use 150–250ms. Long editorial reveals may reach 800ms.</p></li>
+          <li><span>02</span><p>Never animate a surface continuously unless it communicates live activity.</p></li>
+          <li><span>03</span><p>Respect reduced-motion preferences and keep every task usable without animation.</p></li>
+          <li><span>04</span><p>Write labels as actions or evidence: “View prototype,” “Why it was flagged,” “Version 04.”</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="site-container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>Quiet Machines · Abdul Qureshi</p>
+      <a href="/" class="hover:text-neutral-800">Back to portfolio →</a>
+    </div>
+  </footer>
+  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+</body>
+</html>

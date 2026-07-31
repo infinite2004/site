@@ -1,3 +1,12 @@
+/*
+  ============================================================================
+  LEGACY — desktop/window UI behavior (start menu, draggable windows, GSAP).
+  Preserved for archival/experimental pages only and NOT used by the modern
+  hiring portfolio. The production site uses script-modern.js.
+  Do not extend this file; build new behavior in script-modern.js.
+  ============================================================================
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
     const startBtn = document.getElementById("start-btn");
     const dropdown = document.querySelector(".dropdown");

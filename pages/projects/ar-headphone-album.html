@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AR Headphone Album — Augmented Reality Music Experience · Abdul Qureshi</title>
+  <meta name="description" content="AR Headphone Album turns album art and packaging into an interactive augmented-reality experience with audio-reactive 3D visuals." />
+  <meta name="keywords" content="AR headphone album, augmented reality, music experience, Lens Studio, 3D, audio reactive, interaction design" />
+  <meta property="og:title" content="AR Headphone Album — Augmented Reality Music Experience" />
+  <meta property="og:description" content="An interactive AR experience built around album art and sound." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/ar-headphone-album.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/ar-headphone-album.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-06-ds" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-06-ds" />
+</head>
+<body class="text-neutral-900 bg-white" data-scroll-theme="ar-visual">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight"><img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" /><span>Abdul Qureshi</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container-narrow pt-8 sm:pt-12 pb-6">
+      <a href="/pages/all-projects.html" class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg> Back to projects</a>
+      <div class="mt-6 flex items-center gap-2"><span class="tag">Selected Experiment</span><span class="tag">AR · Interaction</span></div>
+      <h1 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">AR Headphone Album</h1>
+      <p class="mt-4 lead">An augmented-reality music experience that turns album art into an interactive scene — point a phone at the cover to unlock audio-reactive 3D visuals that move with the track.</p>
+    </section>
+
+    <section class="container-narrow pb-10">
+      <figure class="figure"><div class="media media-fallback rounded-xl ring-1 ring-neutral-200 aspect-[16/9]"><span class="media-fallback__label">AR Headphone Album — audio-reactive scene</span></div><figcaption>Album art becomes a trigger for a layered, sound-driven AR visual.</figcaption></figure>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <h2 class="text-2xl font-bold tracking-tight mb-6">Snapshot</h2>
+      <dl class="snapshot-grid">
+        <div><dt>Role</dt><dd>Designer &amp; developer</dd></div>
+        <div><dt>Type</dt><dd>Augmented-reality experience</dd></div>
+        <div><dt>Trigger</dt><dd>Image-tracked album art</dd></div>
+        <div><dt>Tools</dt><dd>Lens Studio · 3D · audio analysis</dd></div>
+      </dl>
+    </section>
+
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Overview</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">Making an album something you can step inside</h2>
+      <p class="mt-4 text-neutral-700">Physical album art and packaging are static, but the music they hold is anything but. This experiment explores using AR to bridge the two — image-tracking the cover so it becomes a portal into a 3D scene that reacts to the audio, turning a flat object into a small, playful spatial experience.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card p-6"><h3 class="font-semibold mb-2">Challenge</h3><p class="text-sm text-neutral-700">Tie visuals to sound in real time while keeping tracking stable on a handheld phone.</p></div>
+        <div class="card p-6"><h3 class="font-semibold mb-2">What I built</h3><p class="text-sm text-neutral-700">An image-tracked AR scene with audio-reactive 3D layers anchored to the album cover.</p></div>
+      </div>
+    </section>
+
+    <section class="container-narrow py-12">
+      <div class="rounded-2xl bg-neutral-900 text-white p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+        <h2 class="text-xl font-bold tracking-tight">See the featured case studies</h2>
+        <div class="flex flex-wrap gap-3"><a href="/pages/work.html" class="btn btn-accent">View work →</a><a href="/pages/contact.html" class="btn btn-secondary">Contact me</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/script-modern.js?v=2026-07-06-ds" defer></script>
+</body>
+</html>

@@ -1,13 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://abdulq.dev/sitemap.xml
+Sitemap: https://abdulq.com/sitemap.xml
 
-# Disallow certain directories
-Disallow: /assets/
-Disallow: /components/
-
-# Allow important pages
+# Allow crawling of pages and projects
 Allow: /pages/
-Allow: /index.html
+
+# Keep raw asset and component directories out of search results
+Disallow: /components/

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monoscribe — Abdul Qureshi</title>
+  <meta name="description" content="A distraction-free E-Ink writing device designed around focused note-taking, physical input, file navigation, enclosure design, and quiet AI assistance." />
+  <meta name="keywords" content="Monoscribe, E-Ink device, writing device, distraction-free, Raspberry Pi, embedded systems, industrial design, hardware product design, case study" />
+  <meta property="og:title" content="Monoscribe — Abdul Qureshi" />
+  <meta property="og:description" content="A product design case study for Monoscribe, a distraction-free E-Ink writing device for focused note-taking, file navigation, and quiet AI assistance." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulq.com/pages/projects/monoscribe.html" />
+  <meta property="og:image" content="https://abdulq.com/assets/og-image.jpg" />
+  <link rel="canonical" href="https://abdulq.com/pages/projects/monoscribe.html" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-21-qm2" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-21-qm2" />
+  <script type="module" src="/assets/vendor/model-viewer.min.js"></script>
+</head>
+<body class="text-neutral-900 ds-theme" data-scroll-theme="monoscribe">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-container h-14 flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-2 font-semibold tracking-tight">
+        <img src="/assets/logo.png" alt="" aria-hidden="true" class="h-6 w-6" />
+        <span>Abdul Qureshi</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a href="/pages/work.html" data-nav="work" class="nav-link">Work</a>
+        <a href="/pages/about.html" data-nav="about" class="nav-link">About</a>
+        <a href="/pages/resume.html" data-nav="resume" class="nav-link">Resume</a>
+        <a href="/pages/contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-neutral-300 text-neutral-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-neutral-200 bg-white">
+      <div class="site-container py-3 flex flex-col gap-1 text-sm">
+        <a href="/pages/work.html" class="py-2">Work</a>
+        <a href="/pages/about.html" class="py-2">About</a>
+        <a href="/pages/resume.html" class="py-2">Resume</a>
+        <a href="/pages/contact.html" class="py-2 font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Project Hero -->
+    <section class="project-hero monoscribe-hero section">
+      <div class="site-container">
+        <a href="/pages/work.html" class="case-back-link">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Back to work
+        </a>
+        <p class="eyebrow">Centerpiece Case Study</p>
+        <h1 class="page-title">Monoscribe</h1>
+        <p class="project-subtitle">A distraction-free E-Ink writing device for focused note-taking, file navigation, and quiet AI assistance.</p>
+        <span class="centerpiece-badge">Physical-digital product · concept to working prototype</span>
+        <p class="body-large mt-5 max-w-3xl">
+          Monoscribe is a physical writing device I designed and prototyped after exploring how digital writing tools often
+          create distraction instead of focus. The project combines E-Ink display technology, keyboard input, embedded
+          electronics, file management, 3D-printed enclosure design, and lightweight AI features — sketches, soldering,
+          coding, and a functional demo, not just a mockup.
+        </p>
+        <blockquote class="pull-quote">
+          I took this from early E-Ink laptop experiments to a focused note-taking device — designing the interaction,
+          building the hardware, coding the system, and documenting every iteration along the way.
+        </blockquote>
+        <figure class="case-figure hero-figure hero-figure--centerpiece">
+          <img src="/assets/final_items/hero.jpeg" alt="Abdul Qureshi presenting the MonoScribe prototype alongside its design and hardware development process" class="w-full aspect-[4/3] object-cover bg-neutral-100" />
+          <figcaption>MonoScribe on display with the enclosure iterations, electronics, and working prototype.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. Project Snapshot -->
+    <section class="site-container project-snapshot section-tight" aria-label="Project snapshot">
+      <div><span>Role</span><strong>Product Designer, Prototyper, Developer</strong></div>
+      <div><span>Timeline</span><strong>Spring 2026</strong></div>
+      <div><span>Tools</span><strong>E-Ink, ESP32 / Raspberry Pi, CAD, 3D printing, Python, Arduino</strong></div>
+      <div><span>Skills</span><strong>Product design, hardware prototyping, interaction design, system architecture, enclosure design</strong></div>
+      <div><span>Status</span><strong>Functional prototype / ongoing refinement</strong></div>
+    </section>
+
+    <!-- Problem -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Problem</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">Most writing tools are powerful but distracting</h2>
+      <p class="mt-4 text-neutral-700">
+        Laptops, tablets, and phones make it easy to switch tabs, check notifications, over-edit too early, or lose
+        focus. I wanted to explore whether a digital writing tool could feel calmer and more intentional while still
+        keeping the benefits of digital storage, editing, and organization.
+      </p>
+      <p class="mt-4 text-neutral-700">
+        The design challenge was to create a device that supports writing without becoming another general-purpose screen.
+      </p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="card p-5"><h3 class="font-semibold text-sm">Attention</h3><p class="mt-1 text-sm text-neutral-600">General devices pull focus away from the writing surface itself.</p></div>
+        <div class="card p-5"><h3 class="font-semibold text-sm">Eye comfort</h3><p class="mt-1 text-sm text-neutral-600">Backlit displays fatigue the eyes during long sessions.</p></div>
+        <div class="card p-5"><h3 class="font-semibold text-sm">Friction</h3><p class="mt-1 text-sm text-neutral-600">Note-taking tools bury writing under accounts, sync, and chrome.</p></div>
+      </div>
+    </section>
+
+    <!-- Goal -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Product Goal</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">A focused writing device with digital utility</h2>
+      <div class="mt-5 callout">
+        <h3 class="font-semibold">Design principle</h3>
+        <p class="mt-2 text-neutral-700">
+          The device should disappear. Every decision — display technology, enclosure ergonomics, navigation model,
+          and the role of AI — serves one outcome: getting words down and finding them again without friction.
+        </p>
+      </div>
+      <ul class="mt-6 space-y-3 text-neutral-700">
+        <li class="flex gap-3"><span class="text-accent font-bold">→</span><span><strong>Effortless capture:</strong> open and write immediately, no setup or sign-in.</span></li>
+        <li class="flex gap-3"><span class="text-accent font-bold">→</span><span><strong>Fast navigation:</strong> move between files and notes with keyboard-first controls.</span></li>
+        <li class="flex gap-3"><span class="text-accent font-bold">→</span><span><strong>Quiet AI:</strong> summarize or clarify on demand, never interrupting the flow.</span></li>
+        <li class="flex gap-3"><span class="text-accent font-bold">→</span><span><strong>Manufacturable form:</strong> an enclosure that is comfortable, durable, and printable.</span></li>
+      </ul>
+    </section>
+
+    <!-- Target User -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Who It Is For</p>
+          <h2 class="section-title">Writers who want digital tools without laptop distraction</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Monoscribe is designed for students, writers, researchers, designers, and builders who want the benefits of
+            digital writing without the distractions of a laptop.
+          </p>
+          <ul class="space-y-2 text-neutral-700 text-sm mt-4">
+            <li>→ Students taking notes</li>
+            <li>→ Writers drafting long-form work</li>
+            <li>→ Designers capturing project thoughts</li>
+            <li>→ Researchers organizing reading notes</li>
+            <li>→ People who want a calmer writing workflow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Design Principles -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Design Principles</p>
+          <h2 class="section-title">Rules that guided every decision</h2>
+        </div>
+        <div class="case-section-body">
+          <div class="principle-grid">
+            <div class="principle-card"><h3>Calm by default</h3><p>The device should not feel like another attention-hungry screen.</p></div>
+            <div class="principle-card"><h3>Keyboard-first</h3><p>Typing and navigation work without touch or complex menus.</p></div>
+            <div class="principle-card"><h3>Digital when useful</h3><p>Keep saving, editing, and organizing — drop everything else.</p></div>
+            <div class="principle-card"><h3>AI on request</h3><p>AI supports the user only when asked, not constantly interrupting.</p></div>
+            <div class="principle-card"><h3>Repairable &amp; understandable</h3><p>Explainable through visible layers: display, input, board, power, enclosure.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Process</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">From concept to working device</h2>
+      <div class="mt-7 timeline">
+        <div class="timeline-step">
+          <h3 class="font-semibold">1 · Research &amp; framing</h3>
+          <p class="mt-1 text-sm text-neutral-600">Studied E-Ink behavior, refresh trade-offs, and how writers actually use minimal devices to define what to keep and what to cut.</p>
+        </div>
+        <div class="timeline-step">
+          <h3 class="font-semibold">2 · Industrial design &amp; CAD</h3>
+          <p class="mt-1 text-sm text-neutral-600">Modeled the enclosure in Fusion 360, iterating on keyboard mounting, display housing, ergonomics, and internal component fit.</p>
+        </div>
+        <div class="timeline-step">
+          <h3 class="font-semibold">3 · Embedded software</h3>
+          <p class="mt-1 text-sm text-neutral-600">Built a Python interface tuned for E-Ink: keyboard shortcuts, multi-file navigation, and refresh strategies that keep the display legible.</p>
+        </div>
+        <div class="timeline-step">
+          <h3 class="font-semibold">4 · Build, test, refine</h3>
+          <p class="mt-1 text-sm text-neutral-600">Printed and assembled successive versions, testing tolerances and durability, then folded learnings back into the CAD.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2 class="section-title">E-Ink constraints, writing workflows, and material limits</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Discovery combined personal workflow analysis with hardware testing. I studied E-Ink refresh behavior, keyboard-first
+            writing tools, and how enclosure materials affected heat, weight, and print tolerances before committing to a form factor.
+          </p>
+          <div class="insight-grid">
+            <div class="insight-card"><h3>Display behavior</h3><p>E-Ink refresh speed shapes interaction patterns — partial updates vs. full refresh trade-offs.</p></div>
+            <div class="insight-card"><h3>Writing habits</h3><p>Keyboard-first navigation beats touch for long-form capture on a distraction-free device.</p></div>
+            <div class="insight-card"><h3>Enclosure fit</h3><p>Component stacking order determined keyboard angle, port access, and battery placement.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Decisions -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Design Decisions</p>
+          <h2 class="section-title">Choices that defined the product</h2>
+        </div>
+        <div class="case-section-body">
+          <div class="decision-grid">
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Use E-Ink as the main display.</p>
+              <p class="decision-label">Reason</p>
+              <p>Supports a calmer, lower-distraction writing experience with better eye comfort over long sessions.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Refresh speed is slower than LCD/OLED, requiring different interaction and rendering patterns.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Keyboard-first interaction over touch.</p>
+              <p class="decision-label">Reason</p>
+              <p>Matches how writers actually capture text and enables fast file navigation without UI chrome.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Limits casual browsing use cases the device was never intended to serve.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">3D-printed enclosure with iterative CAD.</p>
+              <p class="decision-label">Reason</p>
+              <p>Let me test fit, ergonomics, and port placement across four hardware generations quickly.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Print tolerances and material strength required multiple refinement passes.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-label">Decision</p>
+              <p class="decision-value">Quiet, on-demand AI assistance.</p>
+              <p class="decision-label">Reason</p>
+              <p>AI should support writing without becoming another attention-pulling surface.</p>
+              <p class="decision-label">Tradeoff</p>
+              <p>Requires careful UX so assistance never interrupts the write loop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System architecture -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">System Architecture</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">Software flows across writing and AI</h2>
+      <p class="mt-4 text-neutral-700">Monoscribe combines a compact compute core, an E-Ink display tuned for text, a physical keyboard, and a software layer designed around the constraints of electronic paper.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="font-semibold mb-3">Hardware</h3>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Raspberry Pi compute core</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>E-Ink display optimized for reading and writing</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Physical keyboard for keyboard-first interaction</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Custom 3D-printed enclosure and battery system</span></li>
+          </ul>
+        </div>
+        <div class="card p-6">
+          <h3 class="font-semibold mb-3">Software</h3>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Python-based writing &amp; reading interface</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Keyboard shortcut system for fast control</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Multi-file navigation and quick switching</span></li>
+            <li class="flex gap-2"><span class="text-neutral-400">•</span><span>Refresh strategy tuned to E-Ink limitations</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="font-semibold text-sm mt-6 mb-2">Main writing loop</p>
+      <figure class="case-figure">
+        <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-5 sm:p-6 overflow-x-auto">
+          <div class="system-flow">
+            <span class="flow-node">Keyboard input</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">Input handler</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">Text buffer</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">File manager</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">E-Ink display update</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node flow-node--accent">Saved note</span>
+          </div>
+        </div>
+        <figcaption>Core writing loop from keystroke to persisted file on E-Ink.</figcaption>
+      </figure>
+      <p class="font-semibold text-sm mt-6 mb-2">Quiet AI flow</p>
+      <figure class="case-figure">
+        <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-5 sm:p-6 overflow-x-auto">
+          <div class="system-flow">
+            <span class="flow-node">User types :ai summarize</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">AI bridge</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">OpenAI / Claude</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node">Summary output</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node flow-node--accent">User accepts or ignores</span>
+          </div>
+        </div>
+        <figcaption>AI stays opt-in — triggered by explicit command, never interrupting the write loop.</figcaption>
+      </figure>
+      <p class="font-semibold text-sm mt-6 mb-2">Hardware layout</p>
+      <figure class="case-figure">
+        <div class="rounded-xl ring-1 ring-neutral-200 bg-white p-5 sm:p-6 overflow-x-auto">
+          <div class="system-flow">
+            <span class="flow-node">E-Ink display</span>
+            <span class="flow-arrow" aria-hidden="true">+</span>
+            <span class="flow-node">Keyboard</span>
+            <span class="flow-arrow" aria-hidden="true">+</span>
+            <span class="flow-node">Compute board</span>
+            <span class="flow-arrow" aria-hidden="true">+</span>
+            <span class="flow-node">Power / storage</span>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <span class="flow-node flow-node--accent">3D-printed enclosure</span>
+          </div>
+        </div>
+        <figcaption>Physical layout — every interface decision affected enclosure space and vice versa.</figcaption>
+      </figure>
+    </section>
+
+
+
+    <!-- Hardware System -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading"><p class="eyebrow">Hardware System</p><h2 class="section-title">Components that make Monoscribe physical</h2></div>
+        <div class="case-section-body">
+          <p>The hardware design balanced screen refresh, input responsiveness, power use, and internal layout. Every hardware decision affected the interface.</p>
+          <div class="hardware-grid">
+            <div class="hardware-item"><h3>E-Ink display</h3><p>Main low-distraction screen for reading and reviewing notes.</p></div>
+            <div class="hardware-item"><h3>OLED display</h3><p>Optional fast-refresh preview for live typing experiments.</p></div>
+            <div class="hardware-item"><h3>Raspberry Pi / ESP32</h3><p>Controls input, display updates, and file logic per prototype version.</p></div>
+            <div class="hardware-item"><h3>Keyboard</h3><p>Physical input for writing and file navigation.</p></div>
+            <div class="hardware-item"><h3>Battery / power</h3><p>Portable use — directly influences enclosure volume.</p></div>
+            <div class="hardware-item"><h3>Storage</h3><p>Saves notes and writing sessions locally.</p></div>
+            <div class="hardware-item"><h3>3D-printed enclosure</h3><p>Holds display, keyboard, board, wiring, and power.</p></div>
+            <div class="hardware-item"><h3>Wiring &amp; soldering</h3><p>Hand-soldered connections between display, power, and control boards.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interface Design -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading"><p class="eyebrow">Interface Design</p><h2 class="section-title">The writing interface</h2></div>
+        <div class="case-section-body">
+          <p>The interface is intentionally minimal: create a note, type, save, return to the file list, optionally call AI. Few screens, keyboard-first navigation, AI only on request.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            <figure class="case-figure">
+              <img src="/assets/final_items/IMG_7154.jpg" alt="MonoScribe command mode showing keyboard shortcuts for notes, files, editing, and AI tools" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[3/2] object-cover bg-neutral-100" />
+              <figcaption>Command mode — keyboard-first shortcuts keep navigation fast and focused.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="/assets/final_items/IMG_7155.jpg" alt="MonoScribe note view showing written text and an on-device AI summary" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[3/2] object-cover bg-neutral-100" />
+              <figcaption>Note view — writing stays primary while AI assistance appears only when requested.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="/assets/final_items/IMG_7156.jpg" alt="MonoScribe E-Ink command reference with note, file, editor, and AI actions" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[3/2] object-cover bg-neutral-100" />
+              <figcaption>Command reference — every core action remains accessible without touch menus.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enclosure Design -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading"><p class="eyebrow">Enclosure Design</p><h2 class="section-title">CAD, fit testing, manufacturable form</h2></div>
+        <div class="case-section-body">
+          <p>The enclosure fits display, keyboard, board, wiring, and battery while feeling like a usable writing object. Physical design became interaction design.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <figure class="case-figure">
+              <img src="/assets/new_enclosureDesign.jpeg" alt="Assembled MonoScribe prototype in its 3D-printed enclosure with the E-Ink display and wireless keyboard" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-cover bg-white" />
+              <figcaption>Assembled enclosure — the E-Ink display, auxiliary screen, and angled housing form a focused writing station.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="/assets/image_of_Circuit.jpeg" alt="MonoScribe circuit prototype with a perfboard, OLED display, wiring, power connection, and switch" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-cover bg-white" />
+              <figcaption>Internal circuit prototype — display, wiring, power, and control connections before enclosure assembly.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive 3D Model -->
+    <section id="monoscribe-model-section" class="model-viewer-section case-section section">
+      <div class="site-container">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive Model</p>
+          <h2 class="section-title">Interactive Device Model</h2>
+          <p class="body mt-3 text-neutral-600">Switch between the assembled device and an exploded view, then rotate and zoom each model to inspect the enclosure and internal layout.</p>
+        </div>
+        <div class="model-layer-tabs" role="toolbar" aria-label="Choose a MonoScribe model view">
+          <button type="button" class="model-layer-tab" aria-pressed="true" data-model-src="/assets/Assembled_view.glb" data-model-label="assembled">Assembled View</button>
+          <button type="button" class="model-layer-tab" aria-pressed="false" data-model-src="/assets/Exploded_view.glb" data-model-label="exploded">Exploded View</button>
+        </div>
+        <div class="model-viewer-wrap">
+          <model-viewer id="monoscribe-model-viewer" src="/assets/Assembled_view.glb" alt="Interactive assembled MonoScribe device model" camera-controls auto-rotate shadow-intensity="1" exposure="1" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
+        </div>
+        <p id="monoscribe-model-status" class="model-status" aria-live="polite">Showing the assembled MonoScribe. Drag to rotate and scroll or pinch to zoom.</p>
+        <div class="model-layer-legend" aria-label="Device layers">
+          <span>Top shell</span><span>E-Ink display</span><span>OLED preview</span><span>Raspberry Pi / ESP32</span>
+          <span>Keyboard</span><span>Battery / power</span><span>Wiring</span><span>Bottom shell</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept evolution -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Concept Evolution</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">From E-Ink Laptop to Monoscribe</h2>
+      <p class="mt-3 text-neutral-600">Monoscribe evolved from earlier E-Ink laptop experiments into a focused writing device. Each version narrowed scope and clarified product purpose. Interactive models below can be rotated, zoomed, and inspected.</p>
+
+
+      <div class="evolution-timeline mt-8">
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 1</p><h3>Early E-Ink laptop idea</h3><p>Explored whether a general writing computer could be slower and less distracting.</p><p class="learned"><strong>Changed:</strong> Scope was too broad — cut toward single-purpose writing.</p></div>
+          <figure class="case-figure">
+            <iframe class="rounded-lg ring-1 ring-neutral-200 w-full aspect-video bg-black" src="https://www.youtube-nocookie.com/embed/y3Hb646zEYg" title="Early E-Ink laptop concept video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </figure>
+        </article>
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 2</p><h3>Focused note-taking direction</h3><p>Shifted from full laptop to a dedicated note-taking tool with clearer purpose.</p><p class="learned"><strong>Changed:</strong> Reduced feature set; product story sharpened.</p></div>
+          <figure class="case-figure">
+            <img src="/assets/stage2.jpeg" alt="Early cardboard MonoScribe prototype with a screen frame and keyboard base" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-neutral-100" />
+          </figure>
+        </article>
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 3</p><h3>OLED + E-Ink display system</h3><p>Small OLED for live typing feedback; E-Ink for committed text.</p><p class="learned"><strong>Changed:</strong> Learned refresh timing trade-offs between preview and commit.</p></div>
+          <figure class="case-figure">
+            <video controls preload="metadata" playsinline aria-label="OLED and E-Ink display prototype test" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-black">
+              <source src="/assets/stage3.mp4" type="video/mp4" />
+              Your browser does not support embedded MP4 video.
+            </video>
+          </figure>
+        </article>
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 4</p><h3>Keyboard-first interaction</h3><p>Navigation and writing through keyboard commands, not touch menus.</p><p class="learned"><strong>Changed:</strong> Every screen state reachable without touch.</p></div>
+          <figure class="case-figure">
+            <img src="/assets/stage4.jpeg" alt="MonoScribe command interface running on an exposed E-Ink display during keyboard navigation testing" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-neutral-100" />
+          </figure>
+        </article>
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 5</p><h3>Enclosure &amp; component layout</h3><p>CAD iterations for screen, keyboard, board clearance, and wire routing.</p><p class="learned"><strong>Changed:</strong> Enclosure became part of interaction design.</p></div>
+          <figure class="case-figure">
+            <img src="/assets/stage5.jpg" alt="Exploded physical layout of the MonoScribe enclosure, E-Ink display, circuit board, and assembled screen housing" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-neutral-100" />
+          </figure>
+        </article>
+        <article class="evolution-stage"><div><p class="evolution-stage__meta">Stage 6</p><h3>Functional Monoscribe prototype</h3><p>Dedicated device with keyboard input, file navigation, calm E-Ink, optional AI.</p><p class="learned"><strong>Changed:</strong> Working demo proves the full product story.</p></div><figure class="case-figure"><a href="#working-prototype-demo" class="asset-placeholder" style="aspect-ratio:4/3;" aria-label="Jump to the Monoscribe working prototype demo"><span class="asset-placeholder__label">Working Prototype Demo</span><span class="asset-placeholder__path">Watch the Stage 6 demo →</span></a></figure></article>
+      </div>
+
+      <h3 class="card-title mt-14">Hardware iteration gallery</h3>
+      <p class="caption mt-2">Four major hardware and enclosure generations documented through build photos and prototype videos.</p>
+
+      <!-- V1 -->
+      <div class="mt-8">
+        <h3 class="text-lg font-semibold flex items-center gap-3"><span class="tag tag-accent">Version 1</span> Concept &amp; exploration</h3>
+        <p class="mt-2 text-sm text-neutral-600">Early form-factor exploration and component feasibility testing.</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="/assets/version1/IMG_1955.jpeg" alt="MonoScribe Version 1 early hardware exploration" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+          <img src="/assets/version1/IMG_4821%202.jpeg" alt="MonoScribe Version 1 prototype detail" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+          <img src="/assets/version1/IMG_4823%202.jpeg" alt="MonoScribe Version 1 form-factor experiment" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+        </div>
+      </div>
+
+      <!-- V2 -->
+      <div class="mt-12">
+        <h3 class="text-lg font-semibold flex items-center gap-3"><span class="tag tag-accent">Version 2</span> First prototype</h3>
+        <p class="mt-2 text-sm text-neutral-600">First working form factor — established core structure and proved viability.</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <img src="/assets/version2/IMG_4715%202.jpeg" alt="MonoScribe Version 2 first working prototype" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+          <video controls preload="metadata" playsinline aria-label="MonoScribe Version 2 working prototype video" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-black">
+            <source src="/assets/version2/IMG_4791.mp4" type="video/mp4" />
+            Your browser does not support embedded MP4 video.
+          </video>
+          <img src="/assets/version2/IMG_4811%202.jpeg" alt="MonoScribe Version 2 hardware assembly" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+          <img src="/assets/version2/IMG_4824%202.jpeg" alt="MonoScribe Version 2 enclosure and component test" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
+        </div>
+      </div>
+
+      <!-- V3 -->
+      <div class="mt-12">
+        <h3 class="text-lg font-semibold flex items-center gap-3"><span class="tag tag-accent">Version 3</span> Design refinement</h3>
+        <p class="mt-2 text-sm text-neutral-600">Improved ergonomics and internal structure; multiple iterations on keyboard mounting and display housing.</p>
+        <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <video controls preload="metadata" playsinline aria-label="MonoScribe Version 3 refinement video" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-contain bg-black">
+            <source src="/assets/version3/IMG_5317.mp4" type="video/mp4" />
+            Your browser does not support embedded MP4 video.
+          </video>
+          <img src="/assets/version3/IMG_5564%202.jpeg" alt="MonoScribe Version 3 design refinement, view 1" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+          <img src="/assets/version3/IMG_5568%202.jpeg" alt="MonoScribe Version 3 design refinement, view 2" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+          <img src="/assets/version3/IMG_5569%203.jpeg" alt="MonoScribe Version 3 internal hardware, view 1" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+          <img src="/assets/version3/IMG_5572%202.jpeg" alt="MonoScribe Version 3 internal hardware, view 2" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+          <img src="/assets/version3/IMG_5573%202.jpeg" alt="MonoScribe Version 3 assembly detail" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+          <img src="/assets/version3/IMG_5574%204.jpeg" alt="MonoScribe Version 3 completed refinement" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-cover bg-neutral-100" />
+        </div>
+      </div>
+
+      <!-- V4 -->
+      <div class="mt-12">
+        <h3 class="text-lg font-semibold flex items-center gap-3"><span class="tag tag-accent">Version 4</span> Final optimized design</h3>
+        <p class="mt-2 text-sm text-neutral-600">Manufacturing refinements, improved structural integrity, and finalized tolerances.</p>
+        <div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <img src="/assets/version4/IMG_5911%202.jpeg" alt="MonoScribe Version 4 optimized enclosure, view 1" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5912.jpeg" alt="MonoScribe Version 4 optimized enclosure, view 2" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5927.jpeg" alt="MonoScribe Version 4 hardware assembly, view 1" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5928%202.jpeg" alt="MonoScribe Version 4 hardware assembly, view 2" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5930%202.jpeg" alt="MonoScribe Version 4 fit and tolerance test" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5932.jpeg" alt="MonoScribe Version 4 final enclosure detail" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+          <img src="/assets/version4/IMG_5944.jpeg" alt="Completed MonoScribe Version 4 prototype" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-40 object-cover bg-neutral-100" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Making Monoscribe -->
+    <section class="case-section section">
+      <div class="site-container">
+        <div class="section-heading"><p class="eyebrow">Making Monoscribe</p><h2 class="section-title">All of my sketches for Monoscribe.</h2>
+          <p class="body mt-3 text-neutral-600">Ideation, display experiments, embedded coding, soldering, CAD, 3D printing, assembly, and debugging — not just the final result.</p>
+        </div>
+        <div id="sketch-gallery" class="sketch-gallery mt-8" tabindex="0" aria-label="MonoScribe sketches and designs gallery">
+          <div class="sketch-gallery__stage">
+            <img id="sketch-gallery-image" class="sketch-gallery__image" src="/assets/resume/sketches%20and%20designs/IMG_7119.jpeg" alt="MonoScribe sketch and design exploration 1 of 17" />
+            <button id="sketch-gallery-prev" type="button" class="sketch-gallery__nav sketch-gallery__nav--prev" aria-label="Previous sketch">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button id="sketch-gallery-next" type="button" class="sketch-gallery__nav sketch-gallery__nav--next" aria-label="Next sketch">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="sketch-gallery__meta">
+            <p id="sketch-gallery-caption" class="sketch-gallery__caption" aria-live="polite">Sketches and designs · 1 of 17</p>
+            <p class="sketch-gallery__hint">Select a thumbnail or use the arrow keys. Select the large image to expand it.</p>
+          </div>
+          <div id="sketch-gallery-thumbs" class="sketch-gallery__thumbs" role="tablist" aria-label="Choose a sketch or design"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Prototype Demo -->
+    <section id="working-prototype-demo" class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading"><p class="eyebrow">Demo</p><h2 class="section-title">Working Prototype Demo</h2></div>
+        <div class="case-section-body">
+          <p>Demo should show typing, keyboard commands, file navigation, E-Ink update behavior, optional AI summary flow, and the physical prototype in use.</p>
+          <figure class="case-figure mt-4">
+            <div class="demo-video-wrap">
+              <video controls preload="metadata" playsinline aria-label="MonoScribe working prototype demo video">
+                <source src="/assets/MonoScribe%20.mp4" type="video/mp4" />
+                Your browser does not support embedded MP4 video.
+              </video>
+            </div>
+            <figcaption>MonoScribe working prototype demo.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Challenges -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading"><p class="eyebrow">Key Challenges</p><h2 class="section-title">Constraints that shaped the design</h2></div>
+        <div class="case-section-body">
+          <div class="decision-grid">
+            <div class="decision-card"><p class="decision-label">Challenge</p><p class="decision-value">E-Ink refresh speed</p><p>E-Ink is calm but not ideal for live typing — pushed preview displays and refresh timing decisions.</p></div>
+            <div class="decision-card"><p class="decision-label">Challenge</p><p class="decision-value">Hardware layout</p><p>Space for screen, board, wires, and battery while staying compact.</p></div>
+            <div class="decision-card"><p class="decision-label">Challenge</p><p class="decision-value">Input and navigation</p><p>Keyboard commands had to replace touch for all core flows.</p></div>
+            <div class="decision-card"><p class="decision-label">Challenge</p><p class="decision-value">AI without distraction</p><p>AI support without taking over the writing process.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="container-narrow py-10 cs-section">
+      <p class="eyebrow">Final Prototype</p>
+      <h2 class="mt-2 text-2xl font-bold tracking-tight">What exists today</h2>
+      <p class="mt-4 text-neutral-700">
+        The final prototype demonstrates the full product idea: a device you can open and write on immediately, navigate
+        with the keyboard, and read comfortably for long stretches. The four-iteration arc moved Monoscribe from a rough
+        concept to a manufacturable enclosure with reliable internals — proof of an end-to-end product process across
+        hardware, software, and form.
+      </p>
+    </section>
+
+    <!-- Reflection -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Reflection</p>
+          <h2 class="section-title">What I learned</h2>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Monoscribe taught me that designing a physical-digital product means balancing many layers at once: attention,
+            input, refresh speed, power, enclosure space, file logic, and user expectations. Every hardware decision affected
+            the interface, and every interface decision affected the hardware. This project helped me grow as a designer who
+            can move between concept, system architecture, prototyping, and product storytelling.
+          </p>
+          <p class="mt-4 text-sm text-neutral-500">
+            Monoscribe grew out of my earlier E-Ink computing experiments. The full weekly build log is preserved as a
+            <a href="/pages/projects/eink-laptop/blog.html" class="underline hover:text-neutral-700">process archive</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="case-section section-tight">
+      <div class="site-container case-section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Next Steps</p>
+          <h2 class="section-title">What I'd do next</h2>
+        </div>
+        <div class="case-section-body">
+          <ul class="space-y-3 text-neutral-700">
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Redesign the interface beyond a terminal-style UI toward a softer, more intuitive reading and writing experience.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Integrate quiet, on-demand AI: summaries and clarifications that never interrupt the flow of writing.</span></li>
+            <li class="flex gap-3"><span class="text-accent font-bold">→</span><span>Add optional sync so notes move between devices without compromising the calm, offline-first feel.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects / CTA -->
+    <section class="case-section section">
+      <div class="site-container">
+        <div class="case-cta">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Open to work</p>
+            <h2 class="section-title text-white mt-2">Interested in physical-digital product work?</h2>
+            <p class="body mt-3">I'm looking for product design, UX, creative technology, hardware prototyping, and early product roles where I can design and build across systems.</p>
+          </div>
+          <div class="button-row">
+            <a href="/pages/projects/signal.html" class="btn btn-accent btn-lg">View Signal Case Study</a>
+            <a href="/pages/projects/seed-planter.html" class="btn btn-on-dark btn-lg">View Seed Planter</a>
+            <a href="/pages/contact.html" class="btn btn-on-dark btn-lg">Contact Me</a>
+            <a href="/assets/resume/abdul-qureshi-resume.pdf" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200">
+    <div class="site-container py-10 text-sm text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Abdul Qureshi · Product Designer &amp; Creative Technologist</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="mailto:aq2073@nyu.edu" class="hover:text-neutral-800">Email</a>
+        <a href="https://github.com/infinite2004" target="_blank" rel="noopener" class="hover:text-neutral-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-qureshi/" target="_blank" rel="noopener" class="hover:text-neutral-800">LinkedIn</a>
+        <a href="/pages/resume.html" class="hover:text-neutral-800">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox()" aria-label="Close" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10"><svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <button onclick="prevImage()" aria-label="Previous" class="absolute left-4 text-white hover:text-gray-300 z-10"><svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+    <button onclick="nextImage()" aria-label="Next" class="absolute right-4 text-white hover:text-gray-300 z-10"><svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain" onclick="event.stopPropagation()">
+  </div>
+
+  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+  <script>
+    let currentImageIndex = 0;
+    let imageElements = [];
+    document.addEventListener('DOMContentLoaded', function () {
+      imageElements = Array.from(document.querySelectorAll('main img')).filter(img => !img.src.includes('logo'));
+      imageElements.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLightbox(index));
+      });
+
+      const modelViewer = document.getElementById('monoscribe-model-viewer');
+      const modelStatus = document.getElementById('monoscribe-model-status');
+      const modelButtons = Array.from(document.querySelectorAll('[data-model-src]'));
+
+      if (modelViewer && modelStatus && modelButtons.length) {
+        let activeLabel = 'assembled';
+
+        modelButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            if (button.getAttribute('aria-pressed') === 'true') return;
+
+            activeLabel = button.dataset.modelLabel;
+            modelButtons.forEach((item) => {
+              item.setAttribute('aria-pressed', String(item === button));
+            });
+
+            modelStatus.textContent = `Loading the ${activeLabel} MonoScribe view…`;
+            modelViewer.alt = `Interactive ${activeLabel} MonoScribe device model`;
+            modelViewer.src = button.dataset.modelSrc;
+          });
+        });
+
+        modelViewer.addEventListener('load', () => {
+          modelStatus.textContent = `Showing the ${activeLabel} MonoScribe. Drag to rotate and scroll or pinch to zoom.`;
+        });
+
+        modelViewer.addEventListener('error', () => {
+          modelStatus.textContent = `The ${activeLabel} model could not be loaded. Please try the other view.`;
+        });
+      }
+
+      const sketchGallery = document.getElementById('sketch-gallery');
+      const sketchImage = document.getElementById('sketch-gallery-image');
+      const sketchCaption = document.getElementById('sketch-gallery-caption');
+      const sketchThumbs = document.getElementById('sketch-gallery-thumbs');
+      const sketchPrev = document.getElementById('sketch-gallery-prev');
+      const sketchNext = document.getElementById('sketch-gallery-next');
+
+      if (sketchGallery && sketchImage && sketchCaption && sketchThumbs && sketchPrev && sketchNext) {
+        const sketchSources = Array.from({ length: 17 }, (_, index) => {
+          const filename = `IMG_${7119 + index}.jpeg`;
+          return {
+            full: `/assets/resume/sketches%20and%20designs/${filename}`,
+            thumb: `/assets/resume/sketches%20and%20designs/thumbs/${filename}`,
+            alt: `MonoScribe sketch and design exploration ${index + 1} of 17`
+          };
+        });
+        let sketchIndex = 0;
+        let touchStartX = 0;
+
+        const showSketch = (nextIndex, focusThumbnail = false) => {
+          sketchIndex = (nextIndex + sketchSources.length) % sketchSources.length;
+          const selectedSketch = sketchSources[sketchIndex];
+          sketchImage.src = selectedSketch.full;
+          sketchImage.alt = selectedSketch.alt;
+          sketchCaption.textContent = `Sketches and designs · ${sketchIndex + 1} of ${sketchSources.length}`;
+
+          const thumbnailButtons = Array.from(sketchThumbs.querySelectorAll('.sketch-gallery__thumb'));
+          thumbnailButtons.forEach((button, index) => {
+            const selected = index === sketchIndex;
+            button.setAttribute('aria-selected', String(selected));
+            button.tabIndex = selected ? 0 : -1;
+          });
+
+          const selectedThumbnail = thumbnailButtons[sketchIndex];
+          if (selectedThumbnail) {
+            selectedThumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            if (focusThumbnail) selectedThumbnail.focus();
+          }
+        };
+
+        sketchSources.forEach((sketch, index) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'sketch-gallery__thumb';
+          button.setAttribute('role', 'tab');
+          button.setAttribute('aria-label', `Show sketch ${index + 1} of ${sketchSources.length}`);
+          button.setAttribute('aria-selected', String(index === 0));
+          button.tabIndex = index === 0 ? 0 : -1;
+
+          const thumbnail = document.createElement('img');
+          thumbnail.src = sketch.thumb;
+          thumbnail.alt = '';
+          thumbnail.loading = 'lazy';
+          thumbnail.setAttribute('aria-hidden', 'true');
+          button.appendChild(thumbnail);
+          button.addEventListener('click', () => showSketch(index));
+          sketchThumbs.appendChild(button);
+        });
+
+        sketchPrev.addEventListener('click', () => showSketch(sketchIndex - 1));
+        sketchNext.addEventListener('click', () => showSketch(sketchIndex + 1));
+        sketchGallery.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showSketch(sketchIndex - 1, true);
+          }
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showSketch(sketchIndex + 1, true);
+          }
+        });
+        sketchImage.addEventListener('touchstart', (event) => {
+          touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+        sketchImage.addEventListener('touchend', (event) => {
+          const distance = event.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(distance) < 50) return;
+          showSketch(sketchIndex + (distance < 0 ? 1 : -1));
+        }, { passive: true });
+      }
+    });
+    function openLightbox(index) {
+      currentImageIndex = index;
+      const lb = document.getElementById('lightbox');
+      const im = document.getElementById('lightbox-img');
+      im.src = imageElements[index].src; im.alt = imageElements[index].alt;
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target.id !== 'lightbox') return;
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden'); lb.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+    function nextImage() { currentImageIndex = (currentImageIndex + 1) % imageElements.length; const im = document.getElementById('lightbox-img'); im.src = imageElements[currentImageIndex].src; im.alt = imageElements[currentImageIndex].alt; }
+    function prevImage() { currentImageIndex = (currentImageIndex - 1 + imageElements.length) % imageElements.length; const im = document.getElementById('lightbox-img'); im.src = imageElements[currentImageIndex].src; im.alt = imageElements[currentImageIndex].alt; }
+    document.addEventListener('keydown', function (e) {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
+  </script>
+</body>
+</html>

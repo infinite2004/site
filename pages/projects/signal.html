@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/style-modern.css?v=2026-07-21-qm2" />
-  <link rel="stylesheet" href="/design-system.css?v=2026-07-21-qm2" />
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-31-mediafix" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-31-mediafix" />
   <style>
     .signal-video-frame {
       width: min(100%, 360px);
@@ -172,7 +172,7 @@
       </div>
     </section>
 
-    <section class="signal-scroll-showcase" aria-label="Signal scrolling case study with product video">
+    <section class="signal-scroll-showcase" aria-label="Signal scrolling case study with product video" data-no-reveal>
       <div class="site-container signal-scroll-showcase__grid">
         <aside class="signal-scroll-showcase__media" aria-label="Signal product walkthrough">
           <figure class="case-figure signal-sticky-video">
@@ -747,6 +747,6 @@
       videos[0].addEventListener("loadedmetadata", () => syncFrom(videos[0], true), { once: true });
     })();
   </script>
-  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+  <script src="/script-modern.js?v=2026-07-31-mediafix" defer></script>
 </body>
 </html>

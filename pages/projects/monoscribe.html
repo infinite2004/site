@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/style-modern.css?v=2026-07-21-qm2" />
-  <link rel="stylesheet" href="/design-system.css?v=2026-07-21-qm2" />
+  <link rel="stylesheet" href="/style-modern.css?v=2026-07-31-mediafix" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-07-31-mediafix" />
   <script type="module" src="/assets/vendor/model-viewer.min.js"></script>
 </head>
 <body class="text-neutral-900 ds-theme" data-scroll-theme="monoscribe">
@@ -453,7 +453,7 @@
         <article class="evolution-stage">
           <div><p class="evolution-stage__meta">Stage 3</p><h3>OLED + E-Ink display system</h3><p>Small OLED for live typing feedback; E-Ink for committed text.</p><p class="learned"><strong>Changed:</strong> Learned refresh timing trade-offs between preview and commit.</p></div>
           <figure class="case-figure">
-            <video controls preload="metadata" playsinline aria-label="OLED and E-Ink display prototype test" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-black">
+            <video controls preload="metadata" playsinline poster="/assets/stage4.jpeg" aria-label="OLED and E-Ink display prototype test" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-black">
               <source src="/assets/stage3.mp4" type="video/mp4" />
               Your browser does not support embedded MP4 video.
             </video>
@@ -471,7 +471,16 @@
             <img src="/assets/stage5.jpg" alt="Exploded physical layout of the MonoScribe enclosure, E-Ink display, circuit board, and assembled screen housing" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-neutral-100" />
           </figure>
         </article>
-        <article class="evolution-stage"><div><p class="evolution-stage__meta">Stage 6</p><h3>Functional Monoscribe prototype</h3><p>Dedicated device with keyboard input, file navigation, calm E-Ink, optional AI.</p><p class="learned"><strong>Changed:</strong> Working demo proves the full product story.</p></div><figure class="case-figure"><a href="#working-prototype-demo" class="asset-placeholder" style="aspect-ratio:4/3;" aria-label="Jump to the Monoscribe working prototype demo"><span class="asset-placeholder__label">Working Prototype Demo</span><span class="asset-placeholder__path">Watch the Stage 6 demo →</span></a></figure></article>
+        <article class="evolution-stage">
+          <div><p class="evolution-stage__meta">Stage 6</p><h3>Functional Monoscribe prototype</h3><p>Dedicated device with keyboard input, file navigation, calm E-Ink, optional AI.</p><p class="learned"><strong>Changed:</strong> Working demo proves the full product story.</p></div>
+          <figure class="case-figure">
+            <video controls preload="metadata" playsinline poster="/assets/final_items/hero.jpeg" aria-label="Functional MonoScribe Stage 6 prototype demo" class="rounded-lg ring-1 ring-neutral-200 w-full aspect-[4/3] object-contain bg-black">
+              <source src="/assets/MonoScribe%20.mp4" type="video/mp4" />
+              Your browser does not support embedded MP4 video.
+            </video>
+            <figcaption>Stage 6 working prototype — typing, navigation, E-Ink updates, and the assembled device in use.</figcaption>
+          </figure>
+        </article>
       </div>
 
       <h3 class="card-title mt-14">Hardware iteration gallery</h3>
@@ -494,7 +503,7 @@
         <p class="mt-2 text-sm text-neutral-600">First working form factor — established core structure and proved viability.</p>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <img src="/assets/version2/IMG_4715%202.jpeg" alt="MonoScribe Version 2 first working prototype" loading="lazy" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-cover bg-neutral-100" />
-          <video controls preload="metadata" playsinline aria-label="MonoScribe Version 2 working prototype video" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-black">
+          <video controls preload="metadata" playsinline poster="/assets/version2/IMG_4715%202.jpeg" aria-label="MonoScribe Version 2 working prototype video" class="rounded-lg ring-1 ring-neutral-200 w-full h-56 object-contain bg-black">
             <source src="/assets/version2/IMG_4791.mp4" type="video/mp4" />
             Your browser does not support embedded MP4 video.
           </video>
@@ -508,7 +517,7 @@
         <h3 class="text-lg font-semibold flex items-center gap-3"><span class="tag tag-accent">Version 3</span> Design refinement</h3>
         <p class="mt-2 text-sm text-neutral-600">Improved ergonomics and internal structure; multiple iterations on keyboard mounting and display housing.</p>
         <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
-          <video controls preload="metadata" playsinline aria-label="MonoScribe Version 3 refinement video" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-contain bg-black">
+          <video controls preload="metadata" playsinline poster="/assets/version3/IMG_5564%202.jpeg" aria-label="MonoScribe Version 3 refinement video" class="rounded-lg ring-1 ring-neutral-200 w-full h-44 object-contain bg-black">
             <source src="/assets/version3/IMG_5317.mp4" type="video/mp4" />
             Your browser does not support embedded MP4 video.
           </video>
@@ -570,7 +579,7 @@
           <p>Demo should show typing, keyboard commands, file navigation, E-Ink update behavior, optional AI summary flow, and the physical prototype in use.</p>
           <figure class="case-figure mt-4">
             <div class="demo-video-wrap">
-              <video controls preload="metadata" playsinline aria-label="MonoScribe working prototype demo video">
+              <video controls preload="metadata" playsinline poster="/assets/final_items/hero.jpeg" aria-label="MonoScribe working prototype demo video">
                 <source src="/assets/MonoScribe%20.mp4" type="video/mp4" />
                 Your browser does not support embedded MP4 video.
               </video>
@@ -687,7 +696,7 @@
     <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain" onclick="event.stopPropagation()">
   </div>
 
-  <script src="/script-modern.js?v=2026-07-21-qm2" defer></script>
+  <script src="/script-modern.js?v=2026-07-31-mediafix" defer></script>
   <script>
     let currentImageIndex = 0;
     let imageElements = [];

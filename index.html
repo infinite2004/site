@@ -41,9 +41,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/style-modern.css?v=2026-07-31-cleanup" />
-  <link rel="stylesheet" href="/design-system.css?v=2026-07-31-cleanup" />
-  <link rel="preload" href="/assets/mononnooscribe.png" as="image" />
+  <link rel="stylesheet" href="/style-modern.css?v=2026-08-27-home-cover" />
+  <link rel="stylesheet" href="/design-system.css?v=2026-08-27-home-cover" />
+  <link rel="preload" href="/assets/final_items/hero.jpeg" as="image" />
 </head>
 <body class="text-neutral-900 ds-theme qm-home">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -94,7 +94,7 @@
           </p>
           <div class="button-row">
             <a href="#featured-case-studies" class="btn btn-primary btn-lg">View Case Studies</a>
-            <a href="/assets/resume/abdul-qureshi-resume.pdf?v=2026-07-31" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
+            <a href="/assets/resume/abdul-qureshi-resume.pdf" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
             <a href="/pages/contact.html" class="btn btn-secondary btn-lg">Contact Me</a>
           </div>
           <div class="ds-stack-badges">
@@ -105,12 +105,18 @@
             <span class="ds-stack-badge"><span class="ds-stack-badge__dot" style="--badge-color:#8a7356"></span>Prototyping</span>
           </div>
           <div class="hero-color-panels__mobile-visual" aria-hidden="true">
-            <img src="/assets/final_items/hero.jpeg" alt="" loading="eager" />
+            <img src="/assets/final_items/hero.jpeg" alt="" />
           </div>
         </div>
 
-        <div class="hero-color-panels__visual reveal-blur" role="img" aria-label="Monoscribe final E-Ink writing device prototype">
-          <img src="/assets/final_items/hero.jpeg" alt="Abdul Qureshi presenting the Monoscribe prototype with its enclosure iterations and electronics" loading="eager" />
+        <div class="hero-color-panels__visual reveal-blur">
+          <img
+            src="/assets/final_items/hero.jpeg"
+            alt="Abdul Qureshi presenting the Monoscribe E-Ink writing device"
+            width="4032"
+            height="3024"
+            fetchpriority="high"
+          />
         </div>
       </div>
     </section>
@@ -136,37 +142,6 @@
         <span class="ds-marquee__item"><span>→</span> Physical Computing</span>
       </div>
     </div>
-
-    <!-- Quiet Machines theme thesis -->
-    <section class="qm-thesis section-tight" aria-labelledby="quiet-machines-title">
-      <div class="site-container">
-        <div class="qm-thesis__header">
-          <div>
-            <p class="qm-kicker">The thread across the work</p>
-            <h2 id="quiet-machines-title" class="section-title">Quiet Machines</h2>
-          </div>
-          <p class="qm-thesis__statement">Calm, legible tools that return control to people.</p>
-        </div>
-        <div class="qm-principle-grid reveal-stagger">
-          <article class="qm-principle">
-            <span class="qm-principle__index">01 / MONOSCRIBE</span>
-            <h3>Reduce noise</h3>
-            <p>Strip away attention-hungry interface layers until the essential action becomes obvious.</p>
-          </article>
-          <article class="qm-principle">
-            <span class="qm-principle__index">02 / SEED DROPPER</span>
-            <h3>Reveal the mechanism</h3>
-            <p>Make hardware, flows, constraints, and repair visible so the system can be understood and adapted.</p>
-          </article>
-          <article class="qm-principle">
-            <span class="qm-principle__index">03 / SIGNAL</span>
-            <h3>Protect human judgment</h3>
-            <p>Offer context at the right moment, then leave the final decision with the person using the tool.</p>
-          </article>
-        </div>
-        <p class="mt-6 text-sm"><a href="/pages/design-system.html" class="font-semibold text-accent hover:underline">Explore the Quiet Machines design system →</a></p>
-      </div>
-    </section>
 
     <!-- Process Diagram -->
     <section class="section-tight border-t border-neutral-200">
@@ -215,10 +190,10 @@
         </div>
 
         <!-- Monoscribe — large centerpiece -->
-        <a href="/pages/projects/monoscribe.html" class="project-card project-card-featured project-card-large ds-shine reveal" data-project="monoscribe">
+        <article class="project-card project-card-featured project-card-large ds-shine reveal">
           <div class="project-card-media">
-            <video controls preload="metadata" playsinline poster="/assets/final_items/hero.jpeg" aria-label="MonoScribe project update video" style="object-fit:contain;background:#000;">
-              <source src="/assets/MonoScribe%20.mp4" type="video/mp4" />
+            <video controls preload="metadata" playsinline poster="/assets/final_items/hero.jpeg" aria-label="Final Monoscribe project video" style="object-fit:contain;background:#000;">
+              <source src="/assets/monoscribe-demo.mp4" type="video/mp4" />
               Your browser does not support embedded MP4 video.
             </video>
           </div>
@@ -237,13 +212,13 @@
               <span class="tag">UX Systems</span>
               <span class="tag">3D Modeling</span>
             </div>
-            <span class="project-card-cta">View Case Study →</span>
+            <a href="/pages/projects/monoscribe.html" class="project-card-cta">View Case Study →</a>
           </div>
-        </a>
+        </article>
 
         <!-- Seed Planter + Signal -->
         <div class="project-card-grid">
-          <a href="/pages/projects/seed-planter.html" class="project-card ds-shine reveal" data-project="seed-planter">
+          <a href="/pages/projects/seed-planter.html" class="project-card ds-shine reveal">
             <div class="project-card-media">
               <img src="/assets/pictures%20of%20the%20planting%20device/presentation.png" alt="Seed Dropper System — labeled prototype anatomy" loading="lazy" />
             </div>
@@ -265,9 +240,9 @@
             </div>
           </a>
 
-          <a href="/pages/projects/signal.html" class="project-card ds-shine reveal" data-project="signal">
-            <div class="project-card-media" style="display: grid; place-items: center; background: #101114;">
-              <img src="/assets/Container.png" alt="Signal app cover image" loading="lazy" style="width: 72px; height: 72px; object-fit: contain;" />
+          <a href="/pages/projects/signal.html" class="project-card ds-shine reveal">
+            <div class="project-card-media" style="display:grid;place-items:center;background:#101114;">
+              <img src="/assets/Container.png" alt="Signal shield logo" loading="lazy" style="width:72px;height:72px;object-fit:contain;" />
             </div>
             <div class="project-card-content">
               <p class="project-card-type">Product Design</p>
@@ -413,7 +388,7 @@
           </div>
           <div class="button-row">
             <a href="mailto:aq2073@nyu.edu" class="btn btn-accent btn-lg">Email Me</a>
-            <a href="/assets/resume/abdul-qureshi-resume.pdf?v=2026-07-31" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
+            <a href="/assets/resume/abdul-qureshi-resume.pdf" class="btn btn-secondary btn-lg" download="Abdul_Qureshi_Resume.pdf">Download Resume</a>
             <a href="/pages/work.html" class="btn btn-on-dark btn-lg">View Work</a>
           </div>
         </div>
@@ -434,6 +409,6 @@
     </div>
   </footer>
 
-  <script src="/script-modern.js?v=2026-07-31-cleanup" defer></script>
+  <script src="/script-modern.js?v=2026-07-06-ds" defer></script>
 </body>
 </html>

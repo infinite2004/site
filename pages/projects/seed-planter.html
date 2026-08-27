@@ -232,11 +232,11 @@
                   <p class="decision-label">Interactive 3D model</p>
                   <h3 class="card-title">Seed dropper connector</h3>
                 </div>
-                <a href="/assets/connecter_dowload.glb" download class="btn btn-secondary btn-sm">Download GLB</a>
+                <a href="/assets/seed-dropper-connector.glb" download class="btn btn-secondary btn-sm">Download GLB</a>
               </div>
               <model-viewer
                 id="seed-connector-model"
-                src="/assets/connecter_dowload.glb"
+                src="/assets/seed-dropper-connector.glb"
                 poster="/assets/seed-planter-cutting-mat-grid.png"
                 alt="Interactive 3D model of the connector used to mount the seed dropper"
                 camera-controls
@@ -407,8 +407,8 @@ void loop() {
           <div class="story-beat">
             <figure class="case-figure">
               <div class="demo-video-wrap relative">
-                <video id="seed-planter-demo-video" class="w-full" controls preload="metadata" playsinline><source src="/assets/IMG_5651.mp4" type="video/mp4" /></video>
-                <div id="seed-planter-demo-placeholder" class="demo-video-placeholder hidden"><p class="font-semibold text-lg">Demo unavailable</p></div>
+                <video id="seed-planter-demo-video" class="w-full" controls preload="metadata" playsinline poster="/assets/seed-planter-demo-poster.jpg" aria-label="Seed Dropper working demonstration video"><source src="/assets/seed-planter-demo.mp4" type="video/mp4" /></video>
+                <div id="seed-planter-demo-placeholder" class="demo-video-placeholder hidden"><p class="font-semibold text-lg">Demo unavailable</p><a href="/assets/seed-planter-demo.mp4" download>Download the video</a></div>
               </div>
               <figcaption>Full loop: printer movement → command trigger → servo → seed drop.</figcaption>
             </figure>
@@ -502,21 +502,17 @@ void loop() {
       var video = document.getElementById('seed-planter-demo-video');
       var placeholder = document.getElementById('seed-planter-demo-placeholder');
       if (video && placeholder) {
-        fetch('/assets/IMG_5651.mp4', { method: 'HEAD' }).then(function (res) {
-          if (!res.ok) {
-            video.classList.add('hidden');
-            placeholder.classList.remove('hidden');
-          } else {
-            placeholder.classList.add('hidden');
-          }
-        }).catch(function () {
+        var showVideoError = function () {
           video.classList.add('hidden');
           placeholder.classList.remove('hidden');
-        });
-        video.addEventListener('error', function () {
-          video.classList.add('hidden');
-          placeholder.classList.remove('hidden');
-        });
+        };
+        video.addEventListener('loadedmetadata', function () {
+          video.classList.remove('hidden');
+          placeholder.classList.add('hidden');
+        }, { once: true });
+        video.addEventListener('error', showVideoError);
+        var source = video.querySelector('source');
+        if (source) source.addEventListener('error', showVideoError);
       }
 
       var model = document.getElementById('seed-connector-model');
@@ -527,7 +523,7 @@ void loop() {
           modelStatus.classList.add('is-ready');
         });
         model.addEventListener('error', function () {
-          modelStatus.innerHTML = 'Preview unavailable — <a href="/assets/connecter_dowload.glb" download>download the GLB</a>.';
+          modelStatus.innerHTML = 'Preview unavailable — <a href="/assets/seed-dropper-connector.glb" download>download the GLB</a>.';
           modelStatus.classList.add('has-error');
         });
       }
